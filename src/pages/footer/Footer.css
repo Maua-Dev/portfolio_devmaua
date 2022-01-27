@@ -1,0 +1,10 @@
+.FooterComponent {
+  color: white;
+  background-color: #121212;
+
+  height: 30vh;
+
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+}
