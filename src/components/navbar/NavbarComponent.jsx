@@ -42,7 +42,7 @@ export default function NavbarComponent() {
   return (
     <div className="navbar">
       <a href="#home">
-        <img src={logo} className="nav-logo" />
+        <img src={logo} alt="Dev. Community" className="nav-logo" />
       </a>
       <div className="nav-links">
         {linksList.map((link) => {
