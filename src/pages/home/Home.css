@@ -2,7 +2,15 @@
   height: 100vh;
   /* Para ficar em baixo da navbar */
 
+  display: grid;
+  place-items: center;
+
   position: relative;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
 }
 
 .VideoBg {
@@ -12,4 +20,18 @@
   background-size: cover;
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+.logo-container {
+  display: grid;
+  width: 100%;
+  place-items: center;
+  height: 100%;
+  position: absolute;
+}
+
+.HomeLogo {
+  position: absolute;
+  width: 75%;
+  height: 75%;
 }
