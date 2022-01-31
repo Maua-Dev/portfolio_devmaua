@@ -46,6 +46,8 @@ export default function NavbarComponent() {
               spy={true}
               offset={-document.documentElement.clientHeight * 0.075}
               duration={750}
+              onClick={() => setNavbarOpen(false)}
+              isDynamic={true}
             >
               {link.text}
             </LinkS>
