@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "./assets/Logo.svg";
 import "./Navbar.css";
-import { Link as LinkS } from "react-scroll";
+import { Link, Link as LinkS } from "react-scroll";
+import { useState } from "react";
 
 export default function NavbarComponent() {
   const linksList = [
@@ -27,12 +28,14 @@ export default function NavbarComponent() {
     },
   ];
 
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
   return (
     <div className="navbar">
-      <a href="#home">
+      <LinkS to="home" smooth={true} spy={true} duration={1000}>
         <img src={logo} alt="Dev. Community" className="nav-logo" />
-      </a>
-      <div className="nav-container">
+      </LinkS>
+      <div className={`nav-container ${navbarOpen && "open"}`}>
         {linksList.map((link) => {
           return (
             <LinkS
@@ -48,6 +51,12 @@ export default function NavbarComponent() {
             </LinkS>
           );
         })}
+      </div>
+      <div
+        className={`nav-toggle  ${navbarOpen && "open"}`}
+        onClick={() => setNavbarOpen(!navbarOpen)}
+      >
+        <div className="hamburguer-bars"></div>
       </div>
     </div>
   );
