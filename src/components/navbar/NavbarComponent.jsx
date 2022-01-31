@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./assets/Logo.svg";
 import "./Navbar.css";
-import { Link, Link as LinkS } from "react-scroll";
+import { Link as LinkS } from "react-scroll";
 import { useState } from "react";
 
 export default function NavbarComponent() {
