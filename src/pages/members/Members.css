@@ -1,5 +1,78 @@
+.pages {
+  display: flex;
+  justify-content: center;
+}
+
 .MembersComponent {
   background-color: #1e1e1e;
 
   color: #9ac4f8;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.categories {
+  margin-top: 20vh;
+  display: flex;
+  width: 180vh;
+  height: 7vh;
+
+  justify-content: space-around;
+}
+
+.button {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1rem;
+
+  color: white;
+  width: 25vh;
+  background-color: #121212;
+  border: none;
+  border-radius: 1.5vh;
+
+  cursor: pointer;
+
+  transition: background-color 0.5s ease-out;
+}
+
+.button:hover {
+  background-color: white;
+  color: #121212;
+}
+
+.button.open {
+  background-color: white;
+  color: #121212;
+}
+
+.members-container {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: space-around;
+
+  color: #121212;
+
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.members-container.open {
+  opacity: 1;
+}
+
+.members {
+  font-size: 3.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #9ac4f8;
+  width: 20vh;
+  height: 20vh;
+  border-radius: 2vh;
 }
