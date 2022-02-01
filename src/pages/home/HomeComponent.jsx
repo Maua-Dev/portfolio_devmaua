@@ -28,7 +28,7 @@ export default function HomeComponent() {
           muted
           src={"https://i.imgur.com/cDy9FHG.mp4"}
           type="video/mp4"
-          playsinline // Para funcionar em Iphone
+          playsInline // Para funcionar em Iphone
         ></video>
       </MouseParallaxContainer>
     </div>
