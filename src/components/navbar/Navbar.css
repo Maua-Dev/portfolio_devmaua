@@ -5,7 +5,7 @@
 
   /* Para ficar em cima e presa no topo */
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   top: 0;
 
   display: flex;
