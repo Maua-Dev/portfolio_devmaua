@@ -36,7 +36,6 @@ export default function MembersComponent() {
           dropdownOpen={dropdownOpen}
           areaEscolhida={areaEscolhida}
           members={members}
-          areaEscolhida={areaEscolhida}
           chooseArea={chooseArea}
         />
         <MembersContainerComponent

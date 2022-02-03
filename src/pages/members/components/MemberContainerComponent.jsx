@@ -4,7 +4,7 @@ import "./MemberContainerComponent.css";
 export default function MemberContainerComponent(props) {
   return (
     <div className={`members-container ${props.isOpen && "open"}`}>
-      {props.members[props.areaEscolhida].map((member) => {
+      {props.members[props.areaEscolhida].map((member, i) => {
         // Quando ele está aberto (isOpen) ele vai rapidamente desligar a opacidade e mudá-la depois, para dar o efeito de smooth
 
         function getMemberInformations(member) {
@@ -27,7 +27,7 @@ export default function MemberContainerComponent(props) {
           //   });
 
           return (
-            <div className="members" key={member.name}>
+            <div className="members" key={i}>
               <img src={memberInfo.avatar} alt="" className="foto" />
               <h2 className="memberName">{member.name}</h2>
             </div>

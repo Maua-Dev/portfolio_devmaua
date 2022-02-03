@@ -1,15 +1,25 @@
 .members-container {
-  display: flex;
   margin-top: 2rem;
-  justify-content: space-around;
 
   color: #121212;
 
   opacity: 0;
 
-  flex-wrap: wrap;
   /* Velocidade da animação  */
   transition: opacity 0.2s ease-in-out;
+
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 4vw;
+
+  justify-content: center;
+}
+
+@media (max-width: 1800px) {
+  .members-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .members-container.open {
@@ -17,8 +27,8 @@
 }
 
 .members {
-  font-size: 3.5vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
@@ -27,17 +37,19 @@
   width: 20vh;
   height: 20vh;
   border-radius: 2vh;
+
+  font-size: 0.75rem;
+}
+
+@media (max-width: 490px) {
+  .members {
+    width: 30vw;
+    height: 30vw;
+  }
 }
 
 .foto {
   width: 50%;
   height: 50%;
   clip-path: circle(50% at 50% 50%);
-}
-
-.members {
-  display: flex;
-  flex-direction: column;
-
-  font-size: 0.75rem;
 }
