@@ -6,7 +6,7 @@
   opacity: 0;
 
   /* Velocidade da animação  */
-  transition: opacity 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   display: grid;
   grid-template-columns: repeat(5, auto);
