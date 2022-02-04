@@ -1,5 +1,6 @@
 import React from "react";
 import "./MemberContainerComponent.css";
+import MiniCardComponent from "./MiniCardComponent";
 
 export default function MemberContainerComponent(props) {
   return (
@@ -27,10 +28,7 @@ export default function MemberContainerComponent(props) {
           //   });
 
           return (
-            <div className="members" key={i}>
-              <img src={memberInfo.avatar} alt="" className="foto" />
-              <h2 className="memberName">{member.name}</h2>
-            </div>
+            <MiniCardComponent i={i} memberInfo={memberInfo} member={member} />
           );
         }
         return getMemberInformations(member);

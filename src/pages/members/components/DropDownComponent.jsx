@@ -11,7 +11,10 @@ export default function DropDownComponent(props) {
         className="dropdown-btn"
         onClick={() => props.setDropdownOpen(!props.dropdownOpen)}
       >
-        {props.areaEscolhida} <AiFillCaretDown className="setinha" />
+        {props.areaEscolhida}{" "}
+        <AiFillCaretDown
+          className={`setinha ${props.dropdownOpen && "open"}`}
+        />
       </div>
       {props.dropdownOpen && (
         <div className={`dropdown-content ${props.dropdownOpen && "open"}`}>
@@ -20,7 +23,11 @@ export default function DropDownComponent(props) {
               <div
                 className={`dropdown-item ${
                   props.areaEscolhida === area && "dropdown-open"
-                } ${area === firstArea && "dropdown-first"} `}
+                } ${
+                  props.areaEscolhida === area &&
+                  area === firstArea &&
+                  "dropdown-first"
+                } `}
                 // Se estiver igual, ele vai considerar que está aberto e vai ficar branco
                 key={area}
                 onClick={() => props.chooseArea(area)}

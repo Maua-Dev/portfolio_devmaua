@@ -11,6 +11,9 @@
   grid-gap: 4vw;
 
   justify-content: center;
+
+  align-items: center;
+
 }
 
 @media (max-width: 1800px) {
@@ -22,32 +25,4 @@
 
 .members-container.open {
   opacity: 1;
-}
-
-.members {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  margin: 10px;
-  background: #9ac4f8;
-  width: 20vh;
-  height: 20vh;
-  border-radius: 2vh;
-
-  font-size: 0.75rem;
-}
-
-@media (max-width: 490px) {
-  .members {
-    width: 30vw;
-    height: 30vw;
-  }
-}
-
-.foto {
-  width: 50%;
-  height: 50%;
-  clip-path: circle(50% at 50% 50%);
 }

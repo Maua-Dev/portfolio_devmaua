@@ -43,9 +43,24 @@
 
   .setinha {
     margin-left: auto;
+
+    transition: all 200ms;
   }
 
-  .dropdown .dropdown-content {
+  .setinha.open {
+    transform: rotate(180deg);
+  }
+
+  @keyframes growDown {
+    0% {
+      transform: scaleY(0);
+    }
+
+    100% {
+      transform: scaleY(1);
+    }
+  }
+  .dropdown-content {
     position: absolute;
     padding: 10px 20px;
     background-color: rgb(41, 39, 39);
@@ -56,14 +71,16 @@
 
     width: 55vw;
 
-    /* margin: auto; */
-
     display: flex;
     align-items: center;
     flex-direction: column;
     z-index: 1;
 
     top: 80px;
+
+    animation: growDown 200ms;
+
+    transform-origin: top center;
   }
 
   .dropdown-item {
