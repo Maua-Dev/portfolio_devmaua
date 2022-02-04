@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./MiniCardComponent.css";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import ModalTeste from "./ModalTeste";
+// import ModalTeste from "./ModalTeste";
 
 export default function MiniCardComponent(props) {
-  const [modaCardlOpen, setModalCardOpen] = useState(false);
+  // const [modaCardlOpen, setModalCardOpen] = useState(false);
   return (
-    <div className="members" onClick={() => setModalCardOpen(true)}>
+    <div className="members">
       <h2 className="memberName">{props.member.name}</h2>
       <img src={props.memberInfo.avatar} alt="" className="foto" />
       <div className="socialContainer">
