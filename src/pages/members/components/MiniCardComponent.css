@@ -19,13 +19,15 @@
 
 .memberName {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .foto {
   width: 50%;
   height: 50%;
   clip-path: circle(50% at 50% 50%);
+
+  transition: all 250ms;
 }
 
 .socialContainer {
@@ -39,6 +41,8 @@
   color: #121212;
 
   font-size: 1.8rem;
+
+  transition: all 250ms;
 }
 
 @media (max-width: 490px) {
@@ -60,5 +64,13 @@
   .members:hover {
     transform: scale(1.1);
   }
-  
+
+  .social:hover {
+    transform: scale(1.4);
+  }
+  .foto:hover {
+    transform: scale(1.1);
+
+    filter: brightness(1.25);
+  }
 }

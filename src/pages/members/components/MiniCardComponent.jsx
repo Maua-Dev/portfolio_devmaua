@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MiniCardComponent.css";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import ModalTeste from "./ModalTeste";
 
 export default function MiniCardComponent(props) {
+  const [modaCardlOpen, setModalCardOpen] = useState(false);
   return (
-    <div className="members" key={props.i}>
+    <div className="members" onClick={() => setModalCardOpen(true)}>
       <h2 className="memberName">{props.member.name}</h2>
       <img src={props.memberInfo.avatar} alt="" className="foto" />
       <div className="socialContainer">
         <a
           className="social socialLinkedin"
-          href="https://www.linkedin.com/feed/"
+          href={props.member.linkedInLink}
           target="_blank"
           rel="noreferrer"
         >
@@ -18,7 +20,7 @@ export default function MiniCardComponent(props) {
         </a>
         <a
           className="social socialGithub"
-          href="https://github.com"
+          href={props.member.linkedinLink}
           target="_blank"
           rel="noreferrer"
         >

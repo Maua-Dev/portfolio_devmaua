@@ -28,7 +28,11 @@ export default function MemberContainerComponent(props) {
           //   });
 
           return (
-            <MiniCardComponent i={i} memberInfo={memberInfo} member={member} />
+            <MiniCardComponent
+              key={i}
+              memberInfo={memberInfo}
+              member={member}
+            />
           );
         }
         return getMemberInformations(member);
