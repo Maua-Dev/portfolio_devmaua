@@ -6,19 +6,12 @@ import ModalTeste from "./ModalTeste";
 export default function MiniCardComponent(props) {
   const [modaCardlOpen, setModalCardOpen] = useState(false); // Abre o modal
 
-  const [memberInfoModal, setMemberInfoModal] = useState("");
-
-  function getModalInfo(memberInfo) {
-    setMemberInfoModal(memberInfo);
+  function setModal() {
     setModalCardOpen(!modaCardlOpen);
   }
 
   return (
-    <div
-      className="members"
-      onClick={() => props.getModalInfo(props.memberInfo)}
-      // onClick={() => setModalCardOpen(true)}
-    >
+    <div className="members" onClick={() => setModal()}>
       <h2 className="memberName">{props.memberInfo.name}</h2>
       <img src={props.memberInfo.avatar} alt="" className="foto" />
       <div className="socialContainer">
@@ -41,8 +34,8 @@ export default function MiniCardComponent(props) {
       </div>
       <ModalTeste
         open={modaCardlOpen}
-        memberInfoModal={memberInfoModal}
-        getModalInfo={getModalInfo}
+        memberInfo={props.memberInfo}
+        setModalOff={setModal}
       />
     </div>
   );

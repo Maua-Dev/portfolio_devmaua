@@ -30,16 +30,16 @@ export default function MemberContainerComponent(props) {
 
           // PARA SIMULAÇÃO DO GITHUB
 
-          memberInfo["name"] = githubFetch.name;
-          memberInfo["avatar"] = githubFetch.avatar_url;
-          memberInfo["bio"] = githubFetch.bio;
+          memberInfo["name"] = member.name;
+          memberInfo["avatar"] =
+            "https://avatars.githubusercontent.com/u/81604963?v=4";
+          memberInfo["bio"] = member.bio;
 
           return (
             <MiniCardComponent
               key={i}
               memberInfo={memberInfo}
               member={member}
-              // getModalInfo={props.getModalInfo}
             />
           );
         }

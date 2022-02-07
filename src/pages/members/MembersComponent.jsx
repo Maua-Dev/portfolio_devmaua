@@ -4,13 +4,11 @@ import members from "./assets/dataMembers.json";
 import FiltroComponent from "./components/FiltroComponent";
 import DropDownComponent from "./components/DropDownComponent";
 import MembersContainerComponent from "./components/MemberContainerComponent";
-import ModalTeste from "./components/ModalTeste";
 
 export default function MembersComponent() {
   const [areaEscolhida, setAreaEscolhida] = useState("Diretoria"); // Escolhe área
   const [isOpen, setOpen] = useState(true); // Abre a área de membros
   const [dropdownOpen, setDropdownOpen] = useState(false); // Abre o dropdown menu para selecionar em mobile
-  // const [modaCardlOpen, setModalCardOpen] = useState(false); // Abre o modal
 
   function chooseArea(area) {
     //  Para aparecer poder selecionar
@@ -25,11 +23,6 @@ export default function MembersComponent() {
   }
 
   const [memberInfoModal, setMemberInfoModal] = useState("");
-
-  // function getModalInfo(memberInfo) {
-  //   setMemberInfoModal(memberInfo);
-  //   setModalCardOpen(!modaCardlOpen);
-  // }
 
   return (
     <div className="MembersComponent pages" id="membros">
@@ -51,12 +44,6 @@ export default function MembersComponent() {
           isOpen={isOpen}
           members={members}
           areaEscolhida={areaEscolhida}
-          // getModalInfo={getModalInfo}
-        />
-        <ModalTeste
-        // open={modaCardlOpen}
-        // memberInfoModal={memberInfoModal}
-        // getModalInfo={getModalInfo}
         />
       </div>
     </div>
