@@ -7,8 +7,8 @@ export default function ModalTeste({ setModal, open, memberInfo }) {
 
   return ReactDom.createPortal(
     <div className="modalCard">
-      <div className={`modalBg`} onClick={() => setModal}>
-        <div className="modalContent"> {memberInfo.name} </div>
+      <div className="modalBg">
+        <div className="modalContent"> {memberInfo.idade} </div>
       </div>
     </div>,
     document.getElementById("portal")

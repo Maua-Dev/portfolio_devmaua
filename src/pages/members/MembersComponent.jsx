@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./Members.css";
 import members from "./assets/dataMembers.json";
-import FiltroComponent from "./components/FiltroComponent";
-import DropDownComponent from "./components/DropDownComponent";
-import MembersContainerComponent from "./components/MemberContainerComponent";
+import FiltroComponent from "./components/Filtro/FiltroComponent";
+import DropDownComponent from "./components/DropDown/DropDownComponent";
+import MembersContainerComponent from "./components/MembersContainer/MemberContainerComponent";
 
 export default function MembersComponent() {
   const [areaEscolhida, setAreaEscolhida] = useState("Diretoria"); // Escolhe área
@@ -21,8 +21,6 @@ export default function MembersComponent() {
       // Para ter dellay e uma animaçãozinha
     }, 300);
   }
-
-  const [memberInfoModal, setMemberInfoModal] = useState("");
 
   return (
     <div className="MembersComponent pages" id="membros">

@@ -1,7 +1,6 @@
 import React from "react";
 import "./MemberContainerComponent.css";
 import MiniCardComponent from "./MiniCardComponent";
-import githubFetch from "../assets/github.json";
 
 export default function MemberContainerComponent(props) {
   return (
@@ -15,6 +14,7 @@ export default function MemberContainerComponent(props) {
           // let githubApiUrl = "https://api.github.com/users/" + githubName;
 
           let memberInfo = {
+            // Dicionário para passar as informações para o modal
             name: "",
             avatar: "",
             bio: "",
@@ -27,8 +27,6 @@ export default function MemberContainerComponent(props) {
           //     memberInfo["avatar"] = data.avatar;
           //     memberInfo["bio"] = data.bio;
           //   });
-
-          // PARA SIMULAÇÃO DO GITHUB
 
           memberInfo["name"] = member.name;
           memberInfo["avatar"] =
