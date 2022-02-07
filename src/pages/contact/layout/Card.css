@@ -4,11 +4,11 @@
     align-items: center;
     justify-content: space-around;
     position: absolute;
-
-    width: 100vw;
+    
+    width: 100%;
     flex-wrap: wrap;
     margin-top: 15vh;
-    gap: 40px;
+    gap: 2vw
 }
 
 .Card {
@@ -41,4 +41,18 @@
 
 .Container p {
     font-size: 1.1rem;
+
+}
+
+@media (max-width: 700px) {
+    .Container {
+        gap: 1vw;
+    }
+    .Container p {
+        display: none;
+    }
+    .Card {
+        min-width: 14vw;
+        width: 14vw;
+    }
 }
