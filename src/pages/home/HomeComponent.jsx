@@ -10,7 +10,11 @@ export default function HomeComponent() {
   return (
     <div className="HomeBackground" id="home">
       <MouseParallaxContainer className="container" resetOnLeave>
-        <MouseParallaxChild factorX={0.03} factorY={0.05} className="logo-container">
+        <MouseParallaxChild
+          factorX={0.01}
+          factorY={0.01}
+          className="logo-container"
+        >
           <img
             src={logo}
             alt="Logo inteiro Dev. Community"
@@ -22,8 +26,11 @@ export default function HomeComponent() {
           autoPlay
           loop
           muted
-          src={"https://i.imgur.com/cDy9FHG.mp4"}
+          src={
+            "https://portfolio-devmaua-assets.s3.sa-east-1.amazonaws.com/BACKGROUND.mp4"
+          }
           type="video/mp4"
+          playsInline // Para funcionar em Iphone
         ></video>
       </MouseParallaxContainer>
     </div>
