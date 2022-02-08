@@ -2,9 +2,16 @@
   color: white;
   background-color: #121212;
 
-  height: 30vh;
+  height: 16vh;
 
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
   font-size: 32px;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .FooterComponent {
+    font-size: 7vw;
+  }
 }
