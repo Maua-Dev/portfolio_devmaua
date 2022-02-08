@@ -19,7 +19,9 @@
 
 .memberName {
   margin: 0;
-  font-size: 1.1rem;
+  margin-top:2px;
+  font-size: 15px;
+  text-align: center;
 }
 
 .foto {
@@ -52,11 +54,17 @@
   }
 
   .memberName {
-    font-size: 5vw;
+    font-size: 10px;
   }
 
   .social {
     font-size: 6vw;
+  }
+}
+
+@media (max-width: 350px){
+  .memberName {
+    font-size: 8px
   }
 }
 

@@ -1,22 +1,22 @@
 {
   "Diretoria": [
     {
-      "name": "Ronaldinho",
+      "name": "Hector Guerrini Herara",
       "githubLink": "https://github.com/hectorguerrini",
       "linkedinLink": "https://www.linkedin.com/in/hector-guerrini-herrera-b08007116/?originalSubdomain=br"
     },
     {
-      "name": "Zeeba",
+      "name": "Caio Godoy de Toledo",
       "githubLink": "https://github.com/caiogtoledo",
       "linkedinLink": "https://www.linkedin.com/in/caio-toledo/"
     },
     {
-      "name": "Zeeba",
+      "name": "Vitor Guirão Soller",
       "githubLink": "https://github.com/caiogtoledo",
       "linkedinLink": "https://www.linkedin.com/in/caio-toledo/"
     },
     {
-      "name": "Zeeba",
+      "name": "Caio Kurek Marques Manual",
       "githubLink": "https://github.com/caiogtoledo",
       "linkedinLink": "https://www.linkedin.com/in/caio-toledo/"
     },
@@ -78,7 +78,6 @@
       "linkedinLink": "https://www.linkedin.com/in/caio-toledo/"
     }
   ],
-
   "DevOps": [
     {
       "name": "Godoy",
@@ -138,7 +137,6 @@
       "linkedinLink": "https://www.linkedin.com/in/caio-toledo/"
     }
   ],
-
   "POs": [
     {
       "name": "Ronaldinho",
@@ -171,7 +169,6 @@
       "linkedinLink": "https://www.linkedin.com/in/caio-toledo/"
     }
   ],
-
   "Áreas Internas": [
     {
       "name": "Ronaldinho",

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./MiniCardComponent.css";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import ModalTeste from "./ModalTeste";
+import Modal from "./Modal";
 
 export default function MiniCardComponent(props) {
   const [modaCardlOpen, setModalCardOpen] = useState(false); // Abre o modal
@@ -40,7 +40,7 @@ export default function MiniCardComponent(props) {
           <AiFillGithub />
         </a>
       </div>
-      <ModalTeste
+      <Modal
         open={modaCardlOpen}
         memberInfo={props.memberInfo}
         setModalOff={setModal}
