@@ -19,7 +19,7 @@
 
 .memberName {
   margin: 0;
-  margin-top:2px;
+  margin-top: 2px;
   font-size: 15px;
   text-align: center;
 }
@@ -47,6 +47,19 @@
   transition: all 250ms;
 }
 
+@media (min-width: 1000px) {
+  .members:hover {
+    transform: scale(1.1);
+  }
+
+  .social:hover {
+    transform: scale(1.4);
+  }
+  .foto:hover {
+    transform: scale(1.1);
+  }
+}
+
 @media (max-width: 490px) {
   .members {
     width: 30vw;
@@ -62,21 +75,8 @@
   }
 }
 
-@media (max-width: 350px){
+@media (max-width: 350px) {
   .memberName {
-    font-size: 8px
-  }
-}
-
-@media (min-width: 1000px) {
-  .members:hover {
-    transform: scale(1.1);
-  }
-
-  .social:hover {
-    transform: scale(1.4);
-  }
-  .foto:hover {
-    transform: scale(1.1);
+    font-size: 8px;
   }
 }
