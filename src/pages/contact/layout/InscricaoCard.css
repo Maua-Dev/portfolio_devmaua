@@ -1,0 +1,108 @@
+.Caixote {
+    display: flex;
+    justify-content: space-around;
+    width: 60vw;
+    height: 35vh;
+    margin: 10vh auto ;
+    max-width: 800px;
+    border-radius: 25px;
+    padding: 30px 30px;
+    align-items: center;
+    
+    color: white;
+    background-color:#1E1E1EE5;
+}
+
+.Inscricao {
+    width: 32.5vw;
+    margin: auto;
+    font-size: 27.5px;
+    padding: 10px 10px;
+
+}
+
+.List {
+    font-size: 22.5px;
+}
+
+.Link {
+    width: 22.5vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.Link p {
+    margin: 0%;
+    font-size: 18px;
+    margin: auto auto;
+}
+
+.QR_Code {
+    max-width: 190px;
+    max-height: 190px;
+    width: 22.5vw;
+    margin: auto auto;
+}
+
+.Botao {
+    font-size: 25px;
+    border-radius: 25px;
+    padding: 8px 7.5px;
+    max-width: 190px;
+    width: 22.5vw;
+    margin: auto auto;
+    background-color: #7D238A ; 
+    text-decoration: none;
+    color: white; 
+
+    transition: all 250ms;
+}
+
+.Botao:hover{
+    transform: scale(1.1)
+}
+
+@media (max-width:700px){
+    
+    .Caixote{
+        flex-direction: column;
+        height: 50vh;
+        justify-content: center;
+
+        
+    }
+
+    .Inscricao{
+        width: 60vw;
+margin: 0
+
+    }
+
+    .Botao{
+        font-size: 22px ;
+        width: 175px;
+    }
+
+    .QR_Code{
+        display:none;
+    }
+    .Link{
+        width: 100%;
+    }
+    .Link p{
+        width: 100%;
+    }
+}
+
+@media (max-width:380px){
+    .Caixote{
+        height: 60vh;
+
+    }
+
+   
+
+    
+}

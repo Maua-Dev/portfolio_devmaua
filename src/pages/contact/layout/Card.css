@@ -3,12 +3,10 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    position: absolute;
     
     width: 100%;
     flex-wrap: wrap;
-    margin-top: 15vh;
-    gap: 2vw
+    gap: 2vw;
 }
 
 .Card {
@@ -29,6 +27,12 @@
     display: flex;
     justify-content: center;
     gap: 1vw;
+
+    transition: all 250ms;
+}
+
+.Card:hover {
+    transform: scale(1.1);
 }
 
 .Icon {
@@ -46,13 +50,13 @@
 
 @media (max-width: 700px) {
     .Container {
-        gap: 1vw;
+        gap: 3vw;
     }
     .Container p {
         display: none;
     }
     .Card {
-        min-width: 14vw;
-        width: 14vw;
+        width: 5vw;
+        min-width: 15vw;
     }
 }
