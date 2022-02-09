@@ -1,0 +1,62 @@
+.Container {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+.Card {
+    text-align: center;
+    color: #fff;
+    background-color:#1E1E1EE5;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    align-items: center;
+    
+    border-radius: 25px;
+    padding: 10px 7.5px;
+    
+    width: 20vw;
+    min-width: 230px;
+
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+
+    transition: all 250ms;
+}
+
+.Card:hover {
+    transform: scale(1.1);
+}
+
+.Icon {
+    font-size: 40px;
+}
+
+.Container a {
+    text-decoration: none;
+}
+
+.Container p {
+    font-size: 1.1rem;
+
+}
+
+@media (max-width: 700px) {
+    .Container {
+        gap: 3vw;
+    }
+    .Container p {
+        display: none;
+    }
+    .Card {
+        width: 5vw;
+        min-width: 15vw;
+    }
+}
