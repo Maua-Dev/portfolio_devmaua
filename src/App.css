@@ -35,5 +35,5 @@ body {
 
 .pages {
   position: relative;
-  height: 92.5vh;
+  min-height: 92.5vh;
 }
