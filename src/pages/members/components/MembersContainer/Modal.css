@@ -41,7 +41,7 @@
   background-color: #9ac4f8;
 }
 
-.modalContent h1 {
+.ModalMemberName {
   padding-left: 1vw;
 }
 
@@ -113,14 +113,15 @@
 @media (max-width: 768px) {
   .modalContent {
     width: 270px;
-    height: 70vh;
 
     padding: 0;
+    padding-bottom: 20px;
   }
 
-  .modalContent h1 {
+  .ModalMemberName {
     font-size: 25px;
     height: fit-content;
+    text-align: center;
   }
 
   .Content {
@@ -128,7 +129,7 @@
     flex-direction: column-reverse;
     /* flex-direction: column; */
     justify-content: center;
-    height: 60vh;
+    height: 80%;
   }
 
   .infoModal {
