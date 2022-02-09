@@ -16,7 +16,7 @@ export default function ModalTeste({ setModal, open, member }) {
               <dt>Curso: <strong>{member.curso}</strong></dt>
               <dt>Ano: <strong>{member.ano}</strong></dt>
               <dt>Idade: <strong>{Math.trunc(((new Date()) - (new Date(member.nascimento))) / 3.154e+10)}</strong></dt>
-              <dt>Principais Linguagens e frameworks: <strong>{member.linguagens}</strong></dt>
+              <dt>Principais Tecnologias e Frameworks: <strong>{member.linguagens}</strong></dt>
               <dt>Hobby: <strong>{member.hobby}</strong></dt>
             </div>
 
