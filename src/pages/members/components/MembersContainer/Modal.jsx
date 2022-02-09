@@ -2,6 +2,7 @@ import React from "react";
 import "./Modal.css";
 import ReactDom from "react-dom";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import moment from "moment";
 
 export default function ModalTeste({ open, member }) {
   if (!open) return null;
@@ -20,15 +21,11 @@ export default function ModalTeste({ open, member }) {
                 Ano: <strong>{member.ano}</strong>
               </dt>
               <dt>
-                Idade:
-                <strong>
-                  {Math.trunc(
-                    (new Date() - new Date(member.nascimento)) / 3.154e10
-                  )}
-                </strong>
+                Idade:{" "}
+                <strong>{moment().diff(member.nascimento, "years")}</strong>
               </dt>
               <dt>
-                Principais Tecnologias e Frameworks:
+                Principais Tecnologias e Frameworks:{" "}
                 <strong>{member.linguagens}</strong>
               </dt>
               <dt>
