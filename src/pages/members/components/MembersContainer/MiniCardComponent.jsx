@@ -21,7 +21,11 @@ export default function MiniCardComponent(props) {
   return (
     <div className="members" onClickCapture={(e) => setModal(e)}>
       <h2 className="memberName">{props.member.name}</h2>
-      <img src={foto} alt="" className="foto" />
+      <img
+        src={foto}
+        alt={props.member.name}
+        className="foto"
+      />
       <div className="socialContainer">
         <a
           className="social socialLinkedin"
