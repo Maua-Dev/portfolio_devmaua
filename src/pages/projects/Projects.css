@@ -32,4 +32,11 @@
   color: #fff;
 
   border-radius: 1rem;
+
+  cursor: pointer;
+  transition: all 250ms;
+}
+
+.project-card:hover {
+  transform: scale(1.1);
 }

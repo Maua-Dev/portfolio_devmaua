@@ -1,0 +1,213 @@
+@keyframes ModalOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.modalCard {
+  overflow: hidden;
+  animation: ModalOpacity 200ms;
+}
+
+.modalBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modalContentProjects {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1001;
+  transform: translate(-50%, -50%);
+
+  border-radius: 25px;
+
+  min-width: 45vw;
+  min-height: 40vh;
+  padding: 5px 30px;
+
+  padding-bottom: 20px;
+
+  background-color: black;
+  color: white;
+}
+
+.modalHeaderName {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: fit-content;
+}
+
+.githubModal {
+  color: white;
+  font-size: 3rem;
+
+  transition: all 250ms;
+}
+
+.githubModal:hover {
+  transform: scale(1.1);
+}
+
+.ModalProjectName {
+  padding-left: 1vw;
+}
+
+.ContentProjectModal {
+  display: flex;
+  align-items: center;
+
+  margin: none;
+
+  width: 100%;
+
+  height: 20vh;
+
+  justify-content: space-around;
+
+  margin-top: 5vh;
+}
+
+.infoModalProjects {
+  width: 20vw;
+  height: fit-content;
+}
+
+.tecnologias {
+  font-size: 25px;
+  margin-top: 0px;
+}
+
+.infoModalProjects dt {
+  font-size: 18.1px;
+  font-weight: 200;
+  font-family: "Righteous", cursive;
+  font-size: 19px;
+  margin: 1.5vh;
+}
+
+.Member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 40%;
+  gap: 10px;
+
+  margin-top: -8vh;
+}
+
+.fotoModalProjects {
+  height: 15vw;
+  object-fit: fill;
+}
+
+.contribuidores {
+  padding-left: 2vw;
+  margin: 10px;
+}
+
+.contribuidores h1 {
+  font-size: 25px;
+}
+
+.membrosParticipantesContainer {
+  width: 40vw;
+  height: 2vw;
+  display: flex;
+  gap: 10px;
+}
+
+.membroParticipanteFoto {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  transition: all 250ms;
+}
+
+.membroParticipante {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.membroParticipante .tooltiptext {
+  visibility: hidden;
+  width: fit-content;
+  background: #5b007b;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+
+  position: absolute;
+  z-index: 1002;
+
+  bottom: -10px;
+}
+
+.membroParticipanteFoto:hover {
+  transform: scale(1.5);
+}
+
+.membroParticipante:hover .tooltiptext {
+  animation: ModalOpacity 250ms;
+  visibility: visible;
+}
+
+@media (max-width: 768px) {
+  .modalHeaderName {
+    justify-content: center;
+  }
+
+  .modalContentProjects {
+    min-width: 270px;
+    padding: 20px;
+    padding-bottom: 20px;
+  }
+
+  .ModalFotoProjectsName {
+    font-size: 25px;
+    height: fit-content;
+    text-align: center;
+  }
+
+  .ContentProjectModal {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    height: 80%;
+
+    margin: 0;
+  }
+
+  .infoModalProjects {
+    width: 240px;
+    padding: 0px 0px;
+    margin: 0px 0px;
+  }
+
+  .fotoModalProjects {
+    height: 12vh;
+  }
+
+  .membrosParticipantesContainer {
+    min-width: 270px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
