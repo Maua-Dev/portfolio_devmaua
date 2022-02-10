@@ -1,7 +1,7 @@
 const data = {
   projects: [
     {
-      //   foto: require("./assets/mauaApp.png"),
+      foto: require("./assets/mauaApp.png"),
       name: "Mauápp",
       frontend: "Flutter",
       backend: "Python",
