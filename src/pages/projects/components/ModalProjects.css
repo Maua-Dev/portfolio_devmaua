@@ -1,0 +1,110 @@
+@keyframes ModalOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.modalContentProjects {
+  position: fixed;
+
+  width: 700px;
+  height: 400px;
+  background-color: black;
+  color: white;
+  border-radius: 1rem;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  padding: 10px 30px ;
+  
+}
+
+.modalBg {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.6);
+
+  z-index: 1000;
+}
+
+.modalCard {
+  overflow: hidden;
+
+  animation: ModalOpacity 200ms;
+}
+
+.modalHeaderName{
+  display: flex;
+  height:fit-content;
+  align-items: center;
+  gap: 1.5vw;
+
+}
+
+.githubModal{
+  font-size: 4rem;
+  transition: all 250ms;
+  color: white;
+}
+
+.githubModal:hover{
+transform: scale(1.1);;
+}
+
+.ModalProjectName{
+ padding-left: 4vw;
+}
+
+
+
+.ColetaneaProjects{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* padding-left: 4vw; */
+  padding: 20px auto;
+  
+}
+
+.FotoProjects{
+  width:35vw;
+display: flex;
+justify-content:center;
+}
+
+.infoModalProjects dt{
+  margin-left: 3vw;
+}
+
+.fotoModalProjects{
+  height: 15vw;
+}
+
+.contribuidores h2{
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.membrosParticipantesContainer{
+  display: flex;
+  flex-direction: row;
+  width: 30vw;
+  gap: 8px;
+}
+
+.membroParticipanteFoto{
+  height: 50px;
+  width: 50px;
+border-radius: 50%;
+object-fit: cover;
+}
