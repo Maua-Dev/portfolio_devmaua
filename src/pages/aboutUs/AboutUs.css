@@ -3,3 +3,54 @@
 
   color: #bd7fb0;
 }
+
+.ContentAboutUs{
+  padding-top: 85px;
+}
+
+.Text1{
+  margin: 15px auto;
+}
+
+.Text2{
+  margin: 10px auto;
+}
+
+.ContentAboutUs p{
+  /* margin: 0px auto; */
+  width: 80vw;
+  color: #F3F3F3;
+  text-align: justify;
+}
+
+.ContentAboutUs h3{
+  margin: auto;
+  margin-top: 35px;
+  margin-bottom: 6px;
+  width: 80vw;
+  color: #F3F3F3;
+}
+
+.FotoAboutUs{
+  padding: 5vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 4vw;
+}
+
+.FotoAboutUs img{
+  width: 20vw;
+  height: 20vw;
+}
+
+@media (max-width: 700px){
+  .FotoAboutUs{
+    flex-wrap: wrap;
+  }
+  .FotoAboutUs img{
+    width: 15vh;
+    height: 15vh;
+  }
+}
+
