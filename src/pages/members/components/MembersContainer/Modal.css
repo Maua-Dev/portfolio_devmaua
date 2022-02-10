@@ -45,7 +45,7 @@
   padding-left: 1vw;
 }
 
-.Content {
+.ContentMemberModal {
   display: flex;
   align-items: center;
 
@@ -90,7 +90,7 @@
   object-fit: cover;
 }
 
-.socialModal {
+.socialModalMembers {
   display: flex;
   justify-content: space-around;
   text-decoration: none;
@@ -122,7 +122,7 @@
     text-align: center;
   }
 
-  .Content {
+  .ContentMemberModal {
     display: flex;
     flex-direction: column-reverse;
     /* flex-direction: column; */

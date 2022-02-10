@@ -1,6 +1,18 @@
 {
   "Diretoria": [
     {
+      "name": "Daniel Branquinho Gomes",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "1996-06-02 00:00:00",
+      "area": "RH, Diretoria",
+      "linguagens": "Backend geral, Flutter, Tableau, tecnologias BI",
+      "linkedinLink": "https://www.linkedin.com/in/danielbranquinho/",
+      "githubLink": "https://github.com/DanielBranquinho",
+      "hobby": "Jogar, ler, tocar caj\u00f3n",
+      "foto": "https://drive.google.com/open?id=1gzrfPy_ceg87ERTywwFEI37nysC-avd6"
+    },
+    {
       "name": "Daniel Xavier",
       "curso": "Engenharia de Computa\u00e7\u00e3o",
       "ano": "5\u00ba",
@@ -27,6 +39,18 @@
   ],
   "Devs": [
     {
+      "name": "Ahmad Kheder Mahfoud",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "3\u00ba",
+      "nascimento": "2002-03-08 00:00:00",
+      "area": "Backend",
+      "linguagens": "",
+      "linkedinLink": "https://www.linkedin.com/in/ahmad-mahfoud-7ba1b71ab/",
+      "githubLink": "https://github.com/AhmadKmahfoud",
+      "hobby": "Jogar Xadrez",
+      "foto": "https://drive.google.com/open?id=1scuuOVD7PE6wUcS7xptpJluGLUQsi4cC"
+    },
+    {
       "name": "Caio Kurek Marques Manuel",
       "curso": "Engenharia de Controle e Automa\u00e7\u00e3o",
       "ano": "3\u00ba",
@@ -49,6 +73,18 @@
       "githubLink": "https://github.com/caiogtoledo",
       "hobby": "Tocar instrumentos, Praticar esportes",
       "foto": "https://drive.google.com/open?id=1zXjVYES5bNZAbOxRcW1VcBSOYSXQnapO"
+    },
+    {
+      "name": "Felipe Paganini",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "5\u00ba",
+      "nascimento": "2000-05-06 00:00:00",
+      "area": "Frontend",
+      "linguagens": "Javascript, Html, CSS, Java, React",
+      "linkedinLink": "",
+      "githubLink": "https://github.com/FePaganini",
+      "hobby": "Assistir s\u00e9ries, jogar no PC",
+      "foto": "https://drive.google.com/open?id=1K06EjXps-E3jC9CY_n0LcdMsLYwwptsa"
     },
     {
       "name": "Felipe Ros Pegini ",
@@ -99,6 +135,30 @@
       "foto": "https://drive.google.com/open?id=15XWC5Lxzc9ae7DAFFhQ7Nhw0B-MxyzSd"
     },
     {
+      "name": "Leonardo Zollner ",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "1999-12-03 00:00:00",
+      "area": "Backend",
+      "linguagens": "",
+      "linkedinLink": "https://www.linkedin.com/in/leonardo-zollner-2b35571a9/",
+      "githubLink": "https://github.com/leonardozollner",
+      "hobby": "Viajar",
+      "foto": "https://drive.google.com/open?id=1eOFGvzRJAP5o6NhtQv7yhxFgz4OW2Ds_"
+    },
+    {
+      "name": "Leticia Magalh\u00e3es",
+      "curso": "Engenharia de Produ\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "1999-05-25 00:00:00",
+      "area": "Frontend",
+      "linguagens": "",
+      "linkedinLink": "www.linkedin.com/in/let\u00edcia-magalh\u00e3es2505",
+      "githubLink": "",
+      "hobby": "Fazer yoga e assistir filmes e s\u00e9ries ",
+      "foto": "https://drive.google.com/open?id=1ByR5hT1hvfThZj43FwYMKl2LshQcpJV5"
+    },
+    {
       "name": "Nathan Brito da Silva",
       "curso": "Engenharia de Computa\u00e7\u00e3o",
       "ano": "5\u00ba",
@@ -121,6 +181,18 @@
       "githubLink": "https://github.com/Renan-Reschke",
       "hobby": "Empinar pipa e jogar Counter Strike",
       "foto": "https://drive.google.com/open?id=15qw4Ps9QeJ4VEFOPmNZh5KKfRVg8aGTs"
+    },
+    {
+      "name": "Vinicius Alves Soares",
+      "curso": "Engenharia de Controle e Automa\u00e7\u00e3o",
+      "ano": "3\u00ba",
+      "nascimento": "2000-12-05 00:00:00",
+      "area": "Frontend",
+      "linguagens": "HTML, CSS, JS e React",
+      "linkedinLink": "https://www.linkedin.com/in/vinicius-alves-soares-4037581ab/",
+      "githubLink": "https://github.com/viso4res",
+      "hobby": "Carros",
+      "foto": "https://drive.google.com/open?id=1jX_K_GKaUVBPib1nP0HJF-b8nLHj27JG"
     },
     {
       "name": "Vitor Soller",
@@ -171,6 +243,18 @@
       "githubLink": "https://github.com/hectorguerrini",
       "hobby": "Rugby, Programar, Beber",
       "foto": "https://drive.google.com/open?id=13epZ3OIVFTK-ZTrOKURe75SaNu8mXQcJ"
+    },
+    {
+      "name": "Matheus Nakai",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "1998-10-23 00:00:00",
+      "area": "DevOps",
+      "linguagens": "",
+      "linkedinLink": "https://www.linkedin.com/in/matheus-nakai-36051a182/",
+      "githubLink": "https://github.com/MatheusNakai",
+      "hobby": "Livros",
+      "foto": "https://drive.google.com/open?id=1aJGhcLENKmrOuCBglYrquIyZCxmFo6hV"
     }
   ],
   "UX / UI": [
@@ -185,6 +269,18 @@
       "githubLink": "https://github.com/Juliana-Haroldo",
       "hobby": "Jogar videogame",
       "foto": "https://drive.google.com/open?id=1G50uvRTQtHWchJ09L1DUiY74dxITlcsi"
+    },
+    {
+      "name": "Michelle Mitie Hamazaki",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "2\u00ba",
+      "nascimento": "2001-08-22 00:00:00",
+      "area": "UX / UI, Comunica\u00e7\u00e3o",
+      "linguagens": "",
+      "linkedinLink": "https://www.linkedin.com/in/michelle-hmzk/",
+      "githubLink": "https://github.com/Michelle-Hmzk",
+      "hobby": "Tirar fotos.",
+      "foto": "https://drive.google.com/open?id=1XhiYRZFWgG8OkCwykBOGl6Sqxq_OMeTo"
     },
     {
       "name": "Yago Garcia Battaggia",
@@ -249,6 +345,30 @@
       "githubLink": "",
       "hobby": "Leitura, Desenho",
       "foto": "https://drive.google.com/open?id=15P2QzdqtNzrsXHYj_CxuSE_4VFvmz_Wd"
+    },
+    {
+      "name": "Daniel Branquinho Gomes",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "1996-06-02 00:00:00",
+      "area": "RH, Diretoria",
+      "linguagens": "Backend geral, Flutter, Tableau, tecnologias BI",
+      "linkedinLink": "https://www.linkedin.com/in/danielbranquinho/",
+      "githubLink": "https://github.com/DanielBranquinho",
+      "hobby": "Jogar, ler, tocar caj\u00f3n",
+      "foto": "https://drive.google.com/open?id=1gzrfPy_ceg87ERTywwFEI37nysC-avd6"
+    },
+    {
+      "name": "Michelle Mitie Hamazaki",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "2\u00ba",
+      "nascimento": "2001-08-22 00:00:00",
+      "area": "UX / UI, Comunica\u00e7\u00e3o",
+      "linguagens": "",
+      "linkedinLink": "https://www.linkedin.com/in/michelle-hmzk/",
+      "githubLink": "https://github.com/Michelle-Hmzk",
+      "hobby": "Tirar fotos.",
+      "foto": "https://drive.google.com/open?id=1XhiYRZFWgG8OkCwykBOGl6Sqxq_OMeTo"
     },
     {
       "name": "Vitor Soller",

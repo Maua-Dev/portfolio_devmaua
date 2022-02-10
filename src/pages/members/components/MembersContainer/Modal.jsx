@@ -12,7 +12,7 @@ export default function ModalTeste({ open, member }) {
       <div className="modalBg">
         <div className="modalContent">
           <h1 className="ModalMemberName">{member.name}</h1>
-          <div className="Content">
+          <div className="ContentMemberModal">
             <div className="infoModal">
               <dt>
                 Curso: <strong>{member.curso}</strong>
@@ -39,7 +39,7 @@ export default function ModalTeste({ open, member }) {
                 alt={`Foto de ${member.name}`}
                 className="fotoModal"
               />
-              <div className="socialModal">
+              <div className="socialModalMembersMembers">
                 <a
                   className="socialMediaModal socialLinkedin"
                   href={member.linkedinLink}
