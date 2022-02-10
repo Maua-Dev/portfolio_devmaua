@@ -4,7 +4,7 @@
   color: #bd7fb0;
 }
 
-.Content{
+.ContentAboutUs{
   padding-top: 85px;
 }
 
@@ -16,14 +16,14 @@
   margin: 10px auto;
 }
 
-.Content p{
+.ContentAboutUs p{
   /* margin: 0px auto; */
   width: 80vw;
   color: #F3F3F3;
   text-align: justify;
 }
 
-.Content h3{
+.ContentAboutUs h3{
   margin: auto;
   margin-top: 35px;
   margin-bottom: 6px;
@@ -31,7 +31,7 @@
   color: #F3F3F3;
 }
 
-.Foto{
+.FotoAboutUs{
   padding: 5vw;
   text-align: center;
   display: flex;
@@ -39,16 +39,16 @@
   gap: 4vw;
 }
 
-.Foto img{
+.FotoAboutUs img{
   width: 20vw;
   height: 20vw;
 }
 
 @media (max-width: 700px){
-  .Foto{
+  .FotoAboutUs{
     flex-wrap: wrap;
   }
-  .Foto img{
+  .FotoAboutUs img{
     width: 15vh;
     height: 15vh;
   }
