@@ -1,10 +1,10 @@
 const data = {
   projects: [
     {
+      foto: require("./assets/mauaApp.png"),
       name: "Mauápp",
       frontend: "Flutter",
       backend: "Python",
-      foto: require("./assets/mauaApp.png"),
       link: "https://github.com/Maua-Dev/System_Maua_Front",
       membros: [
         {
