@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./MiniCardComponent.css";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import ModalTeste from "./ModalTeste";
+import Modal from "./Modal";
 
 export default function MiniCardComponent(props) {
   const [modaCardlOpen, setModalCardOpen] = useState(false); // Abre o modal
-
+  let foto = props.member.foto.replace("open", "uc");
   function setModal(e) {
-    console.log(e.target);
+    // console.log(e.target);
     if (
       e.target.className === "memberName" ||
       e.target.className === "foto" ||
@@ -20,8 +20,12 @@ export default function MiniCardComponent(props) {
 
   return (
     <div className="members" onClickCapture={(e) => setModal(e)}>
-      <h2 className="memberName">{props.memberInfo.name}</h2>
-      <img src={props.memberInfo.avatar} alt="" className="foto" />
+      <h2 className="memberName">{props.member.name}</h2>
+      <img
+        src={foto}
+        alt={props.member.name}
+        className="foto"
+      />
       <div className="socialContainer">
         <a
           className="social socialLinkedin"
@@ -40,9 +44,9 @@ export default function MiniCardComponent(props) {
           <AiFillGithub />
         </a>
       </div>
-      <ModalTeste
+      <Modal
         open={modaCardlOpen}
-        memberInfo={props.memberInfo}
+        member={props.member}
         setModalOff={setModal}
       />
     </div>
