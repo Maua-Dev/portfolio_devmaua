@@ -6,7 +6,7 @@
 
   margin: 10px;
   width: 20vh;
-  height: 20vh;
+  min-height: 22.5vh;
   border-radius: 2vh;
 
   cursor: pointer;
@@ -19,13 +19,17 @@
 
 .memberName {
   margin: 0;
-  font-size: 1.1rem;
+  margin-top: 2px;
+  font-size: 15px;
+  text-align: center;
 }
 
 .foto {
-  width: 50%;
-  height: 50%;
+  width: 5em;
+  height: 5em;
   clip-path: circle(50% at 50% 50%);
+
+  object-fit: cover;
 
   transition: all 250ms;
 }
@@ -45,21 +49,6 @@
   transition: all 250ms;
 }
 
-@media (max-width: 490px) {
-  .members {
-    width: 30vw;
-    height: 30vw;
-  }
-
-  .memberName {
-    font-size: 5vw;
-  }
-
-  .social {
-    font-size: 6vw;
-  }
-}
-
 @media (min-width: 1000px) {
   .members:hover {
     transform: scale(1.1);
@@ -70,5 +59,20 @@
   }
   .foto:hover {
     transform: scale(1.1);
+  }
+}
+
+@media (max-width: 490px) {
+  .members {
+    width: 30vw;
+    min-height: 25vw;
+  }
+
+  .social {
+    font-size: 6vw;
+  }
+
+  .memberName {
+    font-size: 12px;
   }
 }
