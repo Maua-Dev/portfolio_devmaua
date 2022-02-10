@@ -26,9 +26,9 @@ export default function HomeComponent() {
           autoPlay
           loop
           muted
-          src={
-            "https://devmaua-portfolio-assets.s3.amazonaws.com/BACKGROUND.mp4"
-          }
+          // src={
+          //   "https://portfolio-devmaua-assets.s3.sa-east-1.amazonaws.com/BACKGROUND.mp4"
+          // }
           type="video/mp4"
           playsInline // Para funcionar em Iphone
         ></video>

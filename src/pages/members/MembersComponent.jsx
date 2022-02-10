@@ -25,7 +25,7 @@ export default function MembersComponent() {
   return (
     <div className="MembersComponent pages" id="membros">
       <h1 className="titulo">Membros</h1>
-      <div className="info">
+      <div className="infoMembers">
         <FiltroComponent
           members={members}
           areaEscolhida={areaEscolhida}
