@@ -1,0 +1,78 @@
+.members {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  margin: 10px;
+  width: 20vh;
+  min-height: 22.5vh;
+  border-radius: 2vh;
+
+  cursor: pointer;
+
+  background: #9ac4f8;
+  box-shadow: 5px 15px 30px rgba(0, 0, 0, 0.5);
+
+  transition: all 250ms;
+}
+
+.memberName {
+  margin: 0;
+  margin-top: 2px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.foto {
+  width: 5em;
+  height: 5em;
+  clip-path: circle(50% at 50% 50%);
+
+  object-fit: cover;
+
+  transition: all 250ms;
+}
+
+.socialContainer {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.social {
+  text-decoration: none;
+  color: #121212;
+
+  font-size: 1.8rem;
+
+  transition: all 250ms;
+}
+
+@media (min-width: 1000px) {
+  .members:hover {
+    transform: scale(1.1);
+  }
+
+  .social:hover {
+    transform: scale(1.4);
+  }
+  .foto:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 490px) {
+  .members {
+    width: 30vw;
+    min-height: 25vw;
+  }
+
+  .social {
+    font-size: 6vw;
+  }
+
+  .memberName {
+    font-size: 12px;
+  }
+}

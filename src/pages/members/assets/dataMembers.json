@@ -1,0 +1,386 @@
+{
+  "Diretoria": [
+    {
+      "name": "Daniel Branquinho Gomes",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "1996-06-02 00:00:00",
+      "area": "RH, Diretoria",
+      "linguagens": "Backend geral, Flutter, Tableau, tecnologias BI",
+      "linkedinLink": "https://www.linkedin.com/in/danielbranquinho/",
+      "githubLink": "https://github.com/DanielBranquinho",
+      "hobby": "Jogar, ler, tocar caj\u00f3n",
+      "foto": "https://drive.google.com/open?id=1gzrfPy_ceg87ERTywwFEI37nysC-avd6"
+    },
+    {
+      "name": "Daniel Xavier",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "5\u00ba",
+      "nascimento": "1998-09-04 00:00:00",
+      "area": "Diretoria",
+      "linguagens": "Python",
+      "linkedinLink": "https://www.linkedin.com/in/daniel-xavier-134378165/",
+      "githubLink": "https://github.com/Daniel-Xavier",
+      "hobby": "jogar video game",
+      "foto": "https://drive.google.com/open?id=15XDejAfL35YN8yr-8eJhf5dSn4mfF2JV"
+    },
+    {
+      "name": "Hector Guerrini Herrera",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "5\u00ba",
+      "nascimento": "1997-04-07 00:00:00",
+      "area": "Frontend, Backend, DevOps, Diretoria",
+      "linguagens": "Flutter, Angular, Python, C#, Typescript ",
+      "linkedinLink": "https://www.linkedin.com/in/hector-guerrini-herrera-b08007116/",
+      "githubLink": "https://github.com/hectorguerrini",
+      "hobby": "Rugby, Programar, Beber",
+      "foto": "https://drive.google.com/open?id=13epZ3OIVFTK-ZTrOKURe75SaNu8mXQcJ"
+    }
+  ],
+  "Devs": [
+    {
+      "name": "Ahmad Kheder Mahfoud",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "3\u00ba",
+      "nascimento": "2002-03-08 00:00:00",
+      "area": "Backend",
+      "linguagens": "",
+      "linkedinLink": "https://www.linkedin.com/in/ahmad-mahfoud-7ba1b71ab/",
+      "githubLink": "https://github.com/AhmadKmahfoud",
+      "hobby": "Jogar Xadrez",
+      "foto": "https://drive.google.com/open?id=1scuuOVD7PE6wUcS7xptpJluGLUQsi4cC"
+    },
+    {
+      "name": "Caio Kurek Marques Manuel",
+      "curso": "Engenharia de Controle e Automa\u00e7\u00e3o",
+      "ano": "3\u00ba",
+      "nascimento": "2002-04-06 00:00:00",
+      "area": "Frontend",
+      "linguagens": "HTML, CSS, JS, React",
+      "linkedinLink": "www.linkedin.com/in/caio-kurek-6489bb1ab",
+      "githubLink": "https://github.com/KurekCaio",
+      "hobby": "Esportes",
+      "foto": "https://drive.google.com/open?id=1Eh8wMMFBFcdPAngx-aSNariCk7gMhF6e"
+    },
+    {
+      "name": "Caio Toledo",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "3\u00ba",
+      "nascimento": "2001-11-02 00:00:00",
+      "area": "Frontend, Ger\u00eancia de Projetos",
+      "linguagens": "ReacJS, NodeJS, Flutter, Python, C",
+      "linkedinLink": "https://www.linkedin.com/in/caio-toledo/",
+      "githubLink": "https://github.com/caiogtoledo",
+      "hobby": "Tocar instrumentos, Praticar esportes",
+      "foto": "https://drive.google.com/open?id=1zXjVYES5bNZAbOxRcW1VcBSOYSXQnapO"
+    },
+    {
+      "name": "Felipe Paganini",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "5\u00ba",
+      "nascimento": "2000-05-06 00:00:00",
+      "area": "Frontend",
+      "linguagens": "Javascript, Html, CSS, Java, React",
+      "linkedinLink": "",
+      "githubLink": "https://github.com/FePaganini",
+      "hobby": "Assistir s\u00e9ries, jogar no PC",
+      "foto": "https://drive.google.com/open?id=1K06EjXps-E3jC9CY_n0LcdMsLYwwptsa"
+    },
+    {
+      "name": "Felipe Ros Pegini ",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "1999-06-16 00:00:00",
+      "area": "Frontend",
+      "linguagens": "Flutter, python, SQL, Javascript, vue.js",
+      "linkedinLink": "https://www.linkedin.com/in/felipe-ros-pegini-engenheiro-computacao",
+      "githubLink": "https://github.com/Felipe-16",
+      "hobby": "Jogar Valorant",
+      "foto": "https://drive.google.com/open?id=1ll4wWzPCy5w5SD_U6XNEcqjkIP5ELHFG"
+    },
+    {
+      "name": "Gabriel de Godoy Braz (Guerreiro)",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "5\u00ba",
+      "nascimento": "1999-12-28 00:00:00",
+      "area": "Frontend, Ger\u00eancia de Projetos, Diretor de projetos, tech leader e dev front",
+      "linguagens": "Flutter, Java, SQL, Angular, Node.js",
+      "linkedinLink": "https://www.linkedin.com/in/gabrielgbraz/",
+      "githubLink": "https://github.com/GabrielGodoy01",
+      "hobby": "Jogos e m\u00fasica",
+      "foto": "https://drive.google.com/open?id=15oPulb5Z9RoCfC6ROOTKPhfh-fOwguXd"
+    },
+    {
+      "name": "Hector Guerrini Herrera",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "5\u00ba",
+      "nascimento": "1997-04-07 00:00:00",
+      "area": "Frontend, Backend, DevOps, Diretoria",
+      "linguagens": "Flutter, Angular, Python, C#, Typescript ",
+      "linkedinLink": "https://www.linkedin.com/in/hector-guerrini-herrera-b08007116/",
+      "githubLink": "https://github.com/hectorguerrini",
+      "hobby": "Rugby, Programar, Beber",
+      "foto": "https://drive.google.com/open?id=13epZ3OIVFTK-ZTrOKURe75SaNu8mXQcJ"
+    },
+    {
+      "name": "Jo\u00e3o Vitor Choueri Branco ",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "2\u00ba",
+      "nascimento": "2002-10-10 00:00:00",
+      "area": "Backend",
+      "linguagens": "Python",
+      "linkedinLink": "https://www.linkedin.com/in/jo%C3%A3o-vitor-choueri-branco-a756ab209",
+      "githubLink": "https://github.com/JoaoVitorBranco",
+      "hobby": "Jogar/ jogar t\u00eanis de mesa",
+      "foto": "https://drive.google.com/open?id=15XWC5Lxzc9ae7DAFFhQ7Nhw0B-MxyzSd"
+    },
+    {
+      "name": "Leonardo Zollner ",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "1999-12-03 00:00:00",
+      "area": "Backend",
+      "linguagens": "",
+      "linkedinLink": "https://www.linkedin.com/in/leonardo-zollner-2b35571a9/",
+      "githubLink": "https://github.com/leonardozollner",
+      "hobby": "Viajar",
+      "foto": "https://drive.google.com/open?id=1eOFGvzRJAP5o6NhtQv7yhxFgz4OW2Ds_"
+    },
+    {
+      "name": "Leticia Magalh\u00e3es",
+      "curso": "Engenharia de Produ\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "1999-05-25 00:00:00",
+      "area": "Frontend",
+      "linguagens": "",
+      "linkedinLink": "www.linkedin.com/in/let\u00edcia-magalh\u00e3es2505",
+      "githubLink": "",
+      "hobby": "Fazer yoga e assistir filmes e s\u00e9ries ",
+      "foto": "https://drive.google.com/open?id=1ByR5hT1hvfThZj43FwYMKl2LshQcpJV5"
+    },
+    {
+      "name": "Nathan Brito da Silva",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "5\u00ba",
+      "nascimento": "1997-11-04 00:00:00",
+      "area": "Backend",
+      "linguagens": "Python, Pytest, Java, C",
+      "linkedinLink": "https://www.linkedin.com/in/nathan-brito-da-silva-b61343184/",
+      "githubLink": "https://github.com/goodguyplayer",
+      "hobby": "Estudar seguran\u00e7a digital, planejar projetos e c\u00f3digos, expandir conhecimento em dire\u00e7\u00e3o a computa\u00e7\u00e3o e relacionados",
+      "foto": "https://drive.google.com/open?id=13hK4mNxUkC9TtFIsBJL-NeXPA-trN2Qf"
+    },
+    {
+      "name": "Renan Scheidt Reschke",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "2001-02-04 00:00:00",
+      "area": "Backend",
+      "linguagens": "Python, C, C#, Java, FastAPI, Oracle, SQL Server",
+      "linkedinLink": "https://www.linkedin.com/in/renan-reschke-606329198/",
+      "githubLink": "https://github.com/Renan-Reschke",
+      "hobby": "Empinar pipa e jogar Counter Strike",
+      "foto": "https://drive.google.com/open?id=15qw4Ps9QeJ4VEFOPmNZh5KKfRVg8aGTs"
+    },
+    {
+      "name": "Vinicius Alves Soares",
+      "curso": "Engenharia de Controle e Automa\u00e7\u00e3o",
+      "ano": "3\u00ba",
+      "nascimento": "2000-12-05 00:00:00",
+      "area": "Frontend",
+      "linguagens": "HTML, CSS, JS e React",
+      "linkedinLink": "https://www.linkedin.com/in/vinicius-alves-soares-4037581ab/",
+      "githubLink": "https://github.com/viso4res",
+      "hobby": "Carros",
+      "foto": "https://drive.google.com/open?id=1jX_K_GKaUVBPib1nP0HJF-b8nLHj27JG"
+    },
+    {
+      "name": "Vitor Soller",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "2\u00ba",
+      "nascimento": "2002-11-08 00:00:00",
+      "area": "Frontend, Comunica\u00e7\u00e3o",
+      "linguagens": "Python, Javascript, ReactJS, HTML, CSS",
+      "linkedinLink": "https://www.linkedin.com/in/vitor-soller/",
+      "githubLink": "https://github.com/VgsStudio",
+      "hobby": "Jogar Terraria e decorar bandeiras de pa\u00edses.",
+      "foto": "https://drive.google.com/open?id=175FTKhjgzyveOCfWX-7DspFZiZx2v3j0"
+    },
+    {
+      "name": "Yago Garcia Battaggia",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "5\u00ba",
+      "nascimento": "2000-05-07 00:00:00",
+      "area": "Backend, UX / UI",
+      "linguagens": "Javascript, NodeJs, Java, Python, C",
+      "linkedinLink": "https://www.linkedin.com/in/yago-battaggia-01035a148/",
+      "githubLink": "https://github.com/YagoBattaggia",
+      "hobby": "Programa\u00e7\u00e3o e Jogos",
+      "foto": "https://drive.google.com/open?id=11PzLLssFRaSP0-fdV6u2jitzA7lbL6Ok"
+    }
+  ],
+  "DevOps": [
+    {
+      "name": "Bruno Vilardi Bueno",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "2001-01-15 00:00:00",
+      "area": "DevOps, Ger\u00eancia de Projetos",
+      "linguagens": "Python, FastAPI, Docker, AWS",
+      "linkedinLink": "https://www.linkedin.com/in/bruno-vilardi-bueno-8b054a187",
+      "githubLink": "https://github.com/Brvilardi",
+      "hobby": "Video games, RPG de mesa, cozinhar",
+      "foto": "https://drive.google.com/open?id=1IKIyM5G5jivSx0y7YLnZ-XWD-QvnQ5AC"
+    },
+    {
+      "name": "Hector Guerrini Herrera",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "5\u00ba",
+      "nascimento": "1997-04-07 00:00:00",
+      "area": "Frontend, Backend, DevOps, Diretoria",
+      "linguagens": "Flutter, Angular, Python, C#, Typescript ",
+      "linkedinLink": "https://www.linkedin.com/in/hector-guerrini-herrera-b08007116/",
+      "githubLink": "https://github.com/hectorguerrini",
+      "hobby": "Rugby, Programar, Beber",
+      "foto": "https://drive.google.com/open?id=13epZ3OIVFTK-ZTrOKURe75SaNu8mXQcJ"
+    },
+    {
+      "name": "Matheus Nakai",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "1998-10-23 00:00:00",
+      "area": "DevOps",
+      "linguagens": "",
+      "linkedinLink": "https://www.linkedin.com/in/matheus-nakai-36051a182/",
+      "githubLink": "https://github.com/MatheusNakai",
+      "hobby": "Livros",
+      "foto": "https://drive.google.com/open?id=1aJGhcLENKmrOuCBglYrquIyZCxmFo6hV"
+    }
+  ],
+  "UX / UI": [
+    {
+      "name": "Juliana Gomes Haroldo",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "2000-10-02 00:00:00",
+      "area": "UX / UI",
+      "linguagens": "Java, Python, C, JavaScript, HTML, Dart, Flutter",
+      "linkedinLink": "https://www.linkedin.com/in/juliana-gomes-haroldo-4ba9aa219/",
+      "githubLink": "https://github.com/Juliana-Haroldo",
+      "hobby": "Jogar videogame",
+      "foto": "https://drive.google.com/open?id=1G50uvRTQtHWchJ09L1DUiY74dxITlcsi"
+    },
+    {
+      "name": "Michelle Mitie Hamazaki",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "2\u00ba",
+      "nascimento": "2001-08-22 00:00:00",
+      "area": "UX / UI, Comunica\u00e7\u00e3o",
+      "linguagens": "",
+      "linkedinLink": "https://www.linkedin.com/in/michelle-hmzk/",
+      "githubLink": "https://github.com/Michelle-Hmzk",
+      "hobby": "Tirar fotos.",
+      "foto": "https://drive.google.com/open?id=1XhiYRZFWgG8OkCwykBOGl6Sqxq_OMeTo"
+    },
+    {
+      "name": "Yago Garcia Battaggia",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "5\u00ba",
+      "nascimento": "2000-05-07 00:00:00",
+      "area": "Backend, UX / UI",
+      "linguagens": "Javascript, NodeJs, Java, Python, C",
+      "linkedinLink": "https://www.linkedin.com/in/yago-battaggia-01035a148/",
+      "githubLink": "https://github.com/YagoBattaggia",
+      "hobby": "Programa\u00e7\u00e3o e Jogos",
+      "foto": "https://drive.google.com/open?id=11PzLLssFRaSP0-fdV6u2jitzA7lbL6Ok"
+    }
+  ],
+  "Ger\u00eacia de Projetos": [
+    {
+      "name": "Bruno Vilardi Bueno",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "2001-01-15 00:00:00",
+      "area": "DevOps, Ger\u00eancia de Projetos",
+      "linguagens": "Python, FastAPI, Docker, AWS",
+      "linkedinLink": "https://www.linkedin.com/in/bruno-vilardi-bueno-8b054a187",
+      "githubLink": "https://github.com/Brvilardi",
+      "hobby": "Video games, RPG de mesa, cozinhar",
+      "foto": "https://drive.google.com/open?id=1IKIyM5G5jivSx0y7YLnZ-XWD-QvnQ5AC"
+    },
+    {
+      "name": "Caio Toledo",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "3\u00ba",
+      "nascimento": "2001-11-02 00:00:00",
+      "area": "Frontend, Ger\u00eancia de Projetos",
+      "linguagens": "ReacJS, NodeJS, Flutter, Python, C",
+      "linkedinLink": "https://www.linkedin.com/in/caio-toledo/",
+      "githubLink": "https://github.com/caiogtoledo",
+      "hobby": "Tocar instrumentos, Praticar esportes",
+      "foto": "https://drive.google.com/open?id=1zXjVYES5bNZAbOxRcW1VcBSOYSXQnapO"
+    },
+    {
+      "name": "Gabriel de Godoy Braz (Guerreiro)",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "5\u00ba",
+      "nascimento": "1999-12-28 00:00:00",
+      "area": "Frontend, Ger\u00eancia de Projetos, Diretor de projetos, tech leader e dev front",
+      "linguagens": "Flutter, Java, SQL, Angular, Node.js",
+      "linkedinLink": "https://www.linkedin.com/in/gabrielgbraz/",
+      "githubLink": "https://github.com/GabrielGodoy01",
+      "hobby": "Jogos e m\u00fasica",
+      "foto": "https://drive.google.com/open?id=15oPulb5Z9RoCfC6ROOTKPhfh-fOwguXd"
+    }
+  ],
+  "\u00c1reas Internas": [
+    {
+      "name": "Beatriz Seco",
+      "curso": "Engenharia Civil",
+      "ano": "4\u00ba",
+      "nascimento": "2001-05-11 00:00:00",
+      "area": "Comunica\u00e7\u00e3o",
+      "linguagens": "",
+      "linkedinLink": "",
+      "githubLink": "",
+      "hobby": "Leitura, Desenho",
+      "foto": "https://drive.google.com/open?id=15P2QzdqtNzrsXHYj_CxuSE_4VFvmz_Wd"
+    },
+    {
+      "name": "Daniel Branquinho Gomes",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "4\u00ba",
+      "nascimento": "1996-06-02 00:00:00",
+      "area": "RH, Diretoria",
+      "linguagens": "Backend geral, Flutter, Tableau, tecnologias BI",
+      "linkedinLink": "https://www.linkedin.com/in/danielbranquinho/",
+      "githubLink": "https://github.com/DanielBranquinho",
+      "hobby": "Jogar, ler, tocar caj\u00f3n",
+      "foto": "https://drive.google.com/open?id=1gzrfPy_ceg87ERTywwFEI37nysC-avd6"
+    },
+    {
+      "name": "Michelle Mitie Hamazaki",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "2\u00ba",
+      "nascimento": "2001-08-22 00:00:00",
+      "area": "UX / UI, Comunica\u00e7\u00e3o",
+      "linguagens": "",
+      "linkedinLink": "https://www.linkedin.com/in/michelle-hmzk/",
+      "githubLink": "https://github.com/Michelle-Hmzk",
+      "hobby": "Tirar fotos.",
+      "foto": "https://drive.google.com/open?id=1XhiYRZFWgG8OkCwykBOGl6Sqxq_OMeTo"
+    },
+    {
+      "name": "Vitor Soller",
+      "curso": "Engenharia de Computa\u00e7\u00e3o",
+      "ano": "2\u00ba",
+      "nascimento": "2002-11-08 00:00:00",
+      "area": "Frontend, Comunica\u00e7\u00e3o",
+      "linguagens": "Python, Javascript, ReactJS, HTML, CSS",
+      "linkedinLink": "https://www.linkedin.com/in/vitor-soller/",
+      "githubLink": "https://github.com/VgsStudio",
+      "hobby": "Jogar Terraria e decorar bandeiras de pa\u00edses.",
+      "foto": "https://drive.google.com/open?id=175FTKhjgzyveOCfWX-7DspFZiZx2v3j0"
+    }
+  ]
+}

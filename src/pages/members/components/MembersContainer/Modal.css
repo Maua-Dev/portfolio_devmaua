@@ -1,0 +1,148 @@
+@keyframes ModalOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.modalCard {
+  overflow: hidden;
+  animation: ModalOpacity 200ms;
+}
+
+.modalBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modalContent {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1001;
+  transform: translate(-50%, -50%);
+
+  border-radius: 25px;
+
+  width: 45vw;
+  min-height: 40vh;
+  padding: 5px 5px;
+
+  padding-bottom: 20px;
+
+  background-color: #9ac4f8;
+}
+
+.ModalMemberName {
+  padding-left: 1vw;
+}
+
+.ContentMemberModal {
+  display: flex;
+  align-items: center;
+
+  margin: none;
+
+  width: 100%;
+
+  height: 30vh;
+}
+
+.infoModal {
+  color: black;
+  font-weight: 200;
+  font-size: 18.1px;
+
+  width: 40vw;
+  height: fit-content;
+  padding-left: 1.5vw;
+}
+
+.infoModal dt {
+  font-family: "Righteous", cursive;
+  font-size: 19px;
+  margin: 1.5vh;
+}
+
+.Member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 40%;
+  gap: 10px;
+
+  margin-top: -8vh;
+}
+
+.fotoModal {
+  width: 12vw;
+  height: 12vw;
+  clip-path: circle(50% at 50% 50%);
+  object-fit: cover;
+}
+
+.socialModalMembers {
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+
+  width: 80%;
+}
+
+.socialMediaModal {
+  color: #121212;
+  font-size: 2.5rem;
+  transition: all 250ms;
+}
+
+.socialMediaModal:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    width: 270px;
+
+    padding: 0;
+    padding-bottom: 20px;
+  }
+
+  .ModalMemberName {
+    font-size: 25px;
+    height: fit-content;
+    text-align: center;
+  }
+
+  .ContentMemberModal {
+    display: flex;
+    flex-direction: column-reverse;
+    /* flex-direction: column; */
+    justify-content: center;
+    height: 80%;
+  }
+
+  .infoModal {
+    width: 240px;
+    padding: 0px 0px;
+    margin: 0px 0px;
+  }
+
+  .Member {
+    margin: 0;
+    width: 120px;
+  }
+
+  .fotoModal {
+    width: 30vw;
+    height: 30vw;
+  }
+}

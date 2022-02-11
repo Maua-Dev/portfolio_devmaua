@@ -1,11 +1,11 @@
 .navbar {
   background-color: #121212;
-  height: 7.5vh;
+  height: 8vh;
   width: 100%;
 
   /* Para ficar em cima e presa no topo */
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   top: 0;
 
   display: flex;
@@ -15,13 +15,13 @@
   overflow: hidden;
 }
 
-.nav-links {
+.nav-container {
   display: flex;
   justify-content: space-around;
   margin-right: 3rem;
 }
 
-.nav-links a {
+.nav-container a {
   text-decoration: none;
   color: white;
   font-size: 1.3rem;
@@ -32,7 +32,7 @@
   transition: background-color 0.4s ease-out;
 }
 
-.nav-links a:hover {
+.nav-container a:hover {
   background-color: white;
   color: #121212;
 }
@@ -40,4 +40,101 @@
 .nav-logo {
   margin-left: 3rem;
   width: 5vh;
+  cursor: pointer;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.nav-link.active {
+  background-color: white;
+  color: #121212;
+}
+/* Para mobile */
+
+.navbar > .nav-toggle {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .nav-container a {
+    font-size: 1.75rem;
+  }
+
+  .navbar {
+    overflow: visible;
+  }
+
+  .navbar > .nav-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 7.4vh;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(18, 18, 18, 0.95);
+    transform: translateX(100%);
+    transition: all 0.45s;
+  }
+
+  .navbar > .nav-container.open > a::before {
+    background: transparent;
+  }
+
+  .navbar > .nav-container.open {
+    transform: translate(0);
+  }
+
+  .navbar > .nav-toggle {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .nav-toggle > .hamburguer-bars {
+    position: relative;
+    width: 32px;
+    height: 2px;
+    background: white;
+    transition: all 0.45s ease-in-out;
+  }
+
+  .nav-toggle > .hamburguer-bars::before,
+  .nav-toggle > .hamburguer-bars::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.45s ease-in-out;
+  }
+
+  .nav-toggle > .hamburguer-bars::before {
+    width: 25px;
+    transform: translateY(-8px);
+    right: 0;
+  }
+
+  .nav-toggle > .hamburguer-bars::after {
+    width: 32px;
+    transform: translateY(8px);
+  }
+
+  .nav-toggle.open > .hamburguer-bars {
+    transform: translateX(-40px);
+    background: transparent;
+  }
+  .nav-toggle.open > .hamburguer-bars::before {
+    width: 32px;
+    transform: rotate(45deg) translate(26px, -26px);
+  }
+  .nav-toggle.open > .hamburguer-bars::after {
+    transform: rotate(-45deg) translate(26px, 26px);
+  }
 }

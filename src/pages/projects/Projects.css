@@ -1,3 +1,40 @@
 .ProjectsComponent {
   background-color: #aa5397;
+  display: flex;
+  justify-content: center;
+}
+
+.list-members {
+  width: 60vw;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.project-card {
+  height: 5vh;
+  min-width: 5vw;
+
+  padding: 1rem;
+  margin: 1rem;
+
+  display: flex;
+  flex: 1 1 200px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-color: #1e1e1e;
+  color: #fff;
+
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 250ms;
+}
+
+.project-card:hover {
+  transform: scale(1.1);
 }

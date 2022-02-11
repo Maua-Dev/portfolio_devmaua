@@ -13,10 +13,6 @@
   background-color: #c0c0c0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -35,5 +31,5 @@ body {
 
 .pages {
   position: relative;
-  height: 92.5vh;
+  min-height: 92.5vh;
 }
