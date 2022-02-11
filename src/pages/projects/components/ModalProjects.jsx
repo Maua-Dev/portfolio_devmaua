@@ -40,27 +40,28 @@ export default function ModalTeste({ open, project }) {
             </div>
           </div>
           <div className="contribuidores">
-            <h2 >Contribuidores:</h2>
+            <h2>Contribuidores:</h2>
             <div className="membrosParticipantesContainer">
               {project.membros.map((membro, i) => {
                 return (
-                  <a
-                    href={membro.githubLink}
-                    className="membroParticipanteLink"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      key={i}
-                      src={membro.foto.replace("open", "uc")}
-                      alt={membro.name}
-                      className="membroParticipanteFoto"
-                    />
-                  </a>
-                )
-              })
-
-              }
+                  <div className="membroParticipante">
+                    <a
+                      href={membro.githubLink}
+                      className="membroParticipanteLink"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img
+                        key={i}
+                        src={membro.foto.replace("open", "uc")}
+                        alt={membro.name}
+                        className="membroParticipanteFoto"
+                      />
+                    </a>
+                    <span class="tooltiptext">{membro.name}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
