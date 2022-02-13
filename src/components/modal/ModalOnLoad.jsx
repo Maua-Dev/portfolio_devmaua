@@ -9,7 +9,7 @@ export default function ModalOnLoad() {
   const [modaCardOpen, setModalCardOpen] = useState(false); // Abre o modal
 
   useEffect(() => {
-    if (localStorage.length === 1) {
+    if (localStorage.length === 0) {
       setTimeout(() => setModalCardOpen(true), 11000);
     }
   }, []);
