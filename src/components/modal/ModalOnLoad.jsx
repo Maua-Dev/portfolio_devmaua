@@ -10,7 +10,7 @@ export default function ModalOnLoad() {
 
   useEffect(() => {
     console.log(localStorage);
-    if (localStorage === null) {
+    if (localStorage.length === 0) {
       setTimeout(() => setModalCardOpen(true), 10000);
     }
   }, []);
