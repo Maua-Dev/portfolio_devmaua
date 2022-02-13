@@ -9,17 +9,15 @@ export default function ModalOnLoad() {
   const [modaCardOpen, setModalCardOpen] = useState(false); // Abre o modal
 
   useEffect(() => {
-    console.log(localStorage);
-    console.log(localStorage.length);
     if (localStorage.length === 1) {
-      setTimeout(() => setModalCardOpen(true), 10000);
+      setTimeout(() => setModalCardOpen(true), 11000);
     }
   }, []);
 
   function setModal(e) {
     if (e.target.className === "modalBg") {
       setModalCardOpen(!modaCardOpen);
-      localStorage.setItem("firstTime", "salve");
+      localStorage.setItem("firstTime", "off");
     }
   }
 
