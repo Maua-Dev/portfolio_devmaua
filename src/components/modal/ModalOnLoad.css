@@ -1,0 +1,24 @@
+@keyframes ModalOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.modalCard {
+  overflow: hidden;
+  animation: ModalOpacity 200ms;
+}
+
+.modalBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  background-color: rgba(0, 0, 0, 0.6);
+}
