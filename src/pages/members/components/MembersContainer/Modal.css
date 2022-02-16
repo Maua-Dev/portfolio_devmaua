@@ -88,6 +88,12 @@
   height: 12vw;
   clip-path: circle(50% at 50% 50%);
   object-fit: cover;
+
+  transition: all 250ms;
+}
+
+.fotoModal:hover {
+  transform: scale(1.1);
 }
 
 .socialModalMembers {
@@ -101,10 +107,17 @@
 .socialMediaModal {
   color: #121212;
   font-size: 2.5rem;
-  transition: all 250ms;
 }
 
 .socialMediaModal:hover {
+  transform: scale(1.2);
+}
+
+.socialMediaModal svg {
+  transition: all 250ms;
+}
+
+.socialMediaModal svg:hover {
   transform: scale(1.2);
 }
 
