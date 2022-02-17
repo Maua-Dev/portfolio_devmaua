@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import "./MiniCardComponent.css";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { FaUser } from "react-icons/fa";
 import Modal from "./Modal";
 
 export default function MiniCardComponent(props) {
   const [modaCardlOpen, setModalCardOpen] = useState(false); // Abre o modal
   let foto = props.member.foto.replace("open", "uc");
+
+  const [isLoaded, setLoaded] = useState(false);
+
   function setModal(e) {
     // console.log(e.target);
     if (
@@ -24,8 +28,12 @@ export default function MiniCardComponent(props) {
       <img
         src={foto}
         alt={props.member.name}
-        className="foto"
+        className={`foto ${isLoaded && "open"}`}
+        onLoad={() => setLoaded(true)}
       />
+      <div className={`placeHolder ${isLoaded && "open"}`}>
+        <FaUser />
+      </div>
       <div className="socialContainer">
         <a
           className="social socialLinkedin"
