@@ -14,7 +14,7 @@ export default function MiniCardComponent(props) {
     // console.log(e.target);
     if (
       e.target.className === "memberName" ||
-      e.target.className === "foto" ||
+      e.target.className === "foto open" ||
       e.target.className === "members" ||
       e.target.className === "modalBg"
     ) {
