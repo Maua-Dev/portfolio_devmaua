@@ -41,6 +41,38 @@
   background-color: #9ac4f8;
 }
 
+.cabecalho {
+  display: flex;
+}
+
+.xis {
+  position: relative;
+  width: 32px;
+  height: 2px;
+  background: #121212;
+
+  background-color: transparent;
+}
+
+.xis::before,
+.xis::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background: #121212;
+  border-radius: 2px;
+}
+
+.xis::before {
+  width: 32px;
+  transform: rotate(45deg) translate(26px, 30px);
+}
+
+.xis::after {
+  width: 32px;
+  transform: rotate(-45deg) translate(-30px, 26px);
+}
+
 .ModalMemberName {
   padding-left: 1vw;
 }

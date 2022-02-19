@@ -11,7 +11,10 @@ export default function ModalTeste({ open, member }) {
     <div className="modalCard">
       <div className="modalBg">
         <div className="modalContent">
-          <h1 className="ModalMemberName">{member.name}</h1>
+          <div className="cabecalho">
+            <h1 className="ModalMemberName">{member.name}</h1>
+            <div className="xis"></div>
+          </div>
           <div className="ContentMemberModal">
             <div className="infoModal">
               <dt>
