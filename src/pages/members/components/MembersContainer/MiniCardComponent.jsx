@@ -11,7 +11,6 @@ export default function MiniCardComponent(props) {
   const [isLoaded, setLoaded] = useState(false);
 
   function setModal(e) {
-    console.log(e.target);
     if (
       // Era mais fácil colocar ao contrário né
       e.target.className === "memberName" ||

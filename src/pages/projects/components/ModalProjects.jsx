@@ -3,6 +3,7 @@ import "./ModalProjects.css";
 import ReactDom from "react-dom";
 import { AiFillGithub } from "react-icons/ai";
 import { IoClose } from "react-icons/io5";
+import MemberModalProject from "./MemberModalProject";
 
 export default function ModalProjects({ open, project }) {
   if (!open) return null;
@@ -48,25 +49,8 @@ export default function ModalProjects({ open, project }) {
           <div className="contribuidores">
             <h2>Contribuidores:</h2>
             <div className="membrosParticipantesContainer">
-              {project.membros.map((membro, i) => {
-                return (
-                  <div className="membroParticipante">
-                    <a
-                      href={membro.githubLink}
-                      className="membroParticipanteLink"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <img
-                        key={i}
-                        src={membro.foto.replace("open", "uc")}
-                        alt={membro.name}
-                        className="membroParticipanteFoto"
-                      />
-                    </a>
-                    <span class="tooltiptext">{membro.name}</span>
-                  </div>
-                );
+              {project.membros.map((membro) => {
+                return <MemberModalProject key={membro.name} membro={membro} />;
               })}
             </div>
           </div>
