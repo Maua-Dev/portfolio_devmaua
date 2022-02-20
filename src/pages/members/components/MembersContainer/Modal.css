@@ -45,33 +45,27 @@
   display: flex;
 }
 
-.xis {
-  position: relative;
-  width: 32px;
-  height: 2px;
-  background: #121212;
-
-  background-color: transparent;
-}
-
-.xis::before,
-.xis::after {
-  content: "";
+.xisHitBox {
   position: absolute;
-  height: 3px;
-  background: #121212;
-  border-radius: 2px;
+  right: 20px;
+  top: 10px;
+
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }
 
-.xis::before {
-  width: 32px;
-  transform: rotate(45deg) translate(26px, 30px);
+/* XIS PARA FECHAR O MODAL */
+
+.ioClose {
+  font-size: 2rem;
+  transition: all 250ms;
 }
 
-.xis::after {
-  width: 32px;
-  transform: rotate(-45deg) translate(-30px, 26px);
+.xisHitBox:hover .ioClose {
+  transform: scale(1.4);
 }
+/*  */
 
 .ModalMemberName {
   padding-left: 1vw;
@@ -122,6 +116,21 @@
   object-fit: cover;
 
   transition: all 250ms;
+  display: none;
+}
+
+.fotoModal.open {
+  display: inline;
+}
+
+.placeHolderModalMembers {
+  color: #121212;
+
+  font-size: 8em;
+}
+
+.placeHolderModalMembers.open {
+  display: none;
 }
 
 .fotoModal:hover {

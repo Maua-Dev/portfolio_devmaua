@@ -11,12 +11,16 @@ export default function MiniCardComponent(props) {
   const [isLoaded, setLoaded] = useState(false);
 
   function setModal(e) {
-    // console.log(e.target);
+    console.log(e.target);
     if (
+      // Era mais fácil colocar ao contrário né
       e.target.className === "memberName" ||
       e.target.className === "foto open" ||
       e.target.className === "members" ||
-      e.target.className === "modalBg"
+      e.target.className === "modalBg" ||
+      e.target.tagName === "path" ||
+      e.target.tagName === "svg" ||
+      e.target.className === "xisHitBox" // Xis para fechar o modal
     ) {
       setModalCardOpen(!modaCardlOpen);
     }
