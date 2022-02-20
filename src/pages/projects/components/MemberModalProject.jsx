@@ -23,7 +23,7 @@ export default function MemberModalProject({ membro }) {
           <FaUser />
         </div>
       </a>
-      <span class="tooltiptext">{membro.name}</span>
+      <span className="tooltiptext">{membro.name}</span>
     </div>
   );
 }

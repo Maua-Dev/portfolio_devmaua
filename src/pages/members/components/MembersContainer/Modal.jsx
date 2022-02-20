@@ -1,17 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Modal.css";
 import ReactDom from "react-dom";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { IoClose } from "react-icons/io5";
+import { FaUser } from "react-icons/fa";
 import moment from "moment";
 
 export default function ModalTeste({ open, member }) {
+  const [isLoaded, setLoaded] = useState(false); // Para ter um delay na foto e um placeholder descente
+
   if (!open) return null;
 
   return ReactDom.createPortal(
     <div className="modalCard">
       <div className="modalBg">
         <div className="modalContent">
-          <h1 className="ModalMemberName">{member.name}</h1>
+          <div className="cabecalho">
+            <h1 className="ModalMemberName">{member.name}</h1>
+            {/*Xis para fechar o modal */}
+            <div className="xisHitBox">
+              <IoClose className="ioClose" />
+            </div>
+            {/*  */}
+          </div>
           <div className="ContentMemberModal">
             <div className="infoModal">
               <dt>
@@ -37,8 +48,13 @@ export default function ModalTeste({ open, member }) {
               <img
                 src={member.foto.replace("open", "uc")}
                 alt={`Foto de ${member.name}`}
-                className="fotoModal"
+                className={`fotoModal ${isLoaded && "open"}`}
+                onLoad={() => setLoaded(true)}
               />
+              <div className={`placeHolderModalMembers ${isLoaded && "open"}`}>
+                <FaUser />
+              </div>
+
               <div className="socialModalMembersMembers">
                 <a
                   className="socialMediaModal socialLinkedin"

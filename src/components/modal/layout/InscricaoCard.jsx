@@ -1,10 +1,16 @@
 import React from "react";
 import "./InscricaoCard.css";
 import QR_Code from "../assets/QR_Code.png";
+import { IoClose } from "react-icons/io5";
 
 export default function InscricaoCard() {
   return (
     <div className="CaixoteModal">
+      {/*Xis para fechar o modal */}
+      <div className="xisHitBox">
+        <IoClose className="ioClose" />
+      </div>
+      {/*  */}
       <div className="Inscricao">
         Nosso processo seletivo está aberto!
         <ul className="List">

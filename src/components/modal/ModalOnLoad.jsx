@@ -15,7 +15,12 @@ export default function ModalOnLoad() {
   }, []);
 
   function setModal(e) {
-    if (e.target.className === "modalBg") {
+    if (
+      e.target.className === "modalBg" ||
+      e.target.className === "xisHitBox" || // Xis para fechar o modal
+      e.target.tagName === "svg" || // Xis para fechar o modal
+      e.target.tagName === "path" // Xis para fechar o modal
+    ) {
       setModalCardOpen(!modaCardOpen);
       localStorage.setItem("firstTime", "off");
     }
