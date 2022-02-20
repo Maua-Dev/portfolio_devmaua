@@ -3,9 +3,7 @@ import "./Footer.css";
 import dados from "../../../package.json";
 
 export default function FooterComponent() {
-  {
-    console.log("naquele naipão @vgs_studio");
-  }
+  console.log("naquele naipão @vgs_studio");
   return (
     <div className="FooterComponent">
       <p className="FooterMain"> © Dev. Community Mauá 2022</p>
