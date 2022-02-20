@@ -1,24 +1,27 @@
 import React from "react";
 import { useState } from "react";
-import ModalTeste from "./ModalProjects"
+import ModalProjects from "./ModalProjects";
 
 export default function ProjectCard(props) {
-    const [modaCardlOpen, setModalCardOpen] = useState(false); // Abre o modal
+  const [modaCardlOpen, setModalCardOpen] = useState(false); // Abre o modal
 
-    function setModal(e) {
-
-        if (
-            e.target.className === "project-card" ||
-            e.target.className === "modalBg"
-        ) {
-            setModalCardOpen(!modaCardlOpen);
-        }
+  function setModal(e) {
+    console.log(e.target);
+    if (
+      e.target.className === "project-card" ||
+      e.target.className === "modalBg" ||
+      e.target.className === "xisHitBox" || // Xis para fechar o modal
+      e.target.tagName === "svg" || // Xis para fechar o modal
+      e.target.tagName === "path" // Xis para fechar o modal
+    ) {
+      setModalCardOpen(!modaCardlOpen);
     }
+  }
 
-    return (
-        <div className="project-card" onClickCapture={(e) => setModal(e)}>
-            {props.project.name}
-            <ModalTeste open={modaCardlOpen} project={props.project} />
-        </div>
-    )
+  return (
+    <div className="project-card" onClickCapture={(e) => setModal(e)}>
+      {props.project.name}
+      <ModalProjects open={modaCardlOpen} project={props.project} />
+    </div>
+  );
 }

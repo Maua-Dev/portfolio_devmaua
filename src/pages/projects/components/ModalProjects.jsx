@@ -2,8 +2,9 @@ import React from "react";
 import "./ModalProjects.css";
 import ReactDom from "react-dom";
 import { AiFillGithub } from "react-icons/ai";
+import { IoClose } from "react-icons/io5";
 
-export default function ModalTeste({ open, project }) {
+export default function ModalProjects({ open, project }) {
   if (!open) return null;
 
   return ReactDom.createPortal(
@@ -11,6 +12,11 @@ export default function ModalTeste({ open, project }) {
       <div className="modalBg">
         <div className="modalContentProjects">
           <div className="modalHeaderName">
+            {/*Xis para fechar o modal */}
+            <div className="xisHitBox">
+              <IoClose className="ioClose" />
+            </div>
+            {/*  */}
             <h1 className="ModalProjectName">{project.name}</h1>
             <a
               href={project.link}
