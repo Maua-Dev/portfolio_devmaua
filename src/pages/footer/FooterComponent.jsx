@@ -8,7 +8,7 @@ export default function FooterComponent() {
     <div className="FooterComponent">
       <p className="FooterMain"> © Dev. Community Mauá 2022</p>
       <p className="version">
-        Nosso site está sobre constante mudança. Versão: {dados.version}
+        Nosso site está sob constante mudança. Versão: {dados.version}
       </p>
     </div>
   );
