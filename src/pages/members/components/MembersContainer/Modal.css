@@ -41,13 +41,9 @@
   background-color: #9ac4f8;
 }
 
-.cabecalho {
-  display: flex;
-}
-
 .xisHitBox {
   position: absolute;
-  right: 20px;
+  right: 10px;
   top: 10px;
 
   width: 30px;
@@ -166,8 +162,8 @@
   .modalContent {
     width: 270px;
 
-    padding: 0;
-    padding-bottom: 20px;
+    padding: 10px;
+    padding-left: 0;
   }
 
   .ModalMemberName {
