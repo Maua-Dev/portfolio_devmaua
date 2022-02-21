@@ -2,8 +2,10 @@ import React from "react";
 import "./ModalProjects.css";
 import ReactDom from "react-dom";
 import { AiFillGithub } from "react-icons/ai";
+import { IoClose } from "react-icons/io5";
+import MemberModalProject from "./MemberModalProject";
 
-export default function ModalTeste({ open, project }) {
+export default function ModalProjects({ open, project }) {
   if (!open) return null;
 
   return ReactDom.createPortal(
@@ -11,6 +13,11 @@ export default function ModalTeste({ open, project }) {
       <div className="modalBg">
         <div className="modalContentProjects">
           <div className="modalHeaderName">
+            {/*Xis para fechar o modal */}
+            <div className="xisHitBox">
+              <IoClose className="ioClose" />
+            </div>
+            {/*  */}
             <h1 className="ModalProjectName">{project.name}</h1>
             <a
               href={project.link}
@@ -42,25 +49,8 @@ export default function ModalTeste({ open, project }) {
           <div className="contribuidores">
             <h2>Contribuidores:</h2>
             <div className="membrosParticipantesContainer">
-              {project.membros.map((membro, i) => {
-                return (
-                  <div className="membroParticipante">
-                    <a
-                      href={membro.githubLink}
-                      className="membroParticipanteLink"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <img
-                        key={i}
-                        src={membro.foto.replace("open", "uc")}
-                        alt={membro.name}
-                        className="membroParticipanteFoto"
-                      />
-                    </a>
-                    <span class="tooltiptext">{membro.name}</span>
-                  </div>
-                );
+              {project.membros.map((membro) => {
+                return <MemberModalProject key={membro.name} membro={membro} />;
               })}
             </div>
           </div>

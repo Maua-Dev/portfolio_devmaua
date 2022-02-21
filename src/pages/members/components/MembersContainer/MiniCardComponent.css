@@ -11,6 +11,7 @@
 
   cursor: pointer;
 
+  padding: 5px;
   background: #9ac4f8;
   box-shadow: 5px 15px 30px rgba(0, 0, 0, 0.5);
 
@@ -22,6 +23,7 @@
   margin-top: 2px;
   font-size: 15px;
   text-align: center;
+  padding-bottom: 5px;
 }
 
 .foto {
@@ -32,6 +34,21 @@
   object-fit: cover;
 
   transition: all 250ms;
+  display: none;
+}
+
+.foto.open {
+  display: inline;
+}
+
+.placeHolder {
+  color: #121212;
+
+  font-size: 4em;
+}
+
+.placeHolder.open {
+  display: none;
 }
 
 .socialContainer {

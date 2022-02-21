@@ -41,6 +41,28 @@
   background-color: #9ac4f8;
 }
 
+.xisHitBox {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* XIS PARA FECHAR O MODAL */
+
+.ioClose {
+  font-size: 2rem;
+  transition: all 250ms;
+}
+
+.xisHitBox:hover .ioClose {
+  transform: scale(1.4);
+}
+/*  */
+
 .ModalMemberName {
   padding-left: 1vw;
 }
@@ -88,6 +110,27 @@
   height: 12vw;
   clip-path: circle(50% at 50% 50%);
   object-fit: cover;
+
+  transition: all 250ms;
+  display: none;
+}
+
+.fotoModal.open {
+  display: inline;
+}
+
+.placeHolderModalMembers {
+  color: #121212;
+
+  font-size: 8em;
+}
+
+.placeHolderModalMembers.open {
+  display: none;
+}
+
+.fotoModal:hover {
+  transform: scale(1.1);
 }
 
 .socialModalMembers {
@@ -101,10 +144,17 @@
 .socialMediaModal {
   color: #121212;
   font-size: 2.5rem;
-  transition: all 250ms;
 }
 
 .socialMediaModal:hover {
+  transform: scale(1.2);
+}
+
+.socialMediaModal svg {
+  transition: all 250ms;
+}
+
+.socialMediaModal svg:hover {
   transform: scale(1.2);
 }
 
@@ -112,8 +162,8 @@
   .modalContent {
     width: 270px;
 
-    padding: 0;
-    padding-bottom: 20px;
+    padding: 10px;
+    padding-left: 0;
   }
 
   .ModalMemberName {

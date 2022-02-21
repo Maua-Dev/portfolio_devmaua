@@ -1,0 +1,60 @@
+.membroParticipante {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.membroParticipanteFoto {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  transition: all 250ms;
+
+  object-fit: cover;
+  display: none;
+}
+
+.membroParticipanteFoto.open {
+  display: inline;
+}
+
+.placeHolderModal {
+  color: white;
+
+  font-size: 2em;
+
+  transition: all 250ms;
+}
+
+.placeHolderModal.open {
+  display: none;
+}
+
+.placeHolderModal:hover {
+  transform: scale(1.5);
+}
+
+.membroParticipante .tooltiptext {
+  visibility: hidden;
+  width: fit-content;
+  background: #5b007b;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+
+  position: absolute;
+  z-index: 1002;
+
+  bottom: -20px;
+}
+
+.membroParticipanteFoto:hover {
+  transform: scale(1.5);
+}
+
+.membroParticipante:hover .tooltiptext {
+  animation: ModalOpacity 250ms;
+  visibility: visible;
+}
