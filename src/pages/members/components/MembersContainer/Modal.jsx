@@ -39,9 +39,6 @@ export default function ModalTeste({ open, member }) {
                 Principais Tecnologias e Frameworks:{" "}
                 <strong>{member.linguagens}</strong>
               </dt>
-              <dt>
-                Hobby: <strong>{member.hobby}</strong>
-              </dt>
             </div>
 
             <div className="Member">
