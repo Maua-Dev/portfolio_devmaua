@@ -13,7 +13,7 @@ const data =  {
             "foto": require("./assets/smileSite.png"),
             "name": "Site Smile",
             "frontend": "Flutter",
-            "backend": "NodeJS",
+            "backend": "Python",
              "link": "https://github.com/Maua-Dev/smile_front",
 
             "membros": []
