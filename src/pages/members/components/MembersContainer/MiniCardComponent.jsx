@@ -38,26 +38,26 @@ export default function MiniCardComponent(props) {
         <FaUser />
       </div>
       <div className="socialContainer">
-        { props.member.linkedinLink != "" ? (
+        {props.member.linkedinLink != "" ? (
           <a
-          className="social socialLinkedin"
-          href={props.member.linkedinLink}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <AiFillLinkedin />
-        </a>
-        ) : null }
-        { props.member.githubLink != "" ? (
+            className="social socialLinkedin"
+            href={props.member.linkedinLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <AiFillLinkedin />
+          </a>
+        ) : null}
+        {props.member.githubLink != "" ? (
           <a
-          className="social socialGithub"
-          href={props.member.githubLink}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <AiFillGithub />
-        </a>
-        ) : null }
+            className="social socialGithub"
+            href={props.member.githubLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <AiFillGithub />
+          </a>
+        ) : null}
       </div>
       <Modal
         open={modaCardlOpen}
