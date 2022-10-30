@@ -115,8 +115,9 @@
 .membrosParticipantesContainer {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 
-  width: 40vw;
+  width: auto;
   height: fit-content;
 
   gap: 8px;
