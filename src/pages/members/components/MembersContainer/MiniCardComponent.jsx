@@ -1,83 +1,69 @@
 import React, { useState } from "react";
-import "./Modal.css";
-import ReactDom from "react-dom";
+import "./MiniCardComponent.css";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
-import { IoClose } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
-import moment from "moment";
+import Modal from "./Modal";
 
-export default function ModalTeste({ open, member }) {
-  const [isLoaded, setLoaded] = useState(false); // Para ter um delay na foto e um placeholder descente
+export default function MiniCardComponent(props) {
+  const [modaCardlOpen, setModalCardOpen] = useState(false); // Abre o modal
+  let foto = props.member.foto.replace("open", "uc");
 
-  if (!open) return null;
+  const [isLoaded, setLoaded] = useState(false);
 
-  return ReactDom.createPortal(
-    <div className="modalCard">
-      <div className="modalBg">
-        <div className="modalContent">
-          <div className="cabecalho">
-            <h1 className="ModalMemberName">{member.name}</h1>
-            {/*Xis para fechar o modal */}
-            <div className="xisHitBox">
-              <IoClose className="ioClose" />
-            </div>
-            {/*  */}
-          </div>
-          <div className="ContentMemberModal">
-            <div className="infoModal">
-              <dt>
-                Curso: <strong>{member.curso}</strong>
-              </dt>
-              <dt>
-                Ano: <strong>{member.ano}</strong>
-              </dt>
-              <dt>
-                Idade:{" "}
-                <strong>{moment().diff(member.nascimento, "years")}</strong>
-              </dt>
-              <dt>
-                Principais Tecnologias e Frameworks:{" "}
-                <strong>{member.linguagens}</strong>
-              </dt>
-            </div>
+  function setModal(e) {
+    if (
+      // Era mais fácil colocar ao contrário né
+      e.target.className === "memberName" ||
+      e.target.className === "foto open" ||
+      e.target.className === "members" ||
+      e.target.className === "modalBg" ||
+      e.target.tagName === "path" ||
+      e.target.tagName === "svg" ||
+      e.target.className === "xisHitBox" // Xis para fechar o modal
+    ) {
+      setModalCardOpen(!modaCardlOpen);
+    }
+  }
 
-            <div className="Member">
-              <img
-                src={member.foto.replace("open", "uc")}
-                alt={`Foto de ${member.name}`}
-                className={`fotoModal ${isLoaded && "open"}`}
-                onLoad={() => setLoaded(true)}
-              />
-              <div className={`placeHolderModalMembers ${isLoaded && "open"}`}>
-                <FaUser />
-              </div>
-              <div className="socialModalMembersMembers">
-                {member.linkedinLink != "" ? (
-                  <a
-                    className="socialMediaModal socialLinkedin"
-                    href={member.linkedinLink}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <AiFillLinkedin />
-                  </a>
-                ) : null}
-                {member.githubLink != "" ? (
-                  <a
-                    className="socialMediaModal socialGithub"
-                    href={member.githubLink}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <AiFillGithub />
-                  </a>
-                ) : null}
-              </div>
-            </div>
-          </div>
-        </div>
+  return (
+    <div className="members" onClickCapture={(e) => setModal(e)}>
+      <h2 className="memberName">{props.member.name}</h2>
+      <img
+        src={foto}
+        alt={props.member.name}
+        className={`foto ${isLoaded && "open"}`}
+        onLoad={() => setLoaded(true)}
+      />
+      <div className={`placeHolder ${isLoaded && "open"}`}>
+        <FaUser />
       </div>
-    </div>,
-    document.getElementById("portal")
+      <div className="socialContainer">
+        {props.member.linkedinLink !== "" ? (
+          <a
+            className="social socialLinkedin"
+            href={props.member.linkedinLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <AiFillLinkedin />
+          </a>
+        ) : null}
+        {props.member.githubLink !== "" ? (
+          <a
+            className="social socialGithub"
+            href={props.member.githubLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <AiFillGithub />
+          </a>
+        ) : null}
+      </div>
+      <Modal
+        open={modaCardlOpen}
+        member={props.member}
+        setModalOff={setModal}
+      />
+    </div>
   );
 }
