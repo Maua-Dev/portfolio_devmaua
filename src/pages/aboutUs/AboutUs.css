@@ -1,7 +1,7 @@
 .AboutUsComponent {
-  background-color: #1e1e1e;
+  background-color: #000000;
 
-  color: #bd7fb0;
+  color: #2574E3  ;
 }
 
 .ContentAboutUs {
@@ -21,7 +21,7 @@
 .ContentAboutUs p {
   /* margin: 0px auto; */
   width: 80vw;
-  color: #f3f3f3;
+  color: #FFFFFF;
   text-align: justify;
 }
 
@@ -30,7 +30,7 @@
   margin-top: 35px;
   margin-bottom: 6px;
   width: 80vw;
-  color: #f3f3f3;
+  color: #FFFFFF;
 }
 
 .FotoAboutUs {

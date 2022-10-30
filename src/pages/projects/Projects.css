@@ -1,5 +1,5 @@
 .ProjectsComponent {
-  background-color: #aa5397;
+  background-color: #2574E3;
   display: flex;
   justify-content: center;
 }
@@ -27,8 +27,8 @@
   align-items: center;
   text-align: center;
 
-  background-color: #1e1e1e;
-  color: #fff;
+  background-color: #000000;
+  color: #FFFFFF;
 
   border-radius: 1rem;
   cursor: pointer;
