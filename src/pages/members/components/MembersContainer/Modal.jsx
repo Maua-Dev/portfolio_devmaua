@@ -35,17 +35,10 @@ export default function ModalTeste({ open, member }) {
                 Idade:{" "}
                 <strong>{moment().diff(member.nascimento, "years")}</strong>
               </dt>
-              {member.linguagens != "" && (
-                <dt>
-                  Principais Tecnologias e Frameworks:{" "}
-                  <strong>{member.linguagens}</strong>
-                </dt>
-              )}
-              {member.hobby != "" && (
-                <dt>
-                  Hobby: <strong>{member.hobby}</strong>
-                </dt>
-              )}
+              <dt>
+                Principais Tecnologias e Frameworks:{" "}
+                <strong>{member.linguagens}</strong>
+              </dt>
             </div>
 
             <div className="Member">
@@ -59,7 +52,7 @@ export default function ModalTeste({ open, member }) {
                 <FaUser />
               </div>
               <div className="socialModalMembersMembers">
-                {member.linkedinLink != "" && (
+                {member.linkedinLink != "" ? (
                   <a
                     className="socialMediaModal socialLinkedin"
                     href={member.linkedinLink}
@@ -68,8 +61,8 @@ export default function ModalTeste({ open, member }) {
                   >
                     <AiFillLinkedin />
                   </a>
-                )}
-                {member.githubLink != "" && (
+                ) : null}
+                {member.githubLink != "" ? (
                   <a
                     className="socialMediaModal socialGithub"
                     href={member.githubLink}
@@ -78,7 +71,7 @@ export default function ModalTeste({ open, member }) {
                   >
                     <AiFillGithub />
                   </a>
-                )}
+                ) : null}
               </div>
             </div>
           </div>
