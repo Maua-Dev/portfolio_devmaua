@@ -21,7 +21,7 @@ export default function HomeComponent() {
             className="HomeLogo"
           ></img>
         </MouseParallaxChild>
-        <video
+        {/* <video
           className="VideoBg"
           autoPlay
           loop
@@ -31,7 +31,7 @@ export default function HomeComponent() {
           // }
           type="video/mp4"
           playsInline // Para funcionar em Iphone
-        ></video>
+        ></video> */}
       </MouseParallaxContainer>
     </div>
   );
