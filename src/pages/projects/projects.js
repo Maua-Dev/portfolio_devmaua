@@ -706,7 +706,7 @@ const data = {
     {
       foto: require("./assets/selfMaua.png"),
       name: "Self Maua",
-      frontend: "Flutter",
+      frontend: "Angular",
       backend: "Python",
       link: "https://github.com/Maua-Dev/selfie_front.git",
 
