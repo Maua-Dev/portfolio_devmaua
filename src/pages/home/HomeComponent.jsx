@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import logo from "./assets/LogoInteiro.svg";
+import logo from "./assets/LOGO_DEVNOVO.png";
 import {
   MouseParallaxContainer,
   MouseParallaxChild,
@@ -21,17 +21,7 @@ export default function HomeComponent() {
             className="HomeLogo"
           ></img>
         </MouseParallaxChild>
-        <video
-          className="VideoBg"
-          autoPlay
-          loop
-          muted
-          src={
-            "https://devmaua-portfolio-assets.s3.amazonaws.com/BACKGROUND.mp4"
-          }
-          type="video/mp4"
-          playsInline // Para funcionar em Iphone
-        ></video>
+        <div className="Bg"></div>
       </MouseParallaxContainer>
     </div>
   );

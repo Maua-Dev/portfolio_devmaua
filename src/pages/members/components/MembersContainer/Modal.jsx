@@ -51,28 +51,27 @@ export default function ModalTeste({ open, member }) {
               <div className={`placeHolderModalMembers ${isLoaded && "open"}`}>
                 <FaUser />
               </div>
-
               <div className="socialModalMembersMembers">
-                { member.linkedinLink != "" ? (
+                {member.linkedinLink != "" ? (
                   <a
-                  className="socialMediaModal socialLinkedin"
-                  href={member.linkedinLink}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <AiFillLinkedin />
-                </a>
-                ) : null }
-               { member.githubLink != "" ? (
-                 <a
-                 className="socialMediaModal socialGithub"
-                 href={member.githubLink}
-                 target="_blank"
-                 rel="noreferrer"
-               >
-                 <AiFillGithub />
-               </a>
-               ) : null}
+                    className="socialMediaModal socialLinkedin"
+                    href={member.linkedinLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <AiFillLinkedin />
+                  </a>
+                ) : null}
+                {member.githubLink != "" ? (
+                  <a
+                    className="socialMediaModal socialGithub"
+                    href={member.githubLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <AiFillGithub />
+                  </a>
+                ) : null}
               </div>
             </div>
           </div>
