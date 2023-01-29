@@ -19,7 +19,8 @@ export default function ModalProjects({ open, project }) {
             </div>
             {/*  */}
             <h1 className="ModalProjectName">{project.name}</h1>
-            <a
+            {project.link != "" ? (
+              <a
               href={project.link}
               target="_blank"
               rel="noreferrer"
@@ -27,6 +28,7 @@ export default function ModalProjects({ open, project }) {
             >
               <AiFillGithub />
             </a>
+            ) : null}
           </div>
           <div className="ColetaneaProjects">
             <div className="infoModalProjects">

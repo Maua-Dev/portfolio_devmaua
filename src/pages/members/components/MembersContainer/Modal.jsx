@@ -52,7 +52,7 @@ export default function ModalTeste({ open, member }) {
                 <FaUser />
               </div>
               <div className="socialModalMembersMembers">
-                {member.linkedinLink != "" ? (
+                {member.linkedinLink !== "" ? (
                   <a
                     className="socialMediaModal socialLinkedin"
                     href={member.linkedinLink}
@@ -62,7 +62,7 @@ export default function ModalTeste({ open, member }) {
                     <AiFillLinkedin />
                   </a>
                 ) : null}
-                {member.githubLink != "" ? (
+                {member.githubLink !== "" ? (
                   <a
                     className="socialMediaModal socialGithub"
                     href={member.githubLink}
