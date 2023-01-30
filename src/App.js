@@ -7,18 +7,20 @@ import MembersComponent from "./pages/members/MembersComponent";
 import ContactComponent from "./pages/contact/ContactComponent";
 import FooterComponent from "./pages/footer/FooterComponent";
 import ModalOnLoad from "./components/modal/ModalOnLoad";
+import LoginComponent from "./pages/login/LoginComponent";
 
 function App() {
   return (
     <div className="App">
-      <NavbarComponent />
-      {/* <ModalOnLoad /> */}
+      <LoginComponent />
+      {/* <NavbarComponent />
+      <ModalOnLoad />
       <HomeComponent />
       <AboutUsComponent />
       <ProjectsComponent />
       <MembersComponent />
       <ContactComponent />
-      <FooterComponent />
+      <FooterComponent /> */}
     </div>
   );
 }

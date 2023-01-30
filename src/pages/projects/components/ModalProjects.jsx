@@ -19,7 +19,7 @@ export default function ModalProjects({ open, project }) {
             </div>
             {/*  */}
             <h1 className="ModalProjectName">{project.name}</h1>
-            {project.link != "" ? (
+            {project.link !== "" ? (
               <a
               href={project.link}
               target="_blank"
