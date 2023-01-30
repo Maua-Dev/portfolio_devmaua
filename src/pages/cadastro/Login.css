@@ -44,13 +44,14 @@
 
 .container-login form label {
     font-size: 12px;
+    outline: none;
 }
 
 .container-login form input {
     border: none;
     border-bottom: 0.4px solid rgb(85, 84, 84);
     padding: 12px 6px;
-    font-family: "Righteous", FontAwesome, cursive;
+    font-family: fontawesome;
 }
 
 .container-login form a {
