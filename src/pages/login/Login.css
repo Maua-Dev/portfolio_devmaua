@@ -13,6 +13,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url("./assets/background.png");
+    background-size: cover;
+    background-color: #FFF;
 }
 
 .container-login {
@@ -25,8 +28,8 @@
     height: 80vh;
     width: 35vh;
     border-radius: 12px;
-    -webkit-box-shadow: 0px 4px 0px 10px rgba(3,97,89,0.38); 
-    box-shadow: 0px 4px 0px 10px rgba(3,97,89,0.38);
+    -webkit-box-shadow: 0px 4px 0px 10px rgba(3,97,89,0.3); 
+    box-shadow: 0px 4px 0px 10px rgba(3,97,89,0.3);
     padding: 0 2rem;
 }
 
@@ -63,7 +66,8 @@
 .container-login button {
     font-size: 1.8rem;
     border: none;
-    background-color: #116cfb;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgb(170, 25, 25) 50%, rgb(250, 46, 46) 100%);
     color: #FFF;
     border-radius: 8px;
     width: 100%;
