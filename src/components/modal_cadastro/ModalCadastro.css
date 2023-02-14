@@ -1,0 +1,141 @@
+.modal {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgb(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-modal {
+    background-color: #FFF;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 85vh;
+    width: 90vh;
+    padding: 2rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    gap: 40px;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    gap: 15px;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    gap: 15px;
+}
+
+.double-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.double-input {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.logo-dev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+}
+
+.label-input {
+    font-size: 1rem;
+}
+
+.user-input {
+    border: none;
+    border-bottom: 0.4px solid rgb(85, 84, 84);
+    padding: 12px 6px;
+    font-size: 0.9rem;
+    font-family: "Righteous", FontAwesome, cursive;
+    width: 100%;
+}
+
+.submit-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.close-btn {
+    font-size: 1.2rem;
+    border: none;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgb(170, 25, 25) 50%, rgb(250, 46, 46) 100%);
+    color: #FFF;
+    border-radius: 8px;
+    width: 100%;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+
+@media (max-width: 825px) {
+    .container-modal {
+        width: 50vh;
+    }
+    .logo-dev {
+        width: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .logo-dev {
+        width: 70%;
+    }
+    .container-modal {
+        width: 30vh;
+    }
+    .modal {
+        height: 200vh;
+    }
+    .container-modal {
+        height: 150vh;
+    }
+    .content {
+        flex-direction: column;
+    }
+    .left-side {
+        width: 100%;
+    }
+    .right-side {
+        width: 100%;
+    }
+}
+
+@media (max-width: 330px) {
+    .container-modal {
+        width: 20vh;
+    }
+}

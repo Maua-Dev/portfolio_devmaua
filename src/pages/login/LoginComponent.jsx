@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { FaFacebook, FaTwitter, FaGoogle } from "react-icons/fa";
 import Logo from './assets/logo-dev.png'
+import ModalCadastro from "../../components/modal_cadastro/ModalCadastro";
 import './Login.css';
 
 export default function LoginComponent() {
 
     const [login, setLogin] = useState(null);
     const [password, setPassword] = useState(null);
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleRegister = () => {
+        if(login === '' || login === null || password === '' || password === null) alert("Preencha os campos corretamente!");
         if(login && password) alert(`Login: ${login} e Senha: ${password}`);
     }
 
@@ -31,14 +34,17 @@ export default function LoginComponent() {
                     <a href="/">Forgot password?</a>
                 </form>
 
-                <button onClick={handleRegister}>login</button>
+                <button className="login-btn" onClick={handleRegister}>login</button>
 
                 <div className="other-icons">
                     <p>Or Sign Up Using</p>
                     <div className="icons">
-                        <a href="/">
+                        <button onClick={() => setIsOpen(true)}>
+                            MODAL
+                        </button>
+                        {/* <a href="/">
                             <FaFacebook/>
-                        </a>
+                        </a> */}
                         <a href="/">
                             <FaTwitter color="blue"/>
                         </a>
@@ -47,11 +53,9 @@ export default function LoginComponent() {
                         </a>
                     </div>
                 </div>
-
-                <div className="other-login">
-                    <p>Or Sign Up Using</p>
-                    <a href="/">SIGN UP</a>
-                </div>
+                <ModalCadastro 
+                isOpen={isOpen} 
+                closeModal={() => setIsOpen(!isOpen)}/>
             </div>
         </div>
     );
