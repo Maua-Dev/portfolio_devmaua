@@ -23,12 +23,16 @@ export default function ModalCadastro({isOpen, closeModal}) {
         console.table(user);
         Object.values(user).forEach(value => {
             if(value === '')  {
-                alert("Preencha os campos corretamente!");
                 validation = !validation
             }
         });
         
-        if(validation) alert("Usuário cadastrado!");
+        if(validation) {
+            alert("Usuário cadastrado!");
+            return;
+        }
+        
+        alert("Preencha os campos corretamente!");
     }
 
     if(isOpen) {
@@ -128,7 +132,7 @@ export default function ModalCadastro({isOpen, closeModal}) {
                         </div>
                     </div>
                     <div className="submit-btn">
-                        <button className='close-btn' onClick={handleSubmit}>Enviar</button>
+                        <button className='close-btn' onClick={handleSubmit}>Cadastrar</button>
                         <button className='close-btn' onClick={closeModal}>Fechar</button>
                     </div>
                 </div>

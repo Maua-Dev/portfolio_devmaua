@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { FaFacebook, FaTwitter, FaGoogle } from "react-icons/fa";
 import Logo from './assets/logo-dev.png'
-import ModalCadastro from "../../components/modal_cadastro/ModalCadastro";
+// import ModalCadastro from "../../components/modal_cadastro/ModalCadastro";
 import './Login.css';
 
 export default function LoginComponent() {
 
     const [login, setLogin] = useState(null);
     const [password, setPassword] = useState(null);
-    const [isOpen, setIsOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
 
     const handleRegister = () => {
         if(login === '' || login === null || password === '' || password === null) alert("Preencha os campos corretamente!");
@@ -39,12 +39,12 @@ export default function LoginComponent() {
                 <div className="other-icons">
                     <p>Or Sign Up Using</p>
                     <div className="icons">
-                        <button onClick={() => setIsOpen(true)}>
+                        {/* <button onClick={() => setIsOpen(true)}>
                             MODAL
-                        </button>
-                        {/* <a href="/">
+                        </button> */}
+                        <a href="/">
                             <FaFacebook/>
-                        </a> */}
+                        </a>
                         <a href="/">
                             <FaTwitter color="blue"/>
                         </a>
@@ -53,9 +53,9 @@ export default function LoginComponent() {
                         </a>
                     </div>
                 </div>
-                <ModalCadastro 
+                {/* <ModalCadastro 
                 isOpen={isOpen} 
-                closeModal={() => setIsOpen(!isOpen)}/>
+                closeModal={() => setIsOpen(!isOpen)}/> */}
             </div>
         </div>
     );

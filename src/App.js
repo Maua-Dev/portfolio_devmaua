@@ -12,15 +12,15 @@ import LoginComponent from "./pages/login/LoginComponent";
 function App() {
   return (
     <div className="App">
-      <LoginComponent />
-      {/* <NavbarComponent />
+      {/* <LoginComponent /> */}
+      <NavbarComponent />
       <ModalOnLoad />
       <HomeComponent />
       <AboutUsComponent />
       <ProjectsComponent />
       <MembersComponent />
       <ContactComponent />
-      <FooterComponent /> */}
+      <FooterComponent />
     </div>
   );
 }
