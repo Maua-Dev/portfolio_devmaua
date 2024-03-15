@@ -56,7 +56,7 @@ jobs:
             cdk deploy --require-approval never 
         - name: Set CloudFront ID
           run: |
-            CLOUD_FRONT_ID=$(aws cloudformation --region ${{vars.AWS_REGION}} describe-stacks --stack-name ${{env.STACK_NAME}} --query "Stacks[0].Outputs[?OutputKey=='PortfolioDevFrontDistributionId${{github.ref_name}}'].OutputValue" --output text)
+            CLOUD_FRONT_ID=$(aws cloudformation --region ${{vars.AWS_REGION}} describe-stacks --stack-name ${{env.STACK_NAME}} --query "Stacks[0].Outputs[?OutputKey=='PortfolioDevMauaFrontDistributionId${{github.ref_name}}'].OutputValue" --output text)
             echo "CLOUD_FRONT_ID='$CLOUD_FRONT_ID'" >> $GITHUB_ENV
         - name: Set AWS Bucket
           run: |
