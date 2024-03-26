@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "cellular-cider-417202",
+  "private_key_id": "4e5d59df7117ff0462885c8f9b9103448c8d1817",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQD5PYqHsuTom29Z\n83ZdhV+rl3U8f9qTIYT+vn3UWMHX91NjYXj1QiSayBgVbSU6rfuUjFFjOxPtleVn\nnwCgpq9KB2M1/adDDwclBPrru6CLoGVcaeW29lhbL6I81MVf1dvHUua7G5nbJSom\nibUJ+DXPSlCUo+BS4+Edbx2+ZV6fkPLgsepaAfMbiW8qwXzOVNt/FRm6RGVV+Wd+\nZ9G1QtUQmmRu+Az85G7BjFb6rjpLvSgeZJa3VRo81ili9zS9iclDUUxw4//dzD9n\nFrgdj09wqdk257oqi/FgCZTP6d4Emk33mOuXAaUeSrd5nufJORWo5/On5+N99kt7\n+ukcbAizAgMBAAECggEAGH1fCMFfs6leMhj1hu/tfBdIOjcX24AeKMe/5mcIOPfA\n1lGECJlErn69uxE76L2irDBzaMwrw5sIbPuXHLH0JFKAgZQYZMLrwUvxecs4Va/f\ndcqj+yvOd7tA9jgz4pxJWZcAO99U6U8ICrxaMQ4V/3W+YDSP/KUOgA1kf0pHl2b9\nicb2K+4ED+hT99MhMGS6roL6Of4oRn0rkUWbvGsHSS5PbcTZtmF0LzxgO+nl5JI2\niUqtWATWyhqTLCzAXn+htdsRR0glIgmC8G2dDtAXImNS5QPUveNAkxXOPPqNWlR5\nwQ9VuY03arQVu8Y4pn5BJ+42AaGxTjy4x6kb90jC1QKBgQD/fEzJITS++nn++aHA\npKCEFF7k9dYv0B6nmucCd83hciFjEczEvrFwvX/7MD96UKEKkolGz/cHeMEF/HbG\nzn9brYyAnVdSeL4FvNWVc9SUNxXQCcYTdBCtkMKXflf63+D+rkAUWuM+IFX27hYQ\n9Bd4R44X/hQLMMbVQIw1oYXLlwKBgQD5vgWZ9ga1g39F4wq+d77+I2K2P9Vhrziq\n66BBUKDAzeVpcD19laIGPMut0By+aWy7yhqdsiD1SkednblRCsUCFsgH5tBNqIiI\nBhr9yyMmJVhF/MflGVn940I+8TaEl3uB/f0TY1viVX7m6fQevXsn+juWYJdwtCYZ\nVIq5HA4/RQKBgAGAOG9CC65HiGnwC3w3O14rRHdx3kU/or53UX4ZOBNn+Tw8wYgy\nWpZ/9n2CRg0w5hFK1RWeaSQZGIExf30hf2wJc/bZdcbdQLiF6HdNS+VnAXDMbeZ1\nWxe57vq22kt1/ztfyK6V7hnSVM7zjRuiY3TobrRDYNjD+5cLHwe9oCyXAoGAfXTB\np5f5wtEt7FOjoA7TeSMZgWgLryiwlNwNAwKX3oMQDal+mknCvNNplgUHi3e2UZez\nSyiiedY4p6sF3vpEAUqkbaO7XGefPoWipX+YRp9X+sCDQkk79dhl/Ox7cJwQRTrs\nGQM+szIzr5gzNAYHigugR2h6avl0ciEQFvFLDukCgYBGiEWT912uzXTqSGQRscYK\nKLbe+nC2t0p/3uvyr0ktHPu3MFXMUkQb4WEK5xDNY4XBtVqvV9KivTShqvKOks1A\nwSTvFdPh0yQGC0AZYfMagGzkx7YO3btx59SUMoQMGT+1cGmNgLi8GM1ibCkAcMdw\nrsSp81C+LvZu5BJ4TWvr8A==\n-----END PRIVATE KEY-----\n",
+  "client_email": "rsiqueiradevmaua@cellular-cider-417202.iam.gserviceaccount.com",
+  "client_id": "118204086609361619700",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/rsiqueiradevmaua%40cellular-cider-417202.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
