@@ -20,10 +20,18 @@ export class IacStack extends cdk.Stack {
     const s3Bucket = new s3.Bucket(this, 'PortfolioDevMauaFrontBucket' + stage, {
       versioned: true,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
-      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       accessControl: s3.BucketAccessControl.PRIVATE,
+      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       autoDeleteObjects: true,
     });
+
+    // const s3SheetsBucket = new s3.Bucket(this, 'PortfolioDevMauaFrontSheetsBucket' + stage, {
+    //   versioned: true,
+    //   removalPolicy: cdk.RemovalPolicy.DESTROY,
+    //   accessControl: s3.BucketAccessControl.PRIVATE,
+    //   autoDeleteObjects: true,
+    //   publicReadAccess: true
+    // });
 
     const oac = new cloudfront.CfnOriginAccessControl(this, "AOC", {
       originAccessControlConfig: {
