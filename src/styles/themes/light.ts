@@ -25,8 +25,8 @@ export default {
     desktop: {
       h1: '64px',
       h2: '56px',
-      h3: '48px',
-      h4: '40px',
+      h3: '40px',
+      h4: '32px',
       h5: '24px',
       p: '16px',
       p_small: '14px',

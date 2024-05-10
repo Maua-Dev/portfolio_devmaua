@@ -27,7 +27,7 @@ export const AboutImg = styled.img`
 export const Title = styled.h1`
   padding-top: 4%;
   color: ${props => props.theme.colors.secondary};
-  font-size: ${props => props.theme.fontsSizes.desktop.h4};
+  font-size: ${props => props.theme.fontsSizes.desktop.h3};
   font-family: 'Libre Franklin';
   font-weight: 800;
   width: 100%;
