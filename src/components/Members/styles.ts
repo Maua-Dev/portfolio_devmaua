@@ -71,6 +71,11 @@ export const MemberName = styled.h2`
   font-size: ${props => props.theme.fontsSizes.desktop.h5};
   margin-top: 4%;
 
+
+
+
+
+  // EXEMPLO PARA RESPONSIVIDADE AQ: 
   @media (max-width: 768px) {
     font-size: ${props => props.theme.fontsSizes.mobile.p};
   }

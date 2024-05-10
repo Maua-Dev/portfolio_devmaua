@@ -4,13 +4,14 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: ${ props => props.theme.colors.primary };
+  background-color: ${ props => props.theme.colors.blue.quaternary };
   width: 100%;
-  height: 30%;
+  /* height: 30%;  PERGUNTAR SE PODEMOS DEIXAR COMO PIXEL */
+  height: 130px;
 `;
 
 export const Logo = styled.img`
-  margin-top: 20px;
+  margin-top: 12px;
   width: 100px;
   height: 50px;
   cursor: pointer;
@@ -26,7 +27,7 @@ export const ButtonNavbar = styled.h3`
   border: none;
   font-size: 20px;
   cursor: pointer;
-  color: ${props => props.theme.title === 'light' ? props.theme.fontsSizes.colors.black : props.theme.fontsSizes.colors.white};
+  color: ${props => props.theme.fontsSizes.colors.white};
   font-weight: bold;
   width: 180px;
   height: 40px;

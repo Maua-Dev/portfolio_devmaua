@@ -3,8 +3,8 @@ import { MdOutlineWbSunny } from "react-icons/md";
 import { ButtonIcon, ButtonNavbar, Container, Logo } from "./styles";
 import { ThemeContext } from "styled-components";
 import { useContext } from "react";
-import logoWhite from '../../assets/images/logo_dev.png'
-import logoBlack from '../../assets/images/logo_dev_light.png'
+// import logoWhite from '../../assets/images/logo_dev.png'
+// import logoBlack from '../../assets/images/logo_dev_light.png'   N será mais usado, perguntar se n vai dar erro de n estar sendo utilizado
 import { HiChevronDoubleLeft } from "react-icons/hi";
 
 interface Props {
@@ -25,8 +25,7 @@ export const Navbar: React.FC<Props> = ({ toggleTheme }) => {
 
   return (
     <Container>
-      <Logo src={theme?.title === 'light' ? 
-        logoWhite : logoBlack} 
+      <Logo src={'src/assets/images/logo_dev.png'} 
         alt="logo" 
         onClick={() => window.location.reload} 
       />
@@ -41,7 +40,7 @@ export const Navbar: React.FC<Props> = ({ toggleTheme }) => {
       </ButtonIcon>}
       {width > 768 && <ButtonIcon onClick={toggleTheme}>
         {theme?.title === 'light' ? 
-          <FaRegMoon size={30} color={theme.fontsSizes.colors.black} /> : 
+          <FaRegMoon size={30} color={theme.fontsSizes.colors.white} /> : 
           <MdOutlineWbSunny size={30} color={theme?.fontsSizes.colors.white}  />}
       </ButtonIcon>}
 
