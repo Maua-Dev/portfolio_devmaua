@@ -33,6 +33,7 @@ export const RowCards = styled.div`
 export const CardSelect = styled.div`
   height: auto;
   width: fit-content;
+  margin: 10px;
   font-size: ${props => props.theme.fontsSizes.desktop.h4};
   font-family: 'Poppins';
   font-weight: 400;

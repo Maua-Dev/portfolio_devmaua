@@ -1,6 +1,6 @@
 import { FaRegMoon } from "react-icons/fa";
 import { MdOutlineWbSunny } from "react-icons/md";
-import { ButtonIcon, ButtonNavbar, Container, Logo } from "./styles";
+import { ButtonIcon, ButtonNavbar, Container, Linha, Logo, SecondContainer } from "./styles";
 import { ThemeContext } from "styled-components";
 import { useContext } from "react";
 // import logoWhite from '../../assets/images/logo_dev.png'
@@ -25,26 +25,28 @@ export const Navbar: React.FC<Props> = ({ toggleTheme }) => {
 
   return (
     <Container>
-      <Logo src={'src/assets/images/logo_dev.png'} 
-        alt="logo" 
-        onClick={() => window.location.reload} 
-      />
-      {width > 768 && <ButtonNavbar onClick={() => handleScroll('header')}>O que fazemos?</ButtonNavbar>}
-      {width > 768 && <ButtonNavbar onClick={() => handleScroll('projects')}>Projetos</ButtonNavbar>}
-      {width > 768 && <ButtonNavbar onClick={() => handleScroll('members')}>Membros</ButtonNavbar>}
-      {width > 768 && <ButtonNavbar onClick={() => handleScroll('footer')}>Contato</ButtonNavbar>}
-      {width < 768 && <ButtonIcon>
-        <HiChevronDoubleLeft color={ theme?.title === 'light'
-          ? theme.fontsSizes.colors.black : theme?.fontsSizes.colors.white
-        }/>
-      </ButtonIcon>}
-      {width > 768 && <ButtonIcon onClick={toggleTheme}>
-        {theme?.title === 'light' ? 
-          <FaRegMoon size={30} color={theme.fontsSizes.colors.white} /> : 
-          <MdOutlineWbSunny size={30} color={theme?.fontsSizes.colors.white}  />}
-      </ButtonIcon>}
+      <SecondContainer>
 
-      
-  </Container>
+        <Logo src={'src/assets/images/logo_dev.png'} 
+          alt="logo" 
+          onClick={() => window.location.reload} 
+        />
+        {width > 768 && <ButtonNavbar onClick={() => handleScroll('header')}>O que fazemos?</ButtonNavbar>}
+        {width > 768 && <ButtonNavbar onClick={() => handleScroll('projects')}>Projetos</ButtonNavbar>}
+        {width > 768 && <ButtonNavbar onClick={() => handleScroll('members')}>Membros</ButtonNavbar>}
+        {width > 768 && <ButtonNavbar onClick={() => handleScroll('footer')}>Contato</ButtonNavbar>}
+        {width < 768 && <ButtonIcon>
+          <HiChevronDoubleLeft color={ theme?.title === 'light'
+            ? theme.fontsSizes.colors.black : theme?.fontsSizes.colors.white
+          }/>
+        </ButtonIcon>}
+        {width > 768 && <ButtonIcon onClick={toggleTheme}>
+          {theme?.title === 'light' ? 
+            <FaRegMoon size={30} color={theme.fontsSizes.colors.white} /> : 
+            <MdOutlineWbSunny size={30} color={theme?.fontsSizes.colors.white}  />}
+        </ButtonIcon>}
+      </SecondContainer>
+        <Linha/>
+    </Container>
   )
 }

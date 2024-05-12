@@ -14,7 +14,7 @@ export const ContainerSecondary = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  height: 100%; // talvez tenhamos que criar um outro container para deslocar o texto mais para a esquerda
+  height: 100%; 
 `
 
 export const AboutImg = styled.img`
