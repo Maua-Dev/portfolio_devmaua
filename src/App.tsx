@@ -1,5 +1,5 @@
 import { Navbar } from './components/Navbar'
-import GlobalStyles  from './styles/global'
+import GlobalStyles from './styles/global'
 import { ThemeProvider } from 'styled-components'
 import light from './styles/themes/light'
 import dark from './styles/themes/dark'
@@ -10,9 +10,11 @@ import { About } from './components/About'
 import { Projects } from './components/Projects'
 import { Members } from './components/Members'
 import { Footer } from './components/Footer'
+import './utils/enviroments'
 
 function App() {
   const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light)
+
 
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light)
@@ -20,15 +22,17 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-    <GlobalStyles />
+      <GlobalStyles />
       <Navbar toggleTheme={toggleTheme} />
       <Header />
       <About />
       <Projects />
-      <Members />  
+      <Members />
       <Footer />
     </ThemeProvider>
   )
 }
 
 export default App
+
+
