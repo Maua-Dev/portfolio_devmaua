@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding-top: 4%;
-  background-color: ${props => props.theme.title === 'light' ? props.theme.colors.red.tertiary : props.theme.colors.secondary};
+  background-color: ${props => props.theme.title === 'light' ? props.theme.colors.secondary : props.theme.colors.secondary};
   display: flex;
   padding: 0 8%;
   width: 100%;
@@ -47,7 +47,8 @@ export const Options = styled.div`
 
 export const Option = styled.p`
   color: ${props => props.theme.colors.primary};
-  font-size: ${props => props.theme.fontsSizes.desktop.p};
+  font-size: ${props => props.theme.fontsSizes.desktop.h4};
+  font-family: 'Poppins';
   margin-top: 4%;
   cursor: pointer;
   transition: all 0.3s;
@@ -77,9 +78,12 @@ export const Social = styled.img`
   }
 `
 
+
+
 export const TextVersion = styled.p`
   color: ${props => props.theme.colors.primary};
-  font-size: ${props => props.theme.fontsSizes.desktop.p_small};
+  font-size: ${props => props.theme.fontsSizes.desktop.h5};
+  font-family: 'Libre Franklin';
   text-align: center;
   margin-top: 5%;
 `

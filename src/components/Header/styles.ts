@@ -7,18 +7,26 @@ export const Container = styled.div`
   padding: 0 2%;
   width: 100%;
   height: 32%;
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p};
+  }
 `
 
 export const LogoHeader = styled.img`
   margin-top: 10%;
-  width: 72%;
-  height: 40%;
+  width: 107%;
+  height: auto;
   object-fit: contain;
 `
 
 export const Description = styled.h1`
   margin-top: 12%;
-  font-size: ${props => props.theme.fontsSizes.desktop.p};
+  text-align: justify;
+  font-family: "Poppins";
+  font-size: ${props => props.theme.fontsSizes.desktop.h5};
+  line-height: 28px;
+  font-weight: 400;
   color: ${props => props.theme.colors.secondary};
 `
 
@@ -33,23 +41,44 @@ export const HeaderImg = styled.img`
   width: 80%;
   height: 80%;
   object-fit: contain;
-  margin-left: 20%;
+  margin-top: 20%;
+  margin-left: 12%;
 `
 
 export const SelectiveProcessBtn = styled.button`
   margin-top: 4%;
   width: 32%;
-  height: 20px;
-  background-color: ${props => props.theme.colors.blue.quaternary};
+  height: 46px;
+  background-color: ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
+  color: ${props => props.theme.fontsSizes.colors.white};
+  font-size: ${props => props.theme.fontsSizes.desktop.h5};
+  font-weight: 700;
+  font-style: italic;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+  &:hover {
+    background-color: ${props => props.theme.title === 'light' ? shade(0.1, props.theme.colors.blue.tertiary) : shade(0.1, props.theme.colors.red.quaternary)};
+
+  }
+`
+
+export const SelectiveProcessBtnLightMode = styled.button`
+  margin-top: 4%;
+  width: 32%;
+  height: 46px;
+  background-color: ${props => props.theme.colors.red.primary};
   color: ${props => props.theme.colors.secondary};
   font-size: ${props => props.theme.fontsSizes.desktop.p};
-  font-weight: bold;
+  font-weight: 700;
+  font-style: italic;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.4s;
   &:hover {
-    background-color: ${props => shade(0.1, props.theme.colors.blue.quaternary)};
+    background-color: ${props => shade(0.1, props.theme.colors.red.quaternary)};
 
   }
 `

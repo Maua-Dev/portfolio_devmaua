@@ -15,8 +15,8 @@ export const Container = styled.div`
 export const Title = styled.h1`
   padding-top: 4%;
   color: ${props => props.theme.colors.secondary};
-  font-size: ${props => props.theme.fontsSizes.desktop.h5};
-  font-style: italic;
+  font-size: ${props => props.theme.fontsSizes.desktop.h3};
+  font-family: 'Libre Franklin';
   width: 100%;
   background-color: ${props => props.theme.colors.primary};
   text-align: center;
@@ -31,18 +31,23 @@ export const RowCards = styled.div`
 `
 
 export const CardSelect = styled.div`
+  height: auto;
   width: fit-content;
+  margin: 10px;
+  font-size: ${props => props.theme.fontsSizes.desktop.h4};
+  font-family: 'Poppins';
+  font-weight: 400;
   padding: 4px;
-  border: 3px solid ${props => props.theme.colors.blue.quaternary};
-  border-radius: 8px;
+  border: 3px solid ${props => props.theme.colors.secondary};
+  border-radius: 10px;
   color: ${props => props.theme.colors.secondary};
   cursor: pointer;
   transition: all 0.3s;
-  margin-right: 12px;
+  margin-right: 32px;
 
   &:hover {
     border-color: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.blue.quaternary};
+    /* color: ${props => props.theme.colors.blue.quaternary}; */
   }
 `
 
@@ -63,14 +68,15 @@ export const Avatar = styled.img`
   height: 40%;
   object-fit: contain;
   border-radius: 100%;
-  border: 3px solid ${props => props.theme.colors.blue.quaternary};
+  border: 3px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
 `
 
 export const MemberName = styled.h2`
   color: ${props => props.theme.colors.secondary};
-  font-size: ${props => props.theme.fontsSizes.desktop.h5};
+  font-size: ${props => props.theme.fontsSizes.desktop.h4};
   margin-top: 4%;
 
+  // EXEMPLO PARA RESPONSIVIDADE AQ: 
   @media (max-width: 768px) {
     font-size: ${props => props.theme.fontsSizes.mobile.p};
   }
@@ -78,13 +84,13 @@ export const MemberName = styled.h2`
 
 export const StackName = styled.h3`
   color: ${props => props.theme.colors.gray.primary};
-  font-size: ${props => props.theme.fontsSizes.desktop.p};
+  font-size: ${props => props.theme.fontsSizes.desktop.h5};
   margin-top: 2%;
 `
 
 export const Biography = styled.p`
-  color: ${props => props.theme.colors.blue.quaternary};
-  font-size: ${props => props.theme.fontsSizes.desktop.p_small};
+  color: ${props => props.theme.colors.red.primary};
+  font-size: ${props => props.theme.fontsSizes.desktop.h5};
   cursor: pointer;
 
   &:hover {
