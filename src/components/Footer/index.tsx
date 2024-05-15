@@ -11,16 +11,6 @@ import {
   Social,
   TextVersion,
 } from "./styles";
-import logoWhiteHeader from "../../assets/images/logo_dev_header.png";
-import logoBlackHeader from "../../assets/images/logo_dev_header_light.png";
-import discBlack from "../../assets/images/discBlack.png";
-import discWhite from "../../assets/images/discWhite.png";
-import instaBlack from "../../assets/images/instaBlack.png";
-import instaWhite from "../../assets/images/instaWhite.png";
-import githubBlack from "../../assets/images/githubBlack.png";
-import githubWhite from "../../assets/images/githubWhite.png";
-import googleBlack from "../../assets/images/googleBlack.png";
-import googleWhite from "../../assets/images/googleWhite.png";
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
 import { bucketURL } from "../../utils/enviroments";
@@ -53,7 +43,7 @@ export const Footer: React.FC = () => {
       <ContentContainer>
         <ContainerOptions>
           <LogoFooter
-            src={theme?.title === "light" ? logoBlackHeader : logoWhiteHeader}
+            src={theme?.title === "light" ? `${bucketURL}/logo_dev_header_light.png` : `${bucketURL}/logo_dev_header.png`}
             alt="logo"
             onClick={window.location.reload}
           />
@@ -68,22 +58,22 @@ export const Footer: React.FC = () => {
         </ContainerOptions>
         <RowSocial id="footer">
           <Social
-            src={theme?.title === "light" ? googleWhite : googleBlack}
+            src={theme?.title === "light" ? `${bucketURL}/googleWhite.png` : `${bucketURL}/googleBlack.png`}
             alt="google"
           />
           <Social
             onClick={handleInstagram}
-            src={theme?.title === "light" ? instaWhite : instaBlack}
+            src={theme?.title === "light" ? `${bucketURL}/instaWhite.png` : `${bucketURL}/instaBlack.png`}
             alt="instagram"
           />
           <Social
             onClick={handleGithub}
-            src={theme?.title === "light" ? githubWhite : githubBlack}
+            src={theme?.title === "light" ? `${bucketURL}/githubWhite.png` : `${bucketURL}/githubBlack.png`}
             alt="google"
           />
           <Social
             onClick={handleDiscord}
-            src={theme?.title === "light" ? discWhite : discBlack}
+            src={theme?.title === "light" ? `${bucketURL}/discWhite.png` : `${bucketURL}/discBlack.png`}
             alt="discord"
           />
         </RowSocial>

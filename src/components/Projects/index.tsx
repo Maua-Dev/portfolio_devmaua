@@ -1,18 +1,15 @@
 import React from "react";
 import { CardProject, CircleMF, Container, Image, Title } from "./styles";
-import smileImg from '../../assets/images/smile.png'
-import mfImg from '../../assets/images/mf.png'
-import eurekaImg from '../../assets/images/eureka.png'
 import devMediasImg from '../../assets/images/devmedias.png'
-import portalInternoimg from '../../assets/images/portalinterno.png'
+import { bucketURL } from "../../utils/enviroments";
 
 export const Projects: React.FC = () => {
   const projects = [
-    smileImg,
-    mfImg,
-    eurekaImg,
+    `${bucketURL}/smile.png`,
+    `${bucketURL}/mf.png`,
+    `${bucketURL}/eureka.png`,
     devMediasImg,
-    portalInternoimg
+    `${bucketURL}/portalinterno.png`
   ]
 
   return <>
