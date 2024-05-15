@@ -1,12 +1,12 @@
 import { AboutImg, Container, ContainerSecondary, Description, Title } from "./styles"
-import aboutImg from '../../assets/images/about.png'
+import { bucketURL } from "../../utils/enviroments"
 
 export const About: React.FC = () => {
   return <>
     <Title>O que fazemos?</Title>
     <Container>
       <ContainerSecondary>
-        <AboutImg src={aboutImg} alt="about-img" />
+        <AboutImg src={`${bucketURL}/about.png`} alt="about-img" />
       </ContainerSecondary>
       <ContainerSecondary>
         <Description>

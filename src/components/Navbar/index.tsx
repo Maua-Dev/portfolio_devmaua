@@ -6,6 +6,7 @@ import { useContext } from "react";
 // import logoWhite from '../../assets/images/logo_dev.png'
 // import logoBlack from '../../assets/images/logo_dev_light.png'   N será mais usado, perguntar se n vai dar erro de n estar sendo utilizado
 import { HiChevronDoubleLeft } from "react-icons/hi";
+import { bucketURL } from "../../utils/enviroments";
 
 interface Props {
   toggleTheme: () => void;
@@ -27,7 +28,7 @@ export const Navbar: React.FC<Props> = ({ toggleTheme }) => {
     <Container>
       <SecondContainer>
 
-        <Logo src={'src/assets/images/logo_dev.png'} 
+        <Logo src={`${bucketURL}/logo_dev.png`} 
           alt="logo" 
           onClick={() => window.location.reload} 
         />
