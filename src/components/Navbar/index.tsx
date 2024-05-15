@@ -3,8 +3,6 @@ import { MdOutlineWbSunny } from "react-icons/md";
 import { ButtonIcon, ButtonNavbar, Container, Linha, Logo, SecondContainer } from "./styles";
 import { ThemeContext } from "styled-components";
 import { useContext } from "react";
-// import logoWhite from '../../assets/images/logo_dev.png'
-// import logoBlack from '../../assets/images/logo_dev_light.png'   N será mais usado, perguntar se n vai dar erro de n estar sendo utilizado
 import { HiChevronDoubleLeft } from "react-icons/hi";
 import { bucketURL } from "../../utils/enviroments";
 

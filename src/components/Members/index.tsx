@@ -1,6 +1,6 @@
 import React from "react";
 import { Avatar, Biography, CardMember, CardSelect, Container, MemberName, RowCards, StackName, Title } from "./styles";
-import profileImg from '../../assets/images/profile.png'
+import { bucketURL } from "../../utils/enviroments";
 
 export const Members: React.FC = () => {
   return <Container>
@@ -18,49 +18,49 @@ export const Members: React.FC = () => {
     </RowCards>
     <RowCards style={{ justifyContent: 'flex-start', alignItems: 'none' }}>
       <CardMember>
-        <Avatar src={profileImg} alt="profile" />
+        <Avatar src={`${bucketURL}/profile.png`} alt="profile" />
         <MemberName>Gabriela Formagge</MemberName>
         <StackName>UX/UI</StackName>
         <Biography>Ler bio</Biography>
       </CardMember>
       <CardMember>
-        <Avatar src={profileImg} alt="profile" />
+        <Avatar src={`${bucketURL}/profile.png`} alt="profile" />
         <MemberName>Gabriela Formagge</MemberName>
         <StackName>UX/UI</StackName>
         <Biography>Ler bio</Biography>
       </CardMember>
       <CardMember>
-        <Avatar src={profileImg} alt="profile" />
+        <Avatar src={`${bucketURL}/profile.png`} alt="profile" />
         <MemberName>Gabriela Formagge</MemberName>
         <StackName>UX/UI</StackName>
         <Biography>Ler bio</Biography>
       </CardMember>
       <CardMember>
-        <Avatar src={profileImg} alt="profile" />
+        <Avatar src={`${bucketURL}/profile.png`} alt="profile" />
         <MemberName>Gabriela Formagge</MemberName>
         <StackName>UX/UI</StackName>
         <Biography>Ler bio</Biography>
       </CardMember>
       <CardMember>
-        <Avatar src={profileImg} alt="profile" />
+        <Avatar src={`${bucketURL}/profile.png`} alt="profile" />
         <MemberName>Gabriela Formagge</MemberName>
         <StackName>UX/UI</StackName>
         <Biography>Ler bio</Biography>
       </CardMember>
       <CardMember>
-        <Avatar src={profileImg} alt="profile" />
+        <Avatar src={`${bucketURL}/profile.png`} alt="profile" />
         <MemberName>Gabriela Formagge</MemberName>
         <StackName>UX/UI</StackName>
         <Biography>Ler bio</Biography>
       </CardMember>
       <CardMember>
-        <Avatar src={profileImg} alt="profile" />
+        <Avatar src={`${bucketURL}/profile.png`} alt="profile" />
         <MemberName>Gabriela Formagge</MemberName>
         <StackName>UX/UI</StackName>
         <Biography>Ler bio</Biography>
       </CardMember>
       <CardMember>
-        <Avatar src={profileImg} alt="profile" />
+        <Avatar src={`${bucketURL}/profile.png`} alt="profile" />
         <MemberName>Gabriela Formagge</MemberName>
         <StackName>UX/UI</StackName>
         <Biography>Ler bio</Biography>

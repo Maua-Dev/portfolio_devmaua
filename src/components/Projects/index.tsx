@@ -1,6 +1,5 @@
 import React from "react";
 import { CardProject, CircleMF, Container, Image, Title } from "./styles";
-import devMediasImg from '../../assets/images/devmedias.png'
 import { bucketURL } from "../../utils/enviroments";
 
 export const Projects: React.FC = () => {
@@ -8,7 +7,7 @@ export const Projects: React.FC = () => {
     `${bucketURL}/smile.png`,
     `${bucketURL}/mf.png`,
     `${bucketURL}/eureka.png`,
-    devMediasImg,
+    `${bucketURL}/devmedias.png`,
     `${bucketURL}/portalinterno.png`
   ]
 

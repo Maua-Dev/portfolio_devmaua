@@ -79,7 +79,7 @@ export const Footer: React.FC = () => {
         </RowSocial>
         {/* <p style={}>Nosso site está sob constante mudança. Versão: 1.1.0</p> */}
         <TextVersion>
-          Nosso site está sob constante mudança. Versão: 1.1.0
+          Nosso site está sob constante mudança. Versão: 2.0.0
         </TextVersion>
       </ContentContainer>
       <LateralImgFooterRight
