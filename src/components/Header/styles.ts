@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
 
-export const Container = styled.div`
+export const ContainerDestkop = styled.div`
   background-color: ${props => props.theme.colors.primary};
   display: flex;
   padding: 0 2%;
@@ -9,9 +9,22 @@ export const Container = styled.div`
   height: 32%;
 
   @media (max-width: 768px) {
-    font-size: ${props => props.theme.fontsSizes.mobile.p};
-    justify-content: center;
-    flex-direction: column;
+    display: none;
+  }
+`
+
+export const ContainerMobile = styled.div`
+  background-color: ${props => props.theme.colors.primary};
+  display: none;
+  padding: 0 2%;
+  width: 100%;
+  height: 32%;
+  justify-content: center;
+  flex-direction: column;
+  font-size: ${props => props.theme.fontsSizes.mobile.p};
+
+  @media (max-width: 768px) {
+    display: flex;
   }
 `
 

@@ -36,9 +36,13 @@ export const ButtonNavbar = styled.h3`
   height: 40px;
   transition: 0.4s;
   border-radius: 5px;
+  display: block;
   &:hover {
     transform: scale(1.1);
+  }
 
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -57,8 +61,39 @@ export const ButtonIcon = styled.div`
   height: 40px;
   transition: 0.4s;
   border-radius: 5px;
+  display: none;
   &:hover {
     transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+`;
+
+export const ThemeIcon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  margin-top: 20px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  transition: 0.4s;
+  border-radius: 5px;
+  display: block;
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 
 `;

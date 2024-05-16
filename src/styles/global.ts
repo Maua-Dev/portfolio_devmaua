@@ -12,6 +12,7 @@ export default createGlobalStyle`
       font-size: 16px;
       font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
       color: #333;
+      width: 100vw
   }
 
 `
