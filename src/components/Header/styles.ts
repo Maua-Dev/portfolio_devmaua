@@ -10,6 +10,8 @@ export const Container = styled.div`
 
   @media (max-width: 768px) {
     font-size: ${props => props.theme.fontsSizes.mobile.p};
+    justify-content: center;
+    flex-direction: column;
   }
 `
 
@@ -18,6 +20,11 @@ export const LogoHeader = styled.img`
   width: 107%;
   height: auto;
   object-fit: contain;
+
+  @media ( max-width: 768px) {
+    width: 80%
+
+  }
 `
 
 export const Description = styled.h1`
@@ -28,6 +35,11 @@ export const Description = styled.h1`
   line-height: 28px;
   font-weight: 400;
   color: ${props => props.theme.colors.secondary};
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p};
+    line-height: 14px;
+  }
 `
 
 export const ContainerSecondary = styled.div`
@@ -35,6 +47,14 @@ export const ContainerSecondary = styled.div`
   flex-direction: column;
   width: 50%;
   height: 100%;
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p};
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
 `
 
 export const HeaderImg = styled.img`
@@ -43,6 +63,10 @@ export const HeaderImg = styled.img`
   object-fit: contain;
   margin-top: 20%;
   margin-left: 12%;
+  
+  @media (max-width: 768px) {
+    width: 40%;
+  }
 `
 
 export const SelectiveProcessBtn = styled.button`

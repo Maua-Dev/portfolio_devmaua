@@ -33,6 +33,10 @@ export const Title = styled.h1`
   width: 100%;
   background-color: ${props => props.theme.colors.primary};
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.h3};
+  }
 `
 
 export const Description = styled.h1`
@@ -43,4 +47,8 @@ export const Description = styled.h1`
   font-weight: 400;
   color: ${props => props.theme.colors.secondary};
   line-height: 25px;
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.h5};
+  }
 `
