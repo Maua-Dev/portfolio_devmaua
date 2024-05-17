@@ -25,6 +25,7 @@ export const ContainerMobile = styled.div`
 
   @media (max-width: 768px) {
     display: flex;
+    align-items: center;
   }
 `
 
@@ -36,7 +37,6 @@ export const LogoHeader = styled.img`
 
   @media ( max-width: 768px) {
     width: 80%
-
   }
 `
 
@@ -50,7 +50,7 @@ export const Description = styled.h1`
   color: ${props => props.theme.colors.secondary};
 
   @media (max-width: 768px) {
-    font-size: ${props => props.theme.fontsSizes.mobile.p};
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
     line-height: 14px;
   }
 `
@@ -62,7 +62,6 @@ export const ContainerSecondary = styled.div`
   height: 100%;
 
   @media (max-width: 768px) {
-    font-size: ${props => props.theme.fontsSizes.mobile.p};
     width: 100%;
     display: flex;
     justify-content: center;
@@ -78,7 +77,10 @@ export const HeaderImg = styled.img`
   margin-left: 12%;
   
   @media (max-width: 768px) {
-    width: 40%;
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    height: 100%;
   }
 `
 
@@ -99,6 +101,11 @@ export const SelectiveProcessBtn = styled.button`
     background-color: ${props => props.theme.title === 'light' ? shade(0.1, props.theme.colors.blue.tertiary) : shade(0.1, props.theme.colors.red.quaternary)};
 
   }
+
+  @media (max-width: 768px) {
+    width: 80%;
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+  }
 `
 
 export const SelectiveProcessBtnLightMode = styled.button`
@@ -117,5 +124,16 @@ export const SelectiveProcessBtnLightMode = styled.button`
   &:hover {
     background-color: ${props => shade(0.1, props.theme.colors.red.quaternary)};
 
+  }
+`
+
+export const ContainerTertiary = styled.div`
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  
+  @media (max-width: 768px) {
+    display: flex;
   }
 `
