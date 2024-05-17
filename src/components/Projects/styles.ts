@@ -10,7 +10,11 @@ export const Container = styled.div`
   padding-bottom: 4%;
 
   @media (max-width: 768px) {
-    height: fit-content;
+    height: 180px;
+  }
+
+  @media (max-width: 400px){
+    height: 100px;
   }
 `
 
@@ -42,6 +46,12 @@ export const CardProject = styled.div`
   padding: 1%;
 
   @media (max-width: 768px) {
+    height: 160px;
+    width: 160px;
+    border: 2px solid ${props => props.theme.colors.blue.quaternary};
+  }
+
+  @media (max-width: 400px) {
     height: 80px;
     width: 80px;
     border: 1px solid ${props => props.theme.colors.blue.quaternary};
