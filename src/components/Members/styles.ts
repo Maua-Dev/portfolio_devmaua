@@ -37,8 +37,8 @@ export const RowCards = styled.div`
 export const CardSelect = styled.div`
   height: auto;
   width: fit-content;
-  margin: 10px;
-  font-size: ${props => props.theme.fontsSizes.desktop.h4};
+  margin: 8px;
+  font-size: ${props => props.theme.fontsSizes.desktop.h5};
   font-family: 'Poppins';
   font-weight: 400;
   padding: 4px;
@@ -47,13 +47,20 @@ export const CardSelect = styled.div`
   color: ${props => props.theme.colors.secondary};
   cursor: pointer;
   transition: all 0.3s;
-  margin-right: 32px;
+
+  @media (max-width: 1279px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p};
+    padding: 3px;
+    margin: 6px;
+    border-radius: 8px;
+    border: 2px solid ${props => props.theme.colors.secondary};
+  }
 
   @media (max-width: 768px) {
-    display: flex;
     font-size: ${props => props.theme.fontsSizes.mobile.caption};
     padding: 2px;
     margin: 4px;
+    border-radius: 5px;
     border: 1px solid ${props => props.theme.colors.secondary};
   }
 
@@ -88,7 +95,6 @@ export const MemberName = styled.h2`
   font-size: ${props => props.theme.fontsSizes.desktop.h4};
   margin-top: 4%;
 
-  // EXEMPLO PARA RESPONSIVIDADE AQ: 
   @media (max-width: 768px) {
     font-size: ${props => props.theme.fontsSizes.mobile.p_small};
   }
