@@ -21,6 +21,10 @@ export const Title = styled.h1`
   background-color: ${props => props.theme.colors.primary};
   text-align: center;
   padding-bottom: 4%;
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p};
+  }
 `
 
 export const RowCards = styled.div`
@@ -44,6 +48,14 @@ export const CardSelect = styled.div`
   cursor: pointer;
   transition: all 0.3s;
   margin-right: 32px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    font-size: ${props => props.theme.fontsSizes.mobile.caption};
+    padding: 2px;
+    margin: 4px;
+    border: 1px solid ${props => props.theme.colors.secondary};
+  }
 
   &:hover {
     border-color: ${props => props.theme.colors.secondary};
@@ -78,7 +90,7 @@ export const MemberName = styled.h2`
 
   // EXEMPLO PARA RESPONSIVIDADE AQ: 
   @media (max-width: 768px) {
-    font-size: ${props => props.theme.fontsSizes.mobile.p};
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
   }
 `
 
@@ -86,12 +98,20 @@ export const StackName = styled.h3`
   color: ${props => props.theme.colors.gray.primary};
   font-size: ${props => props.theme.fontsSizes.desktop.h5};
   margin-top: 2%;
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+  }
 `
 
 export const Biography = styled.p`
   color: ${props => props.theme.colors.red.primary};
   font-size: ${props => props.theme.fontsSizes.desktop.h5};
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+  }
 
   &:hover {
     text-decoration: underline;

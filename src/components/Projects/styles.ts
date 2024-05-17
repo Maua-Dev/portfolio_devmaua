@@ -10,20 +10,23 @@ export const Container = styled.div`
   padding-bottom: 4%;
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    height: 100%;
+    height: fit-content;
   }
 `
 
 export const Title = styled.h1`
   padding-top: 4%;
   color: ${props => props.theme.colors.secondary};
-  font-size: ${props => props.theme.fontsSizes.desktop.h5};
-  font-style: italic;
+  font-size: ${props => props.theme.fontsSizes.desktop.h3};
+  font-family: 'Libre Franklin';
   width: 100%;
   background-color: ${props => props.theme.colors.primary};
   text-align: center;
   padding-bottom: 4%;
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p};
+  }
 `
 
 export const CardProject = styled.div`
@@ -37,6 +40,12 @@ export const CardProject = styled.div`
   align-items: center;
   margin: 0 1%;
   padding: 1%;
+
+  @media (max-width: 768px) {
+    height: 80px;
+    width: 80px;
+    border: 1px solid ${props => props.theme.colors.blue.quaternary};
+  }
 `
 
 export const CircleMF = styled.div`
