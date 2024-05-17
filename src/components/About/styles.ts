@@ -49,6 +49,7 @@ export const Description = styled.h1`
   line-height: 25px;
 
   @media (max-width: 768px) {
-    font-size: ${props => props.theme.fontsSizes.mobile.h5};
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    line-height: 14px;
   }
 `
