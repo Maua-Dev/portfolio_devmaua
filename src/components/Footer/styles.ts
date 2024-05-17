@@ -127,7 +127,7 @@ export const LateralImgFooterRight = styled.img`
     width: 200px;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 600px) {
     width: 110px;
   }
 `
