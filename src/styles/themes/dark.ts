@@ -27,7 +27,7 @@ export default {
       h2: '56px',
       h3: '40px',
       h4: '32px',
-      h5: '16px',
+      h5: '24px',
       p: '14px',
       p_small: '10px',
       caption: '8.5px',

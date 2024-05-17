@@ -11,12 +11,12 @@ interface Props {
   export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
     const theme = useContext(ThemeContext);
   
-    // function handleScroll(id: string) {
-    //   const section = document.getElementById(id);
-    //   if (section) {
-    //     section.scrollIntoView({ behavior: 'smooth' });
-    //   }
-    // }
+    function handleScroll(id: string) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   
     return (
       <Container>
