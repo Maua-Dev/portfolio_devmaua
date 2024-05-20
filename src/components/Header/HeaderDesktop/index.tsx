@@ -27,7 +27,7 @@ export const HeaderDesktop: React.FC = () => {
                     trabalho em equipe e as práticas do mercado com o mundo da tecnologia
                     e inovação.
                 </Description>
-                <SelectiveProcessBtn id="header">Processo Seletivo</SelectiveProcessBtn>
+                <SelectiveProcessBtn>Processo Seletivo</SelectiveProcessBtn>
             </ContainerSecondary>
             <ContainerSecondary>
                 <HeaderImg src={`${bucketURL}/header.png`} alt="header-img" />

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: none;
   width: 100%;
-  /* height: 30%;  PERGUNTAR SE PODEMOS DEIXAR COMO PIXEL :  pode sim, só ver a responsividade*/ 
   align-items: center;
   background-color: ${ props => props.theme.title === 'light' ? props.theme.colors.primary : props.theme.colors.primary };
   justify-content: space-between;
