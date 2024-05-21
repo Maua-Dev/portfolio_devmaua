@@ -50,8 +50,12 @@ export const Description = styled.h1`
   color: ${props => props.theme.colors.secondary};
 
   @media (max-width: 768px) {
-    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    font-size: ${props => props.theme.fontsSizes.mobile.p};
     line-height: 14px;
+  }
+
+  @media (max-width: 481px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
   }
 `
 

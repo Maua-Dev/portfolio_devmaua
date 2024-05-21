@@ -7,8 +7,11 @@ export const Container = styled.div`
   padding: 0 2%;
   width: 100%;
   height: 32%;
-`
 
+  @media (max-width: 768px) {
+    display: block;
+  }
+`
 
 export const ContainerDesktop = styled.div`
   display: block;
@@ -43,6 +46,7 @@ export const AboutImg = styled.img`
   @media (max-width: 768px) {
     float: left;
     width: 50%;
+    margin-top: 0;
   }
 `
 
@@ -71,8 +75,12 @@ export const Description = styled.h1`
   line-height: 25px;
 
   @media (max-width: 768px) {
-    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    font-size: ${props => props.theme.fontsSizes.mobile.p};
     line-height: 14px;
-    margin-top: 6%;
   }
+
+  @media (max-width: 481px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+  }
+
 `
