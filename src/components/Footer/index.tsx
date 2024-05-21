@@ -30,6 +30,7 @@ export const Footer: React.FC = () => {
 
   function handleScroll(id: string) {
     const section = document.getElementById(id);
+    console.log(section)
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }

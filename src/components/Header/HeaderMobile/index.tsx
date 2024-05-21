@@ -15,7 +15,7 @@ export const HeaderMobile: React.FC = () => {
   const theme = useContext(ThemeContext);
 
   return (
-    <ContainerMobile>
+    <ContainerMobile >
       <LogoHeader
         src={
           theme?.title === "light"
@@ -39,7 +39,7 @@ export const HeaderMobile: React.FC = () => {
         </ContainerSecondary>
         <ContainerTertiary>
           <HeaderImg src={`${bucketURL}/header.png`} alt="header-img" />
-          <SelectiveProcessBtn id="header">
+          <SelectiveProcessBtn >
             Processo Seletivo
           </SelectiveProcessBtn>
         </ContainerTertiary>

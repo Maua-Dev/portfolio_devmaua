@@ -25,13 +25,13 @@ export const HeaderDesktop: React.FC = () => {
                     desafios e buscando sempre trazer um contato mais eficaz com a áreas
                     de computação, estamos aqui para incorporar, principalmente, o
                     trabalho em equipe e as práticas do mercado com o mundo da tecnologia
-                    e inovação.{" "}
+                    e inovação.
                 </Description>
-                <SelectiveProcessBtn id="header">Processo Seletivo</SelectiveProcessBtn>
+                <SelectiveProcessBtn>Processo Seletivo</SelectiveProcessBtn>
             </ContainerSecondary>
             <ContainerSecondary>
                 <HeaderImg src={`${bucketURL}/header.png`} alt="header-img" />
             </ContainerSecondary>
         </ContainerDestkop>
-    )
-}
+    );
+};

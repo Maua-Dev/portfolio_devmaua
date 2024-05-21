@@ -29,12 +29,9 @@ export const Projects: React.FC = () => {
         <Image src={projects[3]} alt="devmedias" />
       </CardProject>
       <CardProject>
-        <CircleMF style={{ backgroundColor: 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <Image style={{ borderRadius: "50%", width: '90%', height: '90%' }} src={projects[4]} alt="portalinterno" />
-
-        </CircleMF>
+        <Image style={{ borderRadius: "50%", width: '90%', height: '90%' }} src={projects[4]} alt="portalinterno" />
       </CardProject>
     </Container>
-  
+
   </>
 }
