@@ -66,12 +66,14 @@ export const Logo = styled.img`
 export const NavMenu = styled.nav`
   display: flex;
   position: fixed;
-  height: 100vh;
+  height: 100%;
+  width: 70%;
   top: 0;
+  right: 0;
   flex-direction: column;
   background-color: ${ props => props.theme.title === 'light' ? props.theme.colors.primary : props.theme.colors.primary };
   gap: 2%;
-  transition: 850ms;
+  z-index: 2;
 `
 
 export const MenuHeader = styled.div`
@@ -94,15 +96,16 @@ export const Item = styled.button`
   align-items: center;
   padding: 2%;
   background-color: ${ props => props.theme.title === 'light' ? props.theme.colors.primary : props.theme.colors.primary };
-  font-size: ${props => props.theme.fontsSizes.mobile.h3};
+  font-size: ${props => props.theme.fontsSizes.mobile.h5};
   font-weight: bold;
   border: none;
   color: ${props => props.theme.colors.secondary};
+  
 `
 
 export const Icon = styled.div`
   margin-right: 6%;
-  font-size: ${props => props.theme.fontsSizes.mobile.h2};
+  font-size: ${props => props.theme.fontsSizes.mobile.h4};
 `
 
 export const MenuLogo = styled.img`
