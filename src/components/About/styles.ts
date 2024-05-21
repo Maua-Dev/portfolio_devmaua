@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const Container = styled.div`
   padding-top: 4%;
   background-color: ${props => props.theme.colors.primary};
@@ -8,6 +7,26 @@ export const Container = styled.div`
   padding: 0 2%;
   width: 100%;
   height: 32%;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`
+
+export const ContainerDesktop = styled.div`
+  display: block;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`
+
+export const ContainerMobile = styled.div`
+  display: none;
+  background-color: ${props => props.theme.colors.primary};
+  @media (max-width: 768px) {
+    display: block;
+  }
 `
 
 export const ContainerSecondary = styled.div`
@@ -15,6 +34,7 @@ export const ContainerSecondary = styled.div`
   flex-direction: column;
   width: 50%;
   height: 100%; 
+
 `
 
 export const AboutImg = styled.img`
@@ -22,6 +42,12 @@ export const AboutImg = styled.img`
   height: 80%;
   object-fit: contain;
   margin-top: 8%;
+
+  @media (max-width: 768px) {
+    float: left;
+    width: 50%;
+    margin-top: 0;
+  }
 `
 
 export const Title = styled.h1`
@@ -33,6 +59,10 @@ export const Title = styled.h1`
   width: 100%;
   background-color: ${props => props.theme.colors.primary};
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.h4};
+  }
 `
 
 export const Description = styled.h1`
@@ -43,4 +73,14 @@ export const Description = styled.h1`
   font-weight: 400;
   color: ${props => props.theme.colors.secondary};
   line-height: 25px;
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p};
+    line-height: 14px;
+  }
+
+  @media (max-width: 481px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+  }
+
 `

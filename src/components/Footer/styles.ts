@@ -41,12 +41,17 @@ export const ContainerOptions = styled.div`
   justify-content: space-between;
   border-bottom: 2px solid ${props => props.theme.colors.primary};
   padding-bottom: 5%;
+
+  @media (max-width: 768px) {
+    padding-bottom: 7%;
+    justify-content: space-evenly;
+  }
 `
 
 export const Options = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   z-index: 1;
 `
@@ -58,6 +63,10 @@ export const Option = styled.p`
   margin-top: 4%;
   cursor: pointer;
   transition: all 0.3s;
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+  }
 
   &:hover {
     color: ${props => props.theme.title === 'light' ? props.theme.colors.secondary : props.theme.colors.blue.quaternary};
@@ -90,6 +99,14 @@ export const TextVersion = styled.p`
   font-family: 'Libre Franklin';
   text-align: center;
   margin-top: 5%;
+
+  @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+  }
+
+  @media (max-width: 400px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.caption};
+  }
 `
 
 export const LateralImgFooterLeft = styled.img`
@@ -105,4 +122,12 @@ export const LateralImgFooterRight = styled.img`
   right: 0;
   bottom: 0;
   z-index: 0;
+
+  @media (max-width: 768px) {
+    width: 200px;
+  }
+
+  @media (max-width: 600px) {
+    width: 110px;
+  }
 `
