@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: none;
   width: 100%;
   align-items: center;
-  background-color: ${ props => props.theme.title === 'light' ? props.theme.colors.primary : props.theme.colors.primary };
+  background-color: ${ props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.primary };
   justify-content: space-between;
 
   @media (max-width: 768px) {
@@ -15,6 +15,7 @@ export const Container = styled.div`
 export const ButtonIcon = styled.div`
   display: flex;
   justify-content: center;
+  color: ${props => props.theme.fontsSizes.colors.white};
   align-items: center;
   margin-right: 20px;
   margin-top: 20px;
@@ -27,27 +28,6 @@ export const ButtonIcon = styled.div`
   height: 40px;
   transition: 0.4s;
   border-radius: 5px;
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-
-export const ThemeIcon = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-  margin-top: 20px;
-  background-color: transparent;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  font-weight: bold;
-  width: 40px;
-  height: 40px;
-  transition: 0.4s;
-  border-radius: 5px;
-  display: block;
   &:hover {
     transform: scale(1.1);
   }

@@ -30,7 +30,7 @@ export const HeaderDesktop: React.FC = () => {
                 <SelectiveProcessBtn>Processo Seletivo</SelectiveProcessBtn>
             </ContainerSecondary>
             <ContainerSecondary>
-                <HeaderImg src={`${bucketURL}/header.png`} alt="header-img" />
+                <HeaderImg src={`${bucketURL}/headerImage.png`} alt="header-img" />
             </ContainerSecondary>
         </ContainerDestkop>
     );

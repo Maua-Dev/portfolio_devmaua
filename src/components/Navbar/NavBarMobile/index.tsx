@@ -19,6 +19,8 @@ import { HiOutlineViewList } from "react-icons/hi";
 import { bucketURL } from "../../../utils/enviroments";
 import { MenuData } from "./assets/MenuData";
 import { IoMdClose } from "react-icons/io";
+import { MdSunny } from "react-icons/md";
+import { FaMoon } from "react-icons/fa";
 
 interface Props {
   toggleTheme: () => void;
@@ -53,17 +55,12 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
     <>
       <Container>
         <Logo
-          src={theme?.title === "light" ? `${bucketURL}/logo_dev_navbar_black.png`: `${bucketURL}/logo_dev_navbar_white.png`}
+          src={`${bucketURL}/logo_dev.png`}
           alt="logo"
           onClick={() => window.location.reload}
         />
         <ButtonIcon onClick={handleSidebarVisibility}>
           <HiOutlineViewList
-            color={
-              theme?.title === "light"
-                ? theme.fontsSizes.colors.black
-                : theme?.fontsSizes.colors.white
-            }
           />
         </ButtonIcon>
       </Container>
@@ -91,6 +88,18 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
                 </Item>
               );
             })}
+            <Item onClick={toggleTheme}>
+              <Icon>
+                {theme?.title === "light" ? (
+                  <MdSunny />
+                ) : (
+                  <FaMoon />
+                )}
+              </Icon>
+              <span>
+                {theme?.title === "light" ? "Modo Dark" : "Modo Light"}
+              </span>
+            </Item>
           </MenuItems>
           <MenuFooter>
             <RowSocial>
