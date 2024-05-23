@@ -13,7 +13,8 @@ import {
   RowSocial,
   Social,
   TextVersion,
-  MenuFooter
+  MenuFooter,
+  Overlay
 } from "./styles";
 import { HiOutlineViewList } from "react-icons/hi";
 import { bucketURL } from "../../../utils/enviroments";
@@ -60,90 +61,88 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
           onClick={() => window.location.reload}
         />
         <ButtonIcon onClick={handleSidebarVisibility}>
-          <HiOutlineViewList
-          />
+          <HiOutlineViewList />
         </ButtonIcon>
       </Container>
       {sidebarVisibility ? (
-        <NavMenu>
-          <MenuHeader>
-            <MenuLogo
-              src={
-                theme?.title === "light"
-                  ? `${bucketURL}/logo_dev_header.png`
-                  : `${bucketURL}/logo_dev_header_light.png`
-              }
-              alt="logo"
-            ></MenuLogo>
-            <Icon style={{ marginRight: 0 }}>
-              <IoMdClose onClick={handleSidebarVisibility} />
-            </Icon>
-          </MenuHeader>
-          <MenuItems onClick={handleSidebarVisibility}>
-            {MenuData.map((item, index) => {
-              return (
-                <Item key={index} onClick={() => handleScroll(item.path)}>
-                  <Icon>{item.icon}</Icon>
-                  <span>{item.title}</span>
-                </Item>
-              );
-            })}
-            <Item onClick={toggleTheme}>
-              <Icon>
-                {theme?.title === "light" ? (
-                  <MdSunny />
-                ) : (
-                  <FaMoon />
-                )}
+        <>
+        <Overlay onClick={handleSidebarVisibility}></Overlay>
+          <NavMenu>
+            <MenuHeader>
+              <MenuLogo
+                src={
+                  theme?.title === "light"
+                    ? `${bucketURL}/logo_dev_header.png`
+                    : `${bucketURL}/logo_dev_header_light.png`
+                }
+                alt="logo"
+              ></MenuLogo>
+              <Icon style={{ marginRight: 0 }}>
+                <IoMdClose onClick={handleSidebarVisibility} />
               </Icon>
-              <span>
-                {theme?.title === "light" ? "Modo Light" : "Modo Dark"}
-              </span>
-            </Item>
-          </MenuItems>
-          <MenuFooter>
-            <RowSocial>
-              <Social
-                src={
-                  theme?.title === "light"
-                    ? `${bucketURL}/googleBlack.png`
-                    : `${bucketURL}/googleWhite.png`
-                }
-                alt="google"
-              />
-              <Social
-                onClick={handleInstagram}
-                src={
-                  theme?.title === "light"
-                    ? `${bucketURL}/instaBlack.png`
-                    : `${bucketURL}/instaWhite.png`
-                }
-                alt="instagram"
-              />
-              <Social
-                onClick={handleGithub}
-                src={
-                  theme?.title === "light"
-                    ? `${bucketURL}/githubBlack.png`
-                    : `${bucketURL}/githubWhite.png`
-                }
-                alt="google"
-              />
-              <Social
-                onClick={handleDiscord}
-                src={
-                  theme?.title === "light"
-                    ? `${bucketURL}/discBlack.png`
-                    : `${bucketURL}/discWhite.png`
-                }
-                alt="discord"
-              />
-            </RowSocial>
-            <TextVersion>
-              Nosso site está sob constante mudança. Versão: 2.0.0
-            </TextVersion>
-          </MenuFooter>
-        </NavMenu>
+            </MenuHeader>
+            <MenuItems onClick={handleSidebarVisibility}>
+              {MenuData.map((item, index) => {
+                return (
+                  <Item key={index} onClick={() => handleScroll(item.path)}>
+                    <Icon>{item.icon}</Icon>
+                    <span>{item.title}</span>
+                  </Item>
+                );
+              })}
+              <Item onClick={toggleTheme}>
+                <Icon>
+                  {theme?.title === "light" ? <MdSunny /> : <FaMoon />}
+                </Icon>
+                <span>
+                  {theme?.title === "light" ? "Modo Light" : "Modo Dark"}
+                </span>
+              </Item>
+            </MenuItems>
+            <MenuFooter>
+              <RowSocial>
+                <Social
+                  src={
+                    theme?.title === "light"
+                      ? `${bucketURL}/googleBlack.png`
+                      : `${bucketURL}/googleWhite.png`
+                  }
+                  alt="google"
+                />
+                <Social
+                  onClick={handleInstagram}
+                  src={
+                    theme?.title === "light"
+                      ? `${bucketURL}/instaBlack.png`
+                      : `${bucketURL}/instaWhite.png`
+                  }
+                  alt="instagram"
+                />
+                <Social
+                  onClick={handleGithub}
+                  src={
+                    theme?.title === "light"
+                      ? `${bucketURL}/githubBlack.png`
+                      : `${bucketURL}/githubWhite.png`
+                  }
+                  alt="google"
+                />
+                <Social
+                  onClick={handleDiscord}
+                  src={
+                    theme?.title === "light"
+                      ? `${bucketURL}/discBlack.png`
+                      : `${bucketURL}/discWhite.png`
+                  }
+                  alt="discord"
+                />
+              </RowSocial>
+              <TextVersion>
+                Nosso site está sob constante mudança. Versão: 2.0.0
+              </TextVersion>
+            </MenuFooter>
+          </NavMenu>
+        </>
       ) : null}
     </>
   );
