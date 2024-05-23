@@ -106,9 +106,9 @@ export const MemberName = styled.h2`
 `
 
 export const StackName = styled.h3`
-  color: ${props => props.theme.colors.gray.primary};
+  color: ${props => props.theme.colors.gray.secondary};
   font-size: ${props => props.theme.fontsSizes.desktop.h5};
-  margin-top: 2%;
+  margin-top: 1%;
   font-family: 'Poppins';
 
   @media (max-width: 768px) {
