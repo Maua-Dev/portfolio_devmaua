@@ -12,12 +12,14 @@ declare module 'styled-components' {
         secondary: string,
         tertiary: string,
         quaternary: string,
+        quintenary: string,
       },
       red: {
         primary: string,
         secondary: string,
         tertiary: string,
         quaternary: string,
+        quintenary: string,
       },
       gray: {
         primary: string

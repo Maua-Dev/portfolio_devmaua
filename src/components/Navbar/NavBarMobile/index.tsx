@@ -53,7 +53,7 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
     <>
       <Container>
         <Logo
-          src={theme?.title === "light" ? `${bucketURL}/logo_dev_navbar_black.png`: `${bucketURL}/logo_dev_navbar_white.png`}
+          src={`${bucketURL}/logo_dev.png`}
           alt="logo"
           onClick={() => window.location.reload}
         />

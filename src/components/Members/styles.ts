@@ -1,3 +1,4 @@
+import { rgba } from 'polished';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -42,8 +43,10 @@ export const CardSelect = styled.div`
   font-family: 'Poppins';
   font-weight: 400;
   padding: 4px;
-  border: 3px solid ${props => props.theme.colors.secondary};
+  border: 3px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
   border-radius: 10px;
+  background-color: ${props => props.theme.title === 'light' ? rgba(39, 2, 114, 0.3) : rgba(134, 0, 0, 0.3)};
+  /* opacity: 0.3; */
   color: ${props => props.theme.colors.secondary};
   cursor: pointer;
   transition: all 0.3s;
@@ -74,7 +77,6 @@ export const CardMember = styled.div`
   width: 23%;
   height: 36%;
   border-radius: 12px;
-  /* border: 3px solid ${props => props.theme.colors.blue.quaternary}; */
   display: flex;
   margin: 0 1%;
   padding: 1%;
@@ -87,13 +89,16 @@ export const Avatar = styled.img`
   height: 40%;
   object-fit: contain;
   border-radius: 100%;
-  border: 3px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
+  border: 3px solid ${props => props.theme.colors.blue.quaternary};
+  background-color: #FFFFFF;
 `
 
 export const MemberName = styled.h2`
   color: ${props => props.theme.colors.secondary};
   font-size: ${props => props.theme.fontsSizes.desktop.h4};
   margin-top: 4%;
+  font-family: 'Poppins';
+  font-weight: 700;
 
   @media (max-width: 768px) {
     font-size: ${props => props.theme.fontsSizes.mobile.p_small};
@@ -104,6 +109,7 @@ export const StackName = styled.h3`
   color: ${props => props.theme.colors.gray.primary};
   font-size: ${props => props.theme.fontsSizes.desktop.h5};
   margin-top: 2%;
+  font-family: 'Poppins';
 
   @media (max-width: 768px) {
     font-size: ${props => props.theme.fontsSizes.mobile.p_small};
@@ -114,6 +120,7 @@ export const Biography = styled.p`
   color: ${props => props.theme.colors.red.primary};
   font-size: ${props => props.theme.fontsSizes.desktop.h5};
   cursor: pointer;
+  font-family: 'Poppins';
 
   @media (max-width: 768px) {
     font-size: ${props => props.theme.fontsSizes.mobile.p_small};

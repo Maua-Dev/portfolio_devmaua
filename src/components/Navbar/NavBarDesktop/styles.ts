@@ -94,6 +94,6 @@ export const ThemeIcon = styled.div`
 export const Linha = styled.div`
   @media (min-width: 768px) {
     height: 4px;
-    background-color: ${ props => props.theme.colors.blue.quaternary };
+    background-color: ${ props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary };
   }
 `;
