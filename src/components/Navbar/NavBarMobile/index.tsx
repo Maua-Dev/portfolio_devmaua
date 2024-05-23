@@ -97,7 +97,7 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
                 )}
               </Icon>
               <span>
-                {theme?.title === "light" ? "Modo Dark" : "Modo Light"}
+                {theme?.title === "light" ? "Modo Light" : "Modo Dark"}
               </span>
             </Item>
           </MenuItems>
