@@ -5,8 +5,7 @@ import {
   ContainerTertiary,
   Description,
   HeaderImg,
-  LogoHeader,
-  SelectiveProcessBtn,
+  LogoHeader
 } from "../styles";
 import { ThemeContext } from "styled-components";
 import { bucketURL } from "../../../utils/enviroments";
@@ -15,7 +14,7 @@ export const HeaderMobile: React.FC = () => {
   const theme = useContext(ThemeContext);
 
   return (
-    <ContainerMobile >
+    <ContainerMobile>
       <LogoHeader
         src={
           theme?.title === "light"
@@ -28,20 +27,15 @@ export const HeaderMobile: React.FC = () => {
       <ContainerSecondary>
         <ContainerSecondary>
           <Description>
-            O Dev. Community Mauá, fundado em 2021, é uma extracurricular do
-            Instituto Mauá de Tecnologia e tem por objetivo o desenvolvimento e
-            criação de soluções computacionais. Voltado aos alunos que gostam de
-            desafios e buscando sempre trazer um contato mais eficaz com a áreas
-            de computação, estamos aqui para incorporar, principalmente, o
-            trabalho em equipe e as práticas do mercado com o mundo da
-            tecnologia e inovação.{" "}
+            O Dev. Community Mauá, criado em 2021, promove o desenvolvimento de
+            soluções computacionais no Instituto Mauá de Tecnologia. Focado em
+            desafios, busca integrar trabalho em equipe e práticas de mercado
+            com tecnologia e inovação.
           </Description>
         </ContainerSecondary>
         <ContainerTertiary>
           <HeaderImg src={`${bucketURL}/headerImage.png`} alt="header-img" />
-          <SelectiveProcessBtn >
-            Processo Seletivo
-          </SelectiveProcessBtn>
+          {/* <SelectiveProcessBtn>Processo Seletivo</SelectiveProcessBtn> */}
         </ContainerTertiary>
       </ContainerSecondary>
     </ContainerMobile>
