@@ -7,9 +7,11 @@ export const Container = styled.div`
   padding: 0 2%;
   width: 100%;
   height: 32%;
+  gap: 1%;
 
   @media (max-width: 768px) {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 `
 
@@ -29,24 +31,17 @@ export const ContainerMobile = styled.div`
   }
 `
 
-export const ContainerSecondary = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  height: 100%; 
-
-`
-
 export const AboutImg = styled.img`
-  width: 80%;
-  height: 80%;
+  position: relative;
+  width: 40%;
   object-fit: contain;
-  margin-top: 8%;
+  align-self: end;
 
   @media (max-width: 768px) {
-    float: left;
-    width: 50%;
-    margin-top: 0;
+    position:absolute;
+    width: 20%;
+    margin-right: 5%;
+    right: 0;
   }
 `
 
@@ -66,21 +61,51 @@ export const Title = styled.h1`
 `
 
 export const Description = styled.h1`
-  margin-top: 12%;
-  text-align: justify;
   font-family: "Poppins";
-  font-size: ${props => props.theme.fontsSizes.desktop.h5};
+  font-size: ${props => props.theme.fontsSizes.desktop.p};
   font-weight: 400;
   color: ${props => props.theme.colors.secondary};
   line-height: 25px;
+  margin-top: 1%;
 
   @media (max-width: 768px) {
     font-size: ${props => props.theme.fontsSizes.mobile.p};
-    line-height: 14px;
   }
 
   @media (max-width: 481px) {
     font-size: ${props => props.theme.fontsSizes.mobile.p_small};
   }
+
+`
+
+export const Card = styled.div`
+  display: flex;
+  width: 100%;
+  padding: 2%;
+  margin-top: 2%;
+  flex-direction: column;
+  background-color: ${props => props.theme.colors.gray.primary};
+  border-radius: 10px;
+
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+`
+
+export const CardTitle = styled.p`
+  font-size: ${props => props.theme.fontsSizes.desktop.h5};
+  font-family: 'Poppins';
+  font-weight: 600;
+  color: ${props => props.theme.colors.secondary};
+
+  @media (max-width: 1024px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.h5};
+  }
+`
+
+export const ContainerSecondary = styled.div`
+  display: flex;
+  position: relative;
+  width: 100%;
 
 `

@@ -17,7 +17,7 @@ export default {
       quaternary:'#ff9999',
     },
     gray: {
-      primary: '#8E98A8'
+      primary: '#1E1E1E'
     }
   },
 

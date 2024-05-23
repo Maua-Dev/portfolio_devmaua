@@ -38,7 +38,7 @@ export const HeaderMobile: React.FC = () => {
           </Description>
         </ContainerSecondary>
         <ContainerTertiary>
-          <HeaderImg src={`${bucketURL}/header.png`} alt="header-img" />
+          <HeaderImg src={`${bucketURL}/headerImage.png`} alt="header-img" />
           <SelectiveProcessBtn >
             Processo Seletivo
           </SelectiveProcessBtn>
