@@ -1,3 +1,4 @@
+
 export default {
   title: 'light',
 
@@ -9,12 +10,14 @@ export default {
       secondary: '#3333ff',
       tertiary: '#9999ff',
       quaternary: '#270272',
+      quintenary: 'rgba(39, 2, 114, 0.3)',
     },
     red: {
       primary:'#860000',
       secondary:'#ff3333',
       tertiary:'#ff6666',
       quaternary:'#ff9999',
+      quintenary: 'rgba(134, 0, 0, 0.3)',
     },
     gray: {
       primary: '#E6E6E6'

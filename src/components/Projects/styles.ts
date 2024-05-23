@@ -1,8 +1,13 @@
+import { rgba } from "polished";
 import styled from "styled-components";
+
+export const Background = styled.div`
+  background-color: ${props => props.theme.colors.primary};
+`
 
 export const Container = styled.div`
   padding-top: 4%;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.title === 'light' ? rgba(134, 0, 0, 0.31) : rgba(39, 2, 114, 0.17)};
   display: flex;
   flex-wrap: wrap;
   padding: 0 2%;
@@ -17,7 +22,7 @@ export const Title = styled.h1`
   font-size: ${props => props.theme.fontsSizes.desktop.h3};
   font-family: 'Libre Franklin';
   width: 100%;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.title === 'light' ? rgba(134, 0, 0, 0.31) : rgba(39, 2, 114, 0.17)};
   text-align: center;
   padding-bottom: 4%;
 

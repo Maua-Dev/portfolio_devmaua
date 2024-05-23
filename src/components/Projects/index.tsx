@@ -1,5 +1,5 @@
 import React from "react";
-import { CardProject, CircleMF, Container, Image, Title } from "./styles";
+import { Background, CardProject, CircleMF, Container, Image, Title } from "./styles";
 import { bucketURL } from "../../utils/enviroments";
 
 export const Projects: React.FC = () => {
@@ -12,6 +12,7 @@ export const Projects: React.FC = () => {
   ]
 
   return <>
+  <Background>
     <Title id="projects">Projetos</Title>
     <Container>
       <CardProject>
@@ -32,6 +33,6 @@ export const Projects: React.FC = () => {
         <Image style={{ borderRadius: "50%", width: '90%', height: '90%' }} src={projects[4]} alt="portalinterno" />
       </CardProject>
     </Container>
-
+  </Background>
   </>
 }
