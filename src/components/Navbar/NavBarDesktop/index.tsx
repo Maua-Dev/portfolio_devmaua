@@ -28,7 +28,7 @@ export const NavbarDesktop: React.FC<Props> = ({ toggleTheme }) => {
           alt="logo"
           onClick={() => window.location.reload}
         />
-        <ButtonNavbar onClick={() => handleScroll('header')}>O que fazemos?</ButtonNavbar>
+        <ButtonNavbar onClick={() => handleScroll('header')}>Sobre nós</ButtonNavbar>
         <ButtonNavbar onClick={() => handleScroll('projects')}>Projetos</ButtonNavbar>
         <ButtonNavbar onClick={() => handleScroll('members')}>Membros</ButtonNavbar>
         <ButtonNavbar onClick={() => handleScroll('footer')}>Contato</ButtonNavbar>

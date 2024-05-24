@@ -51,8 +51,8 @@ export const Footer: React.FC = () => {
           <Options>
             <Option onClick={() => handleScroll(
               innerWidth > 768 ? "header" :
-              "headerMobile")}>
-              O que fazemos?
+                "headerMobile")}>
+              Sobre nós
             </Option>
             <Option onClick={() => handleScroll("projects")}>Projetos</Option>
             <Option onClick={() => handleScroll("members")}>Membros</Option>

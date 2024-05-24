@@ -5,7 +5,7 @@ import { MdOutlineLocalPhone } from "react-icons/md";
 
 export const MenuData = [
     {
-        title: 'O que fazemos?',
+        title: 'Sobre nós',
         path: 'headerMobile',
         icon: <IoEarth />
     },

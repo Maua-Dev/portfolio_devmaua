@@ -66,7 +66,7 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
       </Container>
       {sidebarVisibility ? (
         <>
-        <Overlay onClick={handleSidebarVisibility}></Overlay>
+          <Overlay onClick={handleSidebarVisibility}></Overlay>
           <NavMenu>
             <MenuHeader>
               <MenuLogo
