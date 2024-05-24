@@ -2,6 +2,8 @@ import { Construct } from "constructs";
 import { PolicyStatement } from "aws-cdk-lib/aws-iam";
 import * as lambda from "aws-cdk-lib/aws-lambda";
 import path from "path";
+import * as rules from "aws-cdk-lib/aws-events";
+import * as targets from "aws-cdk-lib/aws-events-targets";
 
 export class LambdaStack extends Construct {
   constructor(scope: Construct, id: string, environments: { [key: string]: string }) {
@@ -20,5 +22,12 @@ export class LambdaStack extends Construct {
       actions: ['s3:PutObject', 's3:GetObject', 's3:GetObjectAcl', 's3:PutObjectAcl'],
       resources: [`arn:aws:s3:::${environments.S3_BUCKET_NAME}/*`],
     }));
+
+    // Schedule event to trigger the lambda function daily
+    const rule = new rules.Rule(this, 'Rule', {
+      schedule: rules.Schedule.expression('rate(1 day)'),
+    });
+
+    rule.addTarget(new targets.LambdaFunction(handler));
   }
 }

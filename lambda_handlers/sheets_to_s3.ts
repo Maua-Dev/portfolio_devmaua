@@ -54,11 +54,11 @@ export async function handler(event: any, context?: any) {
 
   const params: S3.PutObjectRequest = {
     Bucket: process.env.S3_BUCKET_NAME as string,
-    Key: 'assets/data.json',
+    Key: 'members.json',
     Body: JSON.stringify(jsonData),
   }
 
-  const resp = await s3.putObjectAcl(params).promise()
+  const resp = await s3.putObject(params).promise()
 
   console.log('resp - [JSON REPOSITORY S3] - ', resp)
 
