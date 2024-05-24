@@ -7,6 +7,7 @@ import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
 import * as route53Targets from 'aws-cdk-lib/aws-route53-targets';
 
 import { Construct } from 'constructs';
+import { LambdaStack } from './lambda_stack';
 export class IacStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
@@ -17,6 +18,10 @@ export class IacStack extends cdk.Stack {
     const hostedZoneIdValue = process.env.HOSTED_ZONE_ID || 'Z1UJRXOUMOOFQ8'
     const projectName = process.env.PROJECT_NAME || 'PortfolioDevMauaFront'
 
+    new LambdaStack(this, 'LambdaStackPortfolioDevmaua', {
+      S3_BuCKET_NAME: process.env.S3_BUCKET_NAME as string,
+    })
+
     const s3Bucket = new s3.Bucket(this, 'PortfolioDevMauaFrontBucket' + stage, {
       versioned: true,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
@@ -24,14 +29,6 @@ export class IacStack extends cdk.Stack {
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       autoDeleteObjects: true,
     });
-
-    // const s3SheetsBucket = new s3.Bucket(this, 'PortfolioDevMauaFrontSheetsBucket' + stage, {
-    //   versioned: true,
-    //   removalPolicy: cdk.RemovalPolicy.DESTROY,
-    //   accessControl: s3.BucketAccessControl.PRIVATE,
-    //   autoDeleteObjects: true,
-    //   publicReadAccess: true
-    // });
 
     const oac = new cloudfront.CfnOriginAccessControl(this, "AOC", {
       originAccessControlConfig: {
