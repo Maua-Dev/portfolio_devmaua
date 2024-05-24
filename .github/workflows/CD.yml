@@ -62,7 +62,7 @@ jobs:
             CLOUD_FRONT_ID=$(aws cloudformation --region ${{vars.AWS_REGION}} describe-stacks --stack-name ${{env.STACK_NAME}} --query "Stacks[0].Outputs[?OutputKey=='PortfolioDevMauaFrontDistributionId${{github.ref_name}}'].OutputValue" --output text)
             echo "CLOUD_FRONT_ID='$CLOUD_FRONT_ID'" >> $GITHUB_ENV
             CLOUD_FRONT_ID_BUCKET_ASSETS=${{ vars.CLOUD_FRONT_ID_BUCKET_ASSETS }}
-            echo "CLOUD_FRONT_ID_BUCKET_ASSETS='$CLOUD_FRONT_ID_BUCKET_ASSETS'" >> $GITHUB_ENVs
+            echo "CLOUD_FRONT_ID_BUCKET_ASSETS='$CLOUD_FRONT_ID_BUCKET_ASSETS'" >> $GITHUB_ENV
         - name: Set AWS Bucket
           run: |
             AWS_BUCKET=$(aws cloudformation --region ${{vars.AWS_REGION}} describe-stacks --stack-name ${{env.STACK_NAME}} --query "Stacks[0].Outputs[?OutputKey=='PortfolioDevMauaFrontBucketName${{github.ref_name}}'].OutputValue" --output text)
