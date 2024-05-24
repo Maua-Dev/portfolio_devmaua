@@ -12,7 +12,7 @@ import {
 export const AboutDesktop: React.FC = () => {
   return (
     <ContainerDesktop>
-      <Title>O que fazemos?</Title>
+      <Title id="header">Sobre nós</Title>
       <Container>
         <Card>
           <CardTitle>Projetos com Clientes Internos e Externos</CardTitle>

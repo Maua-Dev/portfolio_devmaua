@@ -140,3 +140,17 @@ export const TextVersion = styled.p`
   }
 `
 
+export const Overlay = styled.div`
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`

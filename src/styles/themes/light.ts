@@ -17,10 +17,10 @@ export default {
       secondary:'#ff3333',
       tertiary:'#ff6666',
       quaternary:'#ff9999',
-      quintenary: 'rgba(134, 0, 0, 0.3)',
     },
     gray: {
-      primary: '#E6E6E6'
+      primary: '#E6E6E6',
+      secondary: '#3A3A3A',
     }
   },
 

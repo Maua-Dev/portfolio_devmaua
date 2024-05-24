@@ -56,7 +56,7 @@ export const CardSelect = styled.div`
     padding: 3px;
     margin: 6px;
     border-radius: 8px;
-    border: 2px solid ${props => props.theme.colors.secondary};
+    border: 2px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
   }
 
   @media (max-width: 768px) {
@@ -64,7 +64,7 @@ export const CardSelect = styled.div`
     padding: 2px;
     margin: 4px;
     border-radius: 5px;
-    border: 1px solid ${props => props.theme.colors.secondary};
+    border: 1px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
   }
 
   &:hover {
@@ -106,9 +106,9 @@ export const MemberName = styled.h2`
 `
 
 export const StackName = styled.h3`
-  color: ${props => props.theme.colors.gray.primary};
+  color: ${props => props.theme.colors.gray.secondary};
   font-size: ${props => props.theme.fontsSizes.desktop.h5};
-  margin-top: 2%;
+  margin-top: 1%;
   font-family: 'Poppins';
 
   @media (max-width: 768px) {
