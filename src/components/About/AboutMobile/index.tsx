@@ -13,7 +13,7 @@ import {
 export const AboutMobile: React.FC = () => {
   return (
     <ContainerMobile>
-      <Title>Sobre nós</Title>
+      <Title id="headerMobile">Sobre nós</Title>
       <Container>
         <ContainerSecondary>
           <Card>
