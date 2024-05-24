@@ -2,6 +2,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { google } from 'googleapis'
 import { S3 } from 'aws-sdk'
+import { config } from 'dotenv'
+
+config()
 
 export async function handler(event: any, context?: any) {
   const auth = new google.auth.GoogleAuth({
@@ -51,12 +54,11 @@ export async function handler(event: any, context?: any) {
 
   const params: S3.PutObjectRequest = {
     Bucket: process.env.S3_BUCKET_NAME as string,
-    Key: 'data.json',
+    Key: 'assets/data.json',
     Body: JSON.stringify(jsonData),
-    ContentType: 'application/json',
   }
 
-  const resp = await s3.putObject(params).promise()
+  const resp = await s3.putObjectAcl(params).promise()
 
   console.log('resp - [JSON REPOSITORY S3] - ', resp)
 
