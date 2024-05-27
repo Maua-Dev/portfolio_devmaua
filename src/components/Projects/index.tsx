@@ -1,6 +1,24 @@
 import React from "react";
-import { Background, CardProject, CircleMF, Container, Image, Title } from "./styles";
+import {
+  Background,
+  CardProject,
+  CircleMF,
+  Container,
+  Image,
+  Title,
+  ArrowButtons,
+} from "./styles";
 import { bucketURL } from "../../utils/enviroments";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { IoChevronBackCircleOutline } from "react-icons/io5";
+import { IoChevronForwardCircleOutline } from "react-icons/io5";
+
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 
 export const Projects: React.FC = () => {
   const projects = [
@@ -8,31 +26,75 @@ export const Projects: React.FC = () => {
     `${bucketURL}/mf.png`,
     `${bucketURL}/eureka.png`,
     `${bucketURL}/devmedias.png`,
-    `${bucketURL}/portalinterno.png`
-  ]
+    `${bucketURL}/portalinterno.png`,
+  ];
 
-  return <>
-  <Background>
-    <Title id="projects">Projetos</Title>
-    <Container>
-      <CardProject>
-        <Image src={projects[0]} alt="smile" />
-      </CardProject>
-      <CardProject>
-        <CircleMF>
-          <Image style={{ padding: '16px 8px', paddingLeft: '8px' }} src={projects[1]} alt="mf" />
-        </CircleMF>
-      </CardProject>
-      <CardProject>
-        <Image src={projects[2]} alt="eureka" />
-      </CardProject>
-      <CardProject>
-        <Image src={projects[3]} alt="devmedias" />
-      </CardProject>
-      <CardProject>
-        <Image style={{ borderRadius: "50%", width: '90%', height: '90%' }} src={projects[4]} alt="portalinterno" />
-      </CardProject>
-    </Container>
-  </Background>
-  </>
-}
+  return (
+    <>
+      <Background>
+        <Title id="projects">Projetos</Title>
+        <Container>
+          <Swiper
+            effect={"coverflow"}
+            grabCursor={true}
+            centeredSlides={true}
+            loop={true}
+            slidesPerView={5}
+            coverflowEffect={{
+              rotate: 0,
+              stretch: 0,
+              modifier: 2.5,
+              depth: 100,
+              slideShadows: false,
+            }}
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            modules={[EffectCoverflow, Pagination, Navigation]}
+          >
+            <SwiperSlide>
+              <CardProject>
+                <Image src={projects[0]} alt="smile" />
+              </CardProject>
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardProject>
+                <CircleMF>
+                  <Image
+                    style={{ padding: "16px 8px", paddingLeft: "8px" }}
+                    src={projects[1]}
+                    alt="mf"
+                  />
+                </CircleMF>
+              </CardProject>
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardProject>
+                <Image src={projects[2]} alt="eureka" />
+              </CardProject>
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardProject>
+                <Image src={projects[3]} alt="devmedias" />
+              </CardProject>
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardProject>
+                <Image
+                  style={{ borderRadius: "50%", width: "90%", height: "90%" }}
+                  src={projects[4]}
+                  alt="portalinterno"
+                />
+              </CardProject>
+            </SwiperSlide>
+          </Swiper>
+          <ArrowButtons className="slide-controler">
+            <IoChevronBackCircleOutline className="swiper-button-next slider-arrow"></IoChevronBackCircleOutline>
+            <IoChevronForwardCircleOutline className="swiper-button-prev slider-arrow"></IoChevronForwardCircleOutline>
+          </ArrowButtons>
+        </Container>
+      </Background>
+    </>
+  );
+};
