@@ -31,8 +31,8 @@ export const Title = styled.h1`
 `
 
 export const CardProject = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
   background-color: ${props => props.theme.fontsSizes.colors.white};
   border-radius: 12px;
   border: 3px solid ${props => props.theme.colors.blue.quaternary};
