@@ -48,8 +48,8 @@ export const Projects: React.FC = () => {
               slideShadows: false,
             }}
             navigation={{
-              prevEl: ".swiper-button-prev",
-              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-next",
+              nextEl: ".swiper-button-prev",
             }}
             modules={[EffectCoverflow, Pagination, Navigation]}
           >
@@ -90,8 +90,8 @@ export const Projects: React.FC = () => {
             </SwiperSlide>
           </Swiper>
           <ArrowButtons className="slide-controler">
-            <IoChevronForwardCircleOutline className="swiper-button-next slider-arrow"></IoChevronForwardCircleOutline>
-            <IoChevronBackCircleOutline className="swiper-button-prev slider-arrow"></IoChevronBackCircleOutline>
+            <IoChevronBackCircleOutline className="swiper-button-next slider-arrow"></IoChevronBackCircleOutline>
+            <IoChevronForwardCircleOutline className="swiper-button-prev slider-arrow"></IoChevronForwardCircleOutline>
           </ArrowButtons>
         </Container>
       </Background>
