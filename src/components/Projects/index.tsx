@@ -38,8 +38,23 @@ export const Projects: React.FC = () => {
             effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}
+            breakpoints={
+              {
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 10
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 10
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 10
+                },
+              }
+            }
             loop={true}
-            slidesPerView={5}
             coverflowEffect={{
               rotate: 3,
               stretch: -5,
@@ -53,6 +68,43 @@ export const Projects: React.FC = () => {
             }}
             modules={[EffectCoverflow, Pagination, Navigation]}
           >
+            <SwiperSlide>
+              <CardProject>
+                <Image src={projects[0]} alt="smile" />
+              </CardProject>
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardProject>
+                <CircleMF>
+                  <Image
+                    style={{ padding: "16px 8px", paddingLeft: "8px" }}
+                    src={projects[1]}
+                    alt="mf"
+                  />
+                </CircleMF>
+              </CardProject>
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardProject>
+                <Image src={projects[2]} alt="eureka" />
+              </CardProject>
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardProject>
+                <Image src={projects[3]} alt="devmedias" />
+              </CardProject>
+            </SwiperSlide>
+            <SwiperSlide>
+              <CardProject>
+                <Image
+                  style={{ borderRadius: "50%", width: "90%", height: "90%" }}
+                  src={projects[4]}
+                  alt="portalinterno"
+                />
+              </CardProject>
+            </SwiperSlide>
+
+            {/* REPETIÇÃO DOS SLIDES  */}
             <SwiperSlide>
               <CardProject>
                 <Image src={projects[0]} alt="smile" />
