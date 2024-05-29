@@ -13,6 +13,13 @@ export const Container = styled.div`
   background-color: ${props => props.theme.title === 'light' ? rgba(134, 0, 0, 0.31) : rgba(39, 2, 114, 0.17)};
   padding-bottom: 6%;
   width: 100%;
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
 `
 
 export const Title = styled.h1`
@@ -39,8 +46,6 @@ export const CardProject = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1% 1%;
-  padding: 1%;
 
   @media (max-width: 1279px) {
     height: 160px;
