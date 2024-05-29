@@ -52,12 +52,14 @@ export const CardProject = styled.div`
     height: 120px;
     width: 120px;
     border: 2px solid ${props => props.theme.colors.blue.quaternary};
+    margin-bottom: 20%;
   }
 
   @media (max-width: 400px) {
     height: 80px;
     width: 80px;
     border: 1px solid ${props => props.theme.colors.blue.quaternary};
+    margin-bottom: 20%;
   }
 `
 
@@ -79,9 +81,21 @@ export const ArrowButtons = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 10%;
+  bottom: 3%;
+  width: 100%;
+  gap: 2%;
 
   .slider-arrow {
     color: #860000E5;
+    font-size: 40px;
+    cursor: pointer;
+
+    @media (max-width: 1279px) {
+      font-size: 30px;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 20px;
+    }
   }
 `

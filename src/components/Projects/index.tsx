@@ -15,8 +15,6 @@ import { IoChevronForwardCircleOutline } from "react-icons/io5";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 
@@ -38,40 +36,13 @@ export const Projects: React.FC = () => {
             effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}
-            breakpoints={
-              {
-                0: {
-                  slidesPerView: 4,
-                  spaceBetween: -5,
-                },
-                375:{
-                  slidesPerView: 4,
-                  spaceBetween: 15
-                },
-                425:{
-                  slidesPerView: 4,
-                  spaceBetween: -20
-                },
-                768: {
-                  slidesPerView: 5,
-                  spaceBetween: 30
-                },
-                1024: {
-                  slidesPerView: 5,
-                  spaceBetween: 50
-                },
-                1440: {
-                  slidesPerView: 4,
-                  spaceBetween: 10
-                },
-              }
-            }
+            slidesPerView={5}
             loop={true}
             coverflowEffect={{
               rotate: 3,
-              stretch: -20,
+              stretch: -5,
               modifier: 2.0,
-              depth: 70,
+              depth: 100,
               slideShadows: false,
             }}
             navigation={{
