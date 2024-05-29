@@ -36,6 +36,38 @@ export const Projects: React.FC = () => {
             effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}
+            breakpoints={
+              {
+                0: {
+                  slidesPerView: 5,
+                  spaceBetween: -20,
+                },
+                375:{
+                  slidesPerView: 5,
+                  spaceBetween: -10
+                },
+                425:{
+                  slidesPerView: 4,
+                  spaceBetween: -20
+                },
+                768: {
+                  slidesPerView: 5,
+                  spaceBetween: 30
+                },
+                1024: {
+                  slidesPerView: 5,
+                  spaceBetween: 50
+                },
+                1440: {
+                  slidesPerView: 4,
+                  spaceBetween: 10
+                },
+                1600: {
+                  slidesPerView: 3,
+                  spaceBetween: 400
+                },
+              }
+            }
             slidesPerView={5}
             loop={true}
             coverflowEffect={{
