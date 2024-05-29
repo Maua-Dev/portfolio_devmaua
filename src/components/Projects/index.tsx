@@ -41,10 +41,26 @@ export const Projects: React.FC = () => {
             breakpoints={
               {
                 0: {
+                  slidesPerView: 4,
+                  spaceBetween: -5,
+                },
+                375:{
+                  slidesPerView: 4,
+                  spaceBetween: 15
+                },
+                425:{
+                  slidesPerView: 4,
+                  spaceBetween: -20
+                },
+                768: {
                   slidesPerView: 5,
-                  spaceBetween: 10,
+                  spaceBetween: 30
                 },
                 1024: {
+                  slidesPerView: 5,
+                  spaceBetween: 50
+                },
+                1440: {
                   slidesPerView: 4,
                   spaceBetween: 10
                 },
