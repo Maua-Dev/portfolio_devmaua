@@ -41,12 +41,8 @@ export const Projects: React.FC = () => {
             breakpoints={
               {
                 0: {
-                  slidesPerView: 1,
-                  spaceBetween: 10
-                },
-                768: {
-                  slidesPerView: 2,
-                  spaceBetween: 10
+                  slidesPerView: 5,
+                  spaceBetween: 10,
                 },
                 1024: {
                   slidesPerView: 4,
@@ -57,9 +53,9 @@ export const Projects: React.FC = () => {
             loop={true}
             coverflowEffect={{
               rotate: 3,
-              stretch: -5,
+              stretch: -20,
               modifier: 2.0,
-              depth: 100,
+              depth: 70,
               slideShadows: false,
             }}
             navigation={{
