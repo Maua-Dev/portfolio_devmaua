@@ -22,7 +22,7 @@ export class LambdaStack extends Construct {
     });
 
     this.lambdaLayer = new lambda.LayerVersion(this, 'PortfolioDevmauaLambdaLayerGoogle', {
-      code: lambda.Code.fromAsset(path.join(__dirname, '../../google.json')),
+      code: lambda.Code.fromAsset(path.join(__dirname, '../../lambda_layers/deps')),
     })
 
     // Grant permissions to read/write to S3
