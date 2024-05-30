@@ -4,6 +4,7 @@ import * as lambda from "aws-cdk-lib/aws-lambda";
 import path from "path";
 import * as rules from "aws-cdk-lib/aws-events";
 import * as targets from "aws-cdk-lib/aws-events-targets";
+import { Duration } from "aws-cdk-lib";
 
 export class LambdaStack extends Construct {
   constructor(scope: Construct, id: string, environments: { [key: string]: string }) {
@@ -25,7 +26,7 @@ export class LambdaStack extends Construct {
 
     // Schedule event to trigger the lambda function daily
     const rule = new rules.Rule(this, 'Rule', {
-      schedule: rules.Schedule.expression('rate(30 seconds)'),
+      schedule: rules.Schedule.rate(Duration.seconds(30)),
     });
 
     rule.addTarget(new targets.LambdaFunction(handler));
