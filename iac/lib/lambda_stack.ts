@@ -1,20 +1,19 @@
 import { Construct } from "constructs";
 import { PolicyStatement } from "aws-cdk-lib/aws-iam";
 import * as lambda from "aws-cdk-lib/aws-lambda";
-import path from "path";
 import * as rules from "aws-cdk-lib/aws-events";
 import * as targets from "aws-cdk-lib/aws-events-targets";
 import { Duration } from "aws-cdk-lib";
+import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs";
 
 export class LambdaStack extends Construct {
   constructor(scope: Construct, id: string, environments: { [key: string]: string }) {
     super(scope, id);
 
     // Lambda function
-    const handler = new lambda.Function(this, 'MyFunction', {
+    const handler = new NodejsFunction(this, 'MyFunction', {
       runtime: lambda.Runtime.NODEJS_20_X,
-      code: lambda.Code.fromAsset(path.join(__dirname, '../../lambda_handlers/sheets_handler')),
-      handler: 'sheets_to_s3.handler',
+      handler: '../../lambda_handlers/sheets_to_s3.handler',
       environment: environments,
     });
 
