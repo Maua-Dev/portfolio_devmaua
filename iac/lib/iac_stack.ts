@@ -19,7 +19,8 @@ export class IacStack extends cdk.Stack {
     const projectName = process.env.PROJECT_NAME || 'PortfolioDevMauaFront'
 
     new LambdaStack(this, 'LambdaStackPortfolioDevmaua', {
-      S3_BuCKET_NAME: process.env.S3_BUCKET_NAME as string,
+      S3_BUCKET_NAME: process.env.S3_BUCKET_NAME as string,
+      REGION: process.env.AWS_REGION as string,
     })
 
     const s3Bucket = new s3.Bucket(this, 'PortfolioDevMauaFrontBucket' + stage, {

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { google } from 'googleapis'
@@ -6,7 +7,7 @@ import { config } from 'dotenv'
 
 config()
 
-export async function handler(event: any, context?: any) {
+export async function handler(event, context) {
   const auth = new google.auth.GoogleAuth({
     keyFile: 'google.json',
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
@@ -25,12 +26,12 @@ export async function handler(event: any, context?: any) {
     if (!data) {
       console.log('No data found.')
     }
-    const jsonData = data!.map((row: any) => {
+    const jsonData = data.map((row) => {
       const fields = row[5]?.split(' ')
       const course = fields?.slice(0, -1).join(' ')
       const year = fields[fields.length - 1]
-      const tag = row[7] && row[7] !== '' && row[7] !== ' ' ? row[7].split(',').map((tag: string) => tag.trim()) : []
-      const technologies = row[8] && row[8] !== '' && row[8] !== ' ' ? row[8].split(',').map((tech: string) => tech.trim()) : []
+      const tag = row[7] && row[7] !== '' && row[7] !== ' ' ? row[7].split(',').map((tag) => tag.trim()) : []
+      const technologies = row[8] && row[8] !== '' && row[8] !== ' ' ? row[8].split(',').map((tech) => tech.trim()) : []
       return {
         name: row[1],
         birthday: row[2],
@@ -54,8 +55,8 @@ export async function handler(event: any, context?: any) {
       region: process.env.REGION,
     })
   
-    const params: S3.PutObjectRequest = {
-      Bucket: process.env.S3_BUCKET_NAME as string,
+    const params = {
+      Bucket: process.env.S3_BUCKET_NAME,
       Key: 'members.json',
       Body: JSON.stringify(jsonData),
     }
@@ -63,7 +64,7 @@ export async function handler(event: any, context?: any) {
     const resp = await s3.putObject(params).promise()
     console.log('resp - [JSON REPOSITORY S3] - ', resp)
     return jsonData
-  } catch (error: any) {
+  } catch (error) {
     throw new Error(error.message)
   }
 

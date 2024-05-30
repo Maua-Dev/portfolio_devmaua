@@ -13,7 +13,7 @@ export class LambdaStack extends Construct {
     // Lambda function
     const handler = new lambda.Function(this, 'MyFunction', {
       runtime: lambda.Runtime.NODEJS_20_X,
-      code: lambda.Code.fromAsset(path.join(__dirname, '../../lambda_handlers')),
+      code: lambda.Code.fromAsset(path.join(__dirname, '../../lambda_handlers/sheets_handler')),
       handler: 'sheets_to_s3.handler',
       environment: environments,
     });
