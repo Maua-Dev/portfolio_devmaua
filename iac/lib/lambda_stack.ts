@@ -26,7 +26,7 @@ export class LambdaStack extends Construct {
 
     // Schedule event to trigger the lambda function daily
     const rule = new rules.Rule(this, 'Rule', {
-      schedule: rules.Schedule.rate(Duration.seconds(30)),
+      schedule: rules.Schedule.rate(Duration.minutes(1)),
     });
 
     rule.addTarget(new targets.LambdaFunction(handler));
