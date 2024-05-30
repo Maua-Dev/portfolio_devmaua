@@ -6,14 +6,20 @@ export const Background = styled.div`
 `
 
 export const Container = styled.div`
-  padding-top: 4%;
-  background-color: ${props => props.theme.title === 'light' ? rgba(134, 0, 0, 0.31) : rgba(39, 2, 114, 0.17)};
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  padding: 0 2%;
-  width: 100%;
-  padding-bottom: 4%;
   justify-content: center;
+  align-items: center;
+  background-color: ${props => props.theme.title === 'light' ? rgba(134, 0, 0, 0.31) : rgba(39, 2, 114, 0.17)};
+  padding-bottom: 6%;
+  width: 100%;
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
 `
 
 export const Title = styled.h1`
@@ -32,16 +38,14 @@ export const Title = styled.h1`
 `
 
 export const CardProject = styled.div`
-  width: 240px;
-  height: 240px;
+  width: 350px;
+  height: 350px;
   background-color: ${props => props.theme.fontsSizes.colors.white};
   border-radius: 12px;
   border: 3px solid ${props => props.theme.colors.blue.quaternary};
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1% 1%;
-  padding: 1%;
 
   @media (max-width: 1279px) {
     height: 160px;
@@ -53,12 +57,14 @@ export const CardProject = styled.div`
     height: 120px;
     width: 120px;
     border: 2px solid ${props => props.theme.colors.blue.quaternary};
+    margin-bottom: 20%;
   }
 
   @media (max-width: 400px) {
     height: 80px;
     width: 80px;
     border: 1px solid ${props => props.theme.colors.blue.quaternary};
+    margin-bottom: 20%;
   }
 `
 
@@ -73,4 +79,28 @@ export const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
+`
+
+export const ArrowButtons = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 3%;
+  width: 100%;
+  gap: 2%;
+
+  .slider-arrow {
+    color: #860000E5;
+    font-size: 40px;
+    cursor: pointer;
+
+    @media (max-width: 1279px) {
+      font-size: 30px;
+    }
+
+    @media (max-width: 400px) {
+      font-size: 20px;
+    }
+  }
 `
