@@ -5,17 +5,25 @@ import * as rules from "aws-cdk-lib/aws-events";
 import * as targets from "aws-cdk-lib/aws-events-targets";
 import { Duration } from "aws-cdk-lib";
 import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs";
+import * as path from "path";
 
 export class LambdaStack extends Construct {
+  lambdaLayer: lambda.LayerVersion;
+
   constructor(scope: Construct, id: string, environments: { [key: string]: string }) {
     super(scope, id);
 
     // Lambda function
-    const handler = new NodejsFunction(this, 'MyFunction', {
+    const handler = new NodejsFunction(this, 'PortfolioDevmauaLambdaSheetsToS3', {
       runtime: lambda.Runtime.NODEJS_20_X,
-      handler: '../../lambda_handlers/sheets_to_s3.handler',
+      entry: path.join(__dirname, '../../lambda_handlers/sheets_to_s3.ts'),
+      handler: 'handler',
       environment: environments,
     });
+
+    this.lambdaLayer = new lambda.LayerVersion(this, 'PortfolioDevmauaLambdaLayerGoogle', {
+      code: lambda.Code.fromAsset(path.join(__dirname, '../../google.json')),
+    })
 
     // Grant permissions to read/write to S3
     handler.addToRolePolicy(new PolicyStatement({
