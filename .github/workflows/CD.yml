@@ -35,7 +35,7 @@ jobs:
             yarn global add aws-cdk
             yarn install -g
             cd iac
-            yarn install -g
+            npm install
         - name: Build and Export
           run: |
             yarn vite build
