@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import { Avatar, Biography, CardMember, CardSelect, Container, MemberName, RowCards, StackName, Title } from "./styles";
+import { MemberCard } from "./component/MemberCard";
 
+export type Member = {
+  name: string;
+  photo: string;
+  tag: string[];
+  course: string;
+  year: string;
+  technologies: string[];
+  birthday: string;
+}
 
 export const Members: React.FC = () => {
   const [filtro, setFiltro] = useState<string>()
-  const [membros, setMembros] = useState<Membro[]>(members)
-
-  type Membro = {
-    name: string;
-    photo: string;
-    tag: string[];
-  }
+  const [membros, setMembros] = useState<Member[]>(members)
+  const [member, setMember] = useState<Member|null>(null)
 
   const toggleFiltro = (filt: string) => {
     // Adicionar um filtro que fica verdadeiro se a gnt clica e falso se clicamos novamente
@@ -29,6 +34,7 @@ export const Members: React.FC = () => {
 
   return (
     <Container>
+      {member != null && <MemberCard member={member}/>}
       <Title id="members">Membros</Title>
       <RowCards>
         <CardSelect selected={filtro === "Diretoria"} onClick={() => handleClick("Diretoria")}>Diretoria</CardSelect>
@@ -43,7 +49,7 @@ export const Members: React.FC = () => {
       </RowCards>
       <RowCards style={{ justifyContent: 'flex-start' }}>
         {membros.map((data) => (
-          <CardMember>
+          <CardMember onClick={()=>setMember(data)}>
             <Avatar src={data.photo} alt="profile" />
             <MemberName>{data.name}</MemberName>
             <StackName>
