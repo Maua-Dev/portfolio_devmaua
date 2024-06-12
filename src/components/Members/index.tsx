@@ -4,9 +4,23 @@ import { Avatar, Biography, CardMember, CardSelect, Container, MemberName, RowCa
 
 export const Members: React.FC = () => {
   const [filtro, setFiltro] = useState<string>()
+  const [membros, setMembros] = useState<Membro[]>(members)
+
+  type Membro = {
+    name: string;
+    photo: string;
+    tag: string[];
+  }
 
   const toggleFiltro = (filt: string) => {
     // Adicionar um filtro que fica verdadeiro se a gnt clica e falso se clicamos novamente
+    if (filtro === filt) {
+      setFiltro('');
+      setMembros(members);
+    } else {
+      setFiltro(filt);
+      setMembros(members.filter((m) => m.tag.includes(filt)));
+    }
   }
 
   const handleClick = (filt: string) => {
@@ -18,9 +32,9 @@ export const Members: React.FC = () => {
       <Title id="members">Membros</Title>
       <RowCards>
         <CardSelect onClick={() => handleClick("Diretoria")}>Diretoria</CardSelect>
-        <CardSelect onClick={() => handleClick("Devs")}>Devs</CardSelect>
+        <CardSelect onClick={() => handleClick("DEV")}>Devs</CardSelect>
         <CardSelect onClick={() => handleClick("Infra")}>Infra</CardSelect>
-        <CardSelect onClick={() => handleClick("UX/UI")}>UX/UI</CardSelect>
+        <CardSelect onClick={() => handleClick("UX / UI")}>UX/UI</CardSelect>
         <CardSelect onClick={() => handleClick("PO")}>POs</CardSelect>
         <CardSelect onClick={() => handleClick("Comunicação")}>Comunicação</CardSelect>
         <CardSelect onClick={() => handleClick("RH")}>RH</CardSelect>
@@ -28,7 +42,7 @@ export const Members: React.FC = () => {
         <CardSelect onClick={() => handleClick("Data Science")}>Data Science</CardSelect>
       </RowCards>
       <RowCards style={{ justifyContent: 'flex-start' }}>
-        {members.map((data) => (
+        {membros.map((data) => (
           <CardMember>
             <Avatar src={data.photo} alt="profile" />
             <MemberName>{data.name}</MemberName>
