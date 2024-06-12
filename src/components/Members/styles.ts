@@ -35,7 +35,7 @@ export const RowCards = styled.div`
   flex-wrap: wrap;
 `
 
-export const CardSelect = styled.div`
+export const CardSelect = styled.div<{selected : boolean}>`
   height: auto;
   width: fit-content;
   margin: 8px;
@@ -43,10 +43,9 @@ export const CardSelect = styled.div`
   font-family: 'Poppins';
   font-weight: 400;
   padding: 4px;
-  border: 3px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
+  border: 3px solid ${props => props.selected ? props.theme.colors.secondary : (props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary)};
   border-radius: 10px;
   background-color: ${props => props.theme.title === 'light' ? rgba(39, 2, 114, 0.3) : rgba(134, 0, 0, 0.3)};
-  /* opacity: 0.3; */
   color: ${props => props.theme.colors.secondary};
   cursor: pointer;
   transition: all 0.3s;
@@ -69,7 +68,6 @@ export const CardSelect = styled.div`
 
   &:hover {
     border-color: ${props => props.theme.colors.secondary};
-    /* color: ${props => props.theme.colors.blue.quaternary}; */
   }
 `
 

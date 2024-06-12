@@ -31,15 +31,15 @@ export const Members: React.FC = () => {
     <Container>
       <Title id="members">Membros</Title>
       <RowCards>
-        <CardSelect onClick={() => handleClick("Diretoria")}>Diretoria</CardSelect>
-        <CardSelect onClick={() => handleClick("DEV")}>Devs</CardSelect>
-        <CardSelect onClick={() => handleClick("Infra")}>Infra</CardSelect>
-        <CardSelect onClick={() => handleClick("UX / UI")}>UX/UI</CardSelect>
-        <CardSelect onClick={() => handleClick("PO")}>POs</CardSelect>
-        <CardSelect onClick={() => handleClick("Comunicação")}>Comunicação</CardSelect>
-        <CardSelect onClick={() => handleClick("RH")}>RH</CardSelect>
-        <CardSelect onClick={() => handleClick("Financeiro")}>Financeiro</CardSelect>
-        <CardSelect onClick={() => handleClick("Data Science")}>Data Science</CardSelect>
+        <CardSelect selected={filtro === "Diretoria"} onClick={() => handleClick("Diretoria")}>Diretoria</CardSelect>
+        <CardSelect selected={filtro === "DEV"} onClick={() => handleClick("DEV")}>Devs</CardSelect>
+        <CardSelect selected={filtro === "Infra"} onClick={() => handleClick("Infra")}>Infra</CardSelect>
+        <CardSelect selected={filtro === "UX / UI"} onClick={() => handleClick("UX / UI")}>UX/UI</CardSelect>
+        <CardSelect selected={filtro === "PO"} onClick={() => handleClick("PO")}>POs</CardSelect>
+        <CardSelect selected={filtro === "Comunicação"} onClick={() => handleClick("Comunicação")}>Comunicação</CardSelect>
+        <CardSelect selected={filtro === "RH"} onClick={() => handleClick("RH")}>RH</CardSelect>
+        <CardSelect selected={filtro === "Financeiro"} onClick={() => handleClick("Financeiro")}>Financeiro</CardSelect>
+        <CardSelect selected={filtro === "Data Science"} onClick={() => handleClick("Data Science")}>Data Science</CardSelect>
       </RowCards>
       <RowCards style={{ justifyContent: 'flex-start' }}>
         {membros.map((data) => (
