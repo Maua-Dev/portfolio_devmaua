@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
     justify-content: center;
     align-items: center;
     width: 70%;
@@ -14,6 +13,7 @@ export const Container = styled.div`
     border-radius: 30px;
     border: 4px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
     display: flex;
+    z-index: 1000;
 `
 
 export const LeftContainer = styled.div`
@@ -71,6 +71,21 @@ export const Social = styled.img`
     margin-right: 2%;
     cursor: pointer;
     transition: all 0.3s;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+`
+
+export const CircleMF = styled.div`
+    width: 20%;
+    height: 50%;
+    border-radius: 100%;
+    background-color: ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
+    transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
         transform: scale(1.2);

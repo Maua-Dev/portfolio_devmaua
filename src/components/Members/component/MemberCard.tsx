@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Container, LeftContainer, MemberData, MemberKey, MemberName, MemberPhoto, MemberSocial, MemberTech, MemberValue, RightContainer, Social } from "./styles";
+import { CircleMF, Container, LeftContainer, MemberData, MemberKey, MemberName, MemberPhoto, MemberSocial, MemberTech, MemberValue, RightContainer, Social } from "./styles";
 import { Member } from "..";
 import { ThemeContext } from "styled-components";
 import { bucketURL } from "../../../utils/enviroments";
@@ -21,16 +21,16 @@ function calcularIdade(dataNascimento : string) {
 }
 
 export const MemberCard: React.FC <MemberCardProps> = ({member}) => {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext)
 
   function handleGithub() {
-    window.location.href = member.github;
+    if (member.github) {window.location.href = member.github}
   }
   function handleLinkedin() {
-    window.location.href = member.linkedin;
+    if (member.linkedin) {window.location.href = member.linkedin}
   }
   
-  const idade = calcularIdade(member.birthday);
+  const idade = calcularIdade(member.birthday)
   
   return (
     <Container>
@@ -62,16 +62,19 @@ export const MemberCard: React.FC <MemberCardProps> = ({member}) => {
         <MemberPhoto src={member.photo} alt="profile" />
         <MemberSocial>
           {member.linkedin && (
-            <Social
-              onClick={handleLinkedin}
-              src={theme?.title === "light" ? `${bucketURL}/instaBlack.png` : `${bucketURL}/instaWhite.png`}
-              alt="LinkedIn"
-            />
+            <CircleMF>
+              <Social
+                onClick={handleLinkedin}
+                style={{width: '100%', height: 'auto'}}
+                src={`${bucketURL}/linkedin.png`}
+                alt="LinkedIn"
+              />
+            </CircleMF>
           )}
           {member.github && (
             <Social
               onClick={handleGithub}
-              src={theme?.title === "light" ? `${bucketURL}/githubBlack.png` : `${bucketURL}/githubWhite.png`}
+              src={theme?.title === "light" ? `${bucketURL}/githubMemberBlue.png` : `${bucketURL}/githubMemberRed.png`}
               alt="GitHub"
             />
           )}
