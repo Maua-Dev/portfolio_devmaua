@@ -55,27 +55,32 @@ export const MemberKey = styled.div`
 export const RightContainer = styled.div`
     width: 50%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50%;
 `
+
 export const Social = styled.img`
     width: 20%;
-    height: 5%;
+    height: 50%;
     margin-right: 2%;
     cursor: pointer;
     transition: all 0.3s;
-    
+
     &:hover {
         transform: scale(1.2);
     }
-    `
+`
 
 export const MemberSocial = styled.div`
     margin-top: 20%;
+    display: flex;
+    width: 90%;
+    height: 40%;
     justify-content: center;
     margin-right: 10%;
-    display: flex;
+    gap: 4%;
 `
 
 export const MemberPhoto = styled.img`
@@ -86,6 +91,4 @@ export const MemberPhoto = styled.img`
     border-radius: 100%;
     border: 3px solid ${props => props.theme.colors.blue.quaternary};
     background-color: #FFFFFF;
-    display: flex;
-    justify-content: right;
 `
