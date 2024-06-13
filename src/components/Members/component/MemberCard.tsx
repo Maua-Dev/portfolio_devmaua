@@ -1,18 +1,67 @@
-import React from "react";
-import { Container } from "./styles";
+import React, { useContext } from "react";
+import { Container, LeftContainer, MemberData, MemberKey, MemberName, MemberPhoto, MemberSocial, MemberTech, MemberValue, RightContainer, Social } from "./styles";
 import { Member } from "..";
+import { ThemeContext } from "styled-components";
+import { bucketURL } from "../../../utils/enviroments";
 
 interface MemberCardProps { member: Member } 
 
 export const MemberCard: React.FC <MemberCardProps> = ({member}) => {
+  const theme = useContext(ThemeContext);
 
-
-
+  function handleGithub() {
+    window.location.href = member.github;
+  }
+  function handleLinkedin() {
+    window.location.href = member.linkedin;
+  }
+  
+  
   return (
     <Container>
-      <h1>
-        {member.name}
-      </h1>
+      <LeftContainer>
+        <MemberName>{member.name}</MemberName>
+        <MemberData>
+          <MemberKey>Curso: </MemberKey>
+          <MemberValue>{member.course}</MemberValue>
+        </MemberData>
+        <MemberData>
+          <MemberKey>Ano: </MemberKey>
+          <MemberValue>{member.year}</MemberValue>
+        </MemberData>
+        <MemberData>
+          <MemberKey>Idade: </MemberKey>
+          <MemberValue>{member.birthday}</MemberValue>
+        </MemberData>
+        <MemberTech>
+          <MemberKey>Principais Tecnologias: </MemberKey>
+          <MemberValue>{member.technologies.map((t, i) => (
+            <React.Fragment key={i}>
+                    {t}
+                    {i < member.technologies.length - 1 && ", "}
+                  </React.Fragment>
+                ))}</MemberValue>
+        </MemberTech>
+      </LeftContainer>
+      <RightContainer>
+        <MemberPhoto src={member.photo} alt="profile" />
+        <MemberSocial>
+          {member.linkedin && (
+            <Social
+              onClick={handleLinkedin}
+              src={theme?.title === "light" ? `${bucketURL}/instaBlack.png` : `${bucketURL}/instaWhite.png`}
+              alt="LinkedIn"
+            />
+          )}
+          {member.github && (
+            <Social
+              onClick={handleGithub}
+              src={theme?.title === "light" ? `${bucketURL}/githubBlack.png` : `${bucketURL}/githubWhite.png`}
+              alt="GitHub"
+            />
+          )}
+        </MemberSocial>
+      </RightContainer>
     </Container>
   )
 }

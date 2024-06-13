@@ -10,6 +10,8 @@ export type Member = {
   year: string;
   technologies: string[];
   birthday: string;
+  linkedin: string;
+  github: string;
 }
 
 export const Members: React.FC = () => {
