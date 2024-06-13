@@ -27,11 +27,6 @@ export const ProjectCard: React.FC <ProjectCardProps> = ({project}) => {
       <LeftContainer>
         <ProjectName>
           {project.title}
-          <Social
-              onClick={handleGithub}
-              src={theme?.title === "light" ? `${bucketURL}/githubBlack.png` : `${bucketURL}/githubWhite.png`}
-              alt="google"
-            />
         </ProjectName>
         <Technologies>
           Tecnologias:

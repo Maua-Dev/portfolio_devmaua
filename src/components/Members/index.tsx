@@ -27,8 +27,11 @@ export const Members: React.FC = () => {
   useEffect(() => {
     const fetchMembers = async () => {
         const response = await axios.get(`${bucketURL}/members.json`)
-        setTodosMembros(response.data)
-        setMembros(response.data)
+        
+        const responseSorted: Member[] = response.data.sort((a: Member, b: Member) => a.name.localeCompare(b.name))
+        
+        setTodosMembros(responseSorted)
+        setMembros(responseSorted)
     }
     fetchMembers()
   }, [])
@@ -55,7 +58,7 @@ export const Members: React.FC = () => {
 
   return (
     <Container>
-      {member != null && <MemberCard member={member}/>}
+      {member != null && <MemberCard member={member} setMember={setMember}/>}
       <Title id="members">Membros</Title>
       <RowCards>
         <CardSelect selected={filtro === "Diretoria"} onClick={() => handleClick("Diretoria")}>Diretoria</CardSelect>
@@ -64,14 +67,11 @@ export const Members: React.FC = () => {
         <CardSelect selected={filtro === "UX / UI"} onClick={() => handleClick("UX / UI")}>UX/UI</CardSelect>
         <CardSelect selected={filtro === "PO"} onClick={() => handleClick("PO")}>POs</CardSelect>
         <CardSelect selected={filtro === "Comunicação"} onClick={() => handleClick("Comunicação")}>Comunicação</CardSelect>
-        <CardSelect selected={filtro === "RH"} onClick={() => handleClick("RH")}>RH</CardSelect>
-        <CardSelect selected={filtro === "Financeiro"} onClick={() => handleClick("Financeiro")}>Financeiro</CardSelect>
-        <CardSelect selected={filtro === "Data Science"} onClick={() => handleClick("Data Science")}>Data Science</CardSelect>
       </RowCards>
       <RowCards style={{ justifyContent: 'flex-start' }}>
         {membros.map((data) => (
           <CardMember key={data.ra} onClick={() => setMember(data)}>
-            <Avatar src={data.photo} alt="profile" />
+            <Avatar src={bucketURL + "/" + data.photo}  alt="profile" />
             <MemberName>{data.name}</MemberName>
             <StackName>
               {data.tag.map((t, i) => (

@@ -6,9 +6,9 @@ import { bucketURL } from "../../../utils/enviroments";
 // ----------------------------------------------------------------
 
 interface MemberCardProps { 
-  member: Member , 
+  member: Member,
   setMember : (member: Member | null) => void
-} 
+}
 
 function calcularIdade(dataNascimento : string) {
 
@@ -60,13 +60,13 @@ export const MemberCard: React.FC <MemberCardProps> = ({member, setMember}) => {
         {member.year && (
           <MemberData>
             <MemberKey>Ano: </MemberKey>
-            <MemberValue>{member.year[0]}</MemberValue>
+            <MemberValue>{member.year[0]} °</MemberValue>
           </MemberData>
         )}
         {member.birthday && (
           <MemberData>
             <MemberKey>Idade: </MemberKey>
-            <MemberValue>{idade}</MemberValue>
+            <MemberValue>{idade} anos</MemberValue>
           </MemberData>
         )}
         {member.technologies.length > 0 && (

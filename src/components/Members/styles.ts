@@ -80,12 +80,13 @@ export const CardMember = styled.div`
   padding: 1%;
   margin-top: 4%;
   flex-direction: column;
+  cursor: pointer;
 `
 
 export const Avatar = styled.img`
-  width: 40%;
-  height: 40%;
-  object-fit: contain;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
   border-radius: 100%;
   border: 3px solid ${props => props.theme.colors.blue.quaternary};
   background-color: #FFFFFF;

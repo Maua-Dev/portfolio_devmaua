@@ -75,7 +75,7 @@ export const ProjectImage = styled.img`
     margin-top: 10%;
     width: 60%;
     height: 60%;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 100%;
     border: 3px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
     background-color: #FFFFFF;

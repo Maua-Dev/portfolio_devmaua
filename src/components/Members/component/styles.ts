@@ -93,7 +93,7 @@ export const CircleMF = styled.div`
 `
 
 export const MemberSocial = styled.div`
-    margin-top: 20%;
+    margin-top: 10%;
     display: flex;
     width: 90%;
     height: 40%;
@@ -106,7 +106,7 @@ export const MemberPhoto = styled.img`
     margin-top: 10%;
     width: 300px;
     height: 300px;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 100%;
     border: 3px solid ${props => props.theme.colors.blue.quaternary};
     background-color: #FFFFFF;
