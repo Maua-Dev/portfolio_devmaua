@@ -56,6 +56,10 @@ export const Members: React.FC = () => {
     toggleFiltro(filt);
   }
 
+  const handleImageError = (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    event.currentTarget.src = bucketURL + "/perfilErro.png";
+  }
+
   return (
     <Container>
       {member != null && <MemberCard member={member} setMember={setMember}/>}
@@ -71,7 +75,7 @@ export const Members: React.FC = () => {
       <RowCards style={{ justifyContent: 'flex-start' }}>
         {membros.map((data) => (
           <CardMember key={data.ra} onClick={() => setMember(data)}>
-            <Avatar src={bucketURL + "/" + data.photo}  alt="profile" />
+            <Avatar src={bucketURL + "/" + data.photo} onError={handleImageError} alt="profile" />
             <MemberName>{data.name}</MemberName>
             <StackName>
               {data.tag.map((t, i) => (
