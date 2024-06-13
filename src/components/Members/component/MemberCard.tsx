@@ -6,6 +6,20 @@ import { bucketURL } from "../../../utils/enviroments";
 
 interface MemberCardProps { member: Member } 
 
+function calcularIdade(dataNascimento : string) {
+
+  const hoje = new Date();
+  const nascimento = new Date(dataNascimento);
+  let idade = hoje.getFullYear() - nascimento.getFullYear();
+  const mes = hoje.getMonth() - nascimento.getMonth();
+
+  if (mes < 0 || (mes === 0 && hoje.getDate() < nascimento.getDate())) {
+    idade--;
+  }
+
+  return idade;
+}
+
 export const MemberCard: React.FC <MemberCardProps> = ({member}) => {
   const theme = useContext(ThemeContext);
 
@@ -16,6 +30,7 @@ export const MemberCard: React.FC <MemberCardProps> = ({member}) => {
     window.location.href = member.linkedin;
   }
   
+  const idade = calcularIdade(member.birthday);
   
   return (
     <Container>
@@ -31,7 +46,7 @@ export const MemberCard: React.FC <MemberCardProps> = ({member}) => {
         </MemberData>
         <MemberData>
           <MemberKey>Idade: </MemberKey>
-          <MemberValue>{member.birthday}</MemberValue>
+          <MemberValue>{idade}</MemberValue>
         </MemberData>
         <MemberTech>
           <MemberKey>Principais Tecnologias: </MemberKey>
