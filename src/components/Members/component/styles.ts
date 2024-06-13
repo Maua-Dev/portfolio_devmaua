@@ -66,8 +66,8 @@ export const RightContainer = styled.div`
 `
 
 export const Social = styled.img`
-    width: 20%;
-    height: 50%;
+    width: 100px;
+    height: 100px;
     margin-right: 2%;
     cursor: pointer;
     transition: all 0.3s;
@@ -78,8 +78,8 @@ export const Social = styled.img`
 `
 
 export const CircleMF = styled.div`
-    width: 20%;
-    height: 50%;
+    width: 100px;
+    height: 100px;
     border-radius: 100%;
     background-color: ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
     transition: all 0.3s;
@@ -104,8 +104,8 @@ export const MemberSocial = styled.div`
 
 export const MemberPhoto = styled.img`
     margin-top: 10%;
-    width: 40%;
-    height: 40%;
+    width: 300px;
+    height: 300px;
     object-fit: contain;
     border-radius: 100%;
     border: 3px solid ${props => props.theme.colors.blue.quaternary};

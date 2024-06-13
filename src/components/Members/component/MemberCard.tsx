@@ -36,27 +36,35 @@ export const MemberCard: React.FC <MemberCardProps> = ({member}) => {
     <Container>
       <LeftContainer>
         <MemberName>{member.name}</MemberName>
-        <MemberData>
-          <MemberKey>Curso: </MemberKey>
-          <MemberValue>{member.course}</MemberValue>
-        </MemberData>
-        <MemberData>
-          <MemberKey>Ano: </MemberKey>
-          <MemberValue>{member.year}</MemberValue>
-        </MemberData>
-        <MemberData>
-          <MemberKey>Idade: </MemberKey>
-          <MemberValue>{idade}</MemberValue>
-        </MemberData>
-        <MemberTech>
-          <MemberKey>Principais Tecnologias: </MemberKey>
-          <MemberValue>{member.technologies.map((t, i) => (
-            <React.Fragment key={i}>
-                    {t}
-                    {i < member.technologies.length - 1 && ", "}
-                  </React.Fragment>
-                ))}</MemberValue>
-        </MemberTech>
+        {member.course && (
+          <MemberData>
+            <MemberKey>Curso: </MemberKey>
+            <MemberValue>{member.course}</MemberValue>
+          </MemberData>
+        )}
+        {member.year && (
+          <MemberData>
+            <MemberKey>Ano: </MemberKey>
+            <MemberValue>{member.year[0]}</MemberValue>
+          </MemberData>
+        )}
+        {member.birthday && (
+          <MemberData>
+            <MemberKey>Idade: </MemberKey>
+            <MemberValue>{idade}</MemberValue>
+          </MemberData>
+        )}
+        {member.technologies.length > 0 && (
+          <MemberTech>
+            <MemberKey>Principais Tecnologias: </MemberKey>
+            <MemberValue>{member.technologies.map((t, i) => (
+              <React.Fragment key={i}>
+                      {t}
+                      {i < member.technologies.length - 1 && ", "}
+                    </React.Fragment>
+                  ))}</MemberValue>
+          </MemberTech>
+        )}
       </LeftContainer>
       <RightContainer>
         <MemberPhoto src={member.photo} alt="profile" />
