@@ -24,19 +24,6 @@ export const LeftContainer = styled.div`
     height: 100%;
 `
 
-export const Social = styled.img`
-    width: 100px;
-    height: 100px;
-    margin-right: 2%;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin-left: 20%;
-
-    &:hover {
-    transform: scale(1.2);
-    }
-`
-
 export const ProjectName = styled.div`
     font-family: 'Poppins';
     font-size: ${props => props.theme.fontsSizes.desktop.h3};

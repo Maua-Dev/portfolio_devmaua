@@ -69,7 +69,7 @@ export const Projects: React.FC = () => {
       <Background>
         <Title id="projects">Projetos</Title>
         <Container>
-        {project != null && <ProjectCard project={project}/>}
+        {project != null && <ProjectCard project={project} setProject={setProject}/>}
           <Swiper
             effect={"coverflow"}
             grabCursor={true}

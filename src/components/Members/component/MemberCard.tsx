@@ -3,7 +3,6 @@ import { CircleMF, Container, LeftContainer, MemberData, MemberKey, MemberName, 
 import { Member } from "..";
 import { ThemeContext } from "styled-components";
 import { bucketURL } from "../../../utils/enviroments";
-// ----------------------------------------------------------------
 
 interface MemberCardProps { 
   member: Member,
@@ -29,12 +28,17 @@ export const MemberCard: React.FC <MemberCardProps> = ({member, setMember}) => {
   const ref = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    document.addEventListener("click", (e: MouseEvent) => {
+    const handleClickOutside = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
-        setMember && setMember(null);
+        setMember(null);
       }
-    });
-  }, []);
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [setMember]);
+
 
   const theme = useContext(ThemeContext)
 

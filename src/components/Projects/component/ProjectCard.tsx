@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
-import { Container, Data, LeftContainer, ProjectImage, ProjectImageFood, ProjectName, RightContainer, Social, Technologies } from "./styles";
+import React, { useEffect, useRef } from "react";
+import { Container, Data, LeftContainer, ProjectImage, ProjectImageFood, ProjectName, RightContainer, Technologies } from "./styles";
 import { Project } from ".."
-import { ThemeContext } from "styled-components";
-import { bucketURL } from "../../../utils/enviroments";
 
-interface ProjectCardProps {project: Project}
+interface ProjectCardProps {
+  project: Project,
+  setProject: (project: Project | null) => void
+}
 
-export const ProjectCard: React.FC <ProjectCardProps> = ({project}) => {
-  const theme = useContext(ThemeContext);
+export const ProjectCard: React.FC <ProjectCardProps> = ({project, setProject}) => {
 
   const renderProjectImage = () => {
     if (project.title === "MAUÁ FOOD") {
@@ -18,12 +18,22 @@ export const ProjectCard: React.FC <ProjectCardProps> = ({project}) => {
     return <ProjectImage src={project.image} alt="Project Image" />;
   };
 
-  function handleGithub() {
-    window.location.href = "https://github.com/Maua-Dev";
-  }
+  const ref = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setProject(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [setProject]);
   
   return (
-    <Container>
+    <Container ref={ref}>
       <LeftContainer>
         <ProjectName>
           {project.title}
