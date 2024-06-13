@@ -1,10 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { CircleMF, Container, LeftContainer, MemberData, MemberKey, MemberName, MemberPhoto, MemberSocial, MemberTech, MemberValue, RightContainer, Social } from "./styles";
 import { Member } from "..";
 import { ThemeContext } from "styled-components";
 import { bucketURL } from "../../../utils/enviroments";
+// ----------------------------------------------------------------
 
-interface MemberCardProps { member: Member } 
+interface MemberCardProps { 
+  member: Member , 
+  setMember : (member: Member | null) => void
+} 
 
 function calcularIdade(dataNascimento : string) {
 
@@ -20,7 +24,18 @@ function calcularIdade(dataNascimento : string) {
   return idade;
 }
 
-export const MemberCard: React.FC <MemberCardProps> = ({member}) => {
+export const MemberCard: React.FC <MemberCardProps> = ({member, setMember}) => {
+
+  const ref = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    document.addEventListener("click", (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setMember && setMember(null);
+      }
+    });
+  }, []);
+
   const theme = useContext(ThemeContext)
 
   function handleGithub() {
@@ -33,7 +48,7 @@ export const MemberCard: React.FC <MemberCardProps> = ({member}) => {
   const idade = calcularIdade(member.birthday)
   
   return (
-    <Container>
+    <Container ref={ref}>
       <LeftContainer>
         <MemberName>{member.name}</MemberName>
         {member.course && (
@@ -67,7 +82,7 @@ export const MemberCard: React.FC <MemberCardProps> = ({member}) => {
         )}
       </LeftContainer>
       <RightContainer>
-        <MemberPhoto src={member.photo} alt="profile" />
+        <MemberPhoto src={bucketURL + "/" + member.photo} alt="profile" />
         <MemberSocial>
           {member.linkedin && (
             <CircleMF>
