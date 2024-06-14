@@ -14,6 +14,18 @@ export const Container = styled.div`
     border: 4px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
     display: flex;
     z-index: 1000;
+
+    @media (max-width: 1440px) {
+    height: 500px;
+    }
+
+    @media (max-width: 768px) {
+    height: 400px;
+    }
+
+    @media (max-width: 425px) {
+    height: 300px;
+    }    
 `
 
 export const LeftContainer = styled.div`

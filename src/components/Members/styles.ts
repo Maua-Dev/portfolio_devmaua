@@ -44,7 +44,7 @@ export const CardSelect = styled.div<{selected : boolean}>`
   font-family: 'Poppins';
   font-weight: 400;
   padding: 4px;
-  border: 3px solid ${props => props.selected ? props.theme.colors.secondary : (props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary)};
+  border: 3px solid ${props => props.selected ? (props => props.theme.title === 'light' ? props.theme.colors.blue.tertiary : props.theme.colors.red.tertiary) : (props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary)};
   border-radius: 10px;
   background-color: ${props => props.theme.title === 'light' ? rgba(39, 2, 114, 0.3) : rgba(134, 0, 0, 0.3)};
   color: ${props => props.theme.colors.secondary};
