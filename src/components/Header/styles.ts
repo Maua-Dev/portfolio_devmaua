@@ -82,7 +82,7 @@ export const HeaderImg = styled.img`
   @media (max-width: 768px) {
     margin-top: 0;
     margin-left: 0;
-    width: 100%;
+    width: 80%;
     height: 100%;
   }
 `

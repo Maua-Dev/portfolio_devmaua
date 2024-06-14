@@ -15,34 +15,33 @@ export const AboutDesktop: React.FC = () => {
       <Title id="header">Sobre nós</Title>
       <Container>
         <Card>
-          <CardTitle>Projetos com Clientes Internos e Externos</CardTitle>
+          <CardTitle>Projetos internos e externos</CardTitle>
           <Description>
-            Buscamos projetos reais envolvendo clientes internos e externos.
-            Esses projetos são oportunidades para aplicar conhecimentos
-            adquiridos. As atividades incluem gerenciamento de equipe e
-            interações de mercado.
+            Buscamos projetos com clientes reais, uma vez que são oportunidades
+            para aplicar o conhecimento adquirido na universidade. Tais projetos
+            envolvem desde o levantamento de requisitos, o desenvolvimento de
+            soluções tecnológicas de mercado e manutenção contínua.
           </Description>
           <AboutImg src={`${bucketURL}/aboutImageLeft.png`} alt="about-img" />
         </Card>
         <Card>
-          <CardTitle>Desenvolvimento de Soluções Computacionais:</CardTitle>
+          <CardTitle>Desenvolvimento de Soluções Computacionais</CardTitle>
           <Description>
-            Nosso foco é no desenvolvimento de soluções computacionais e essas
-            soluções são orientadas para a experiência do usuário.
+            Nosso foco é o desenvolvimento de soluções computacionais orientadas
+            para a experiência do usuário.
           </Description>
           <Description>
-            Os participantes estarão envolvidos em todo o processo de criação,
-            aplicando padrões de projeto.
+            Os participantes estão envolvidos em todo o processo de prospecção,
+            criação, sempre aplicando as boas práticas de mercado.
           </Description>
           <AboutImg src={`${bucketURL}/about.png`} alt="about-img" />
         </Card>
         <Card>
-          <CardTitle>Oportunidades Internas de Suporte e Manutenção:</CardTitle>
+          <CardTitle>Oportunidades internas em áreas diversas</CardTitle>
           <Description>
             Além dos projetos, há oportunidades internas de suporte que abrangem
-            áreas como recursos humanos, comunicação e financeiro. Os
-            participantes podem se envolver em suporte e manutenção nessas
-            áreas, recebendo orientações básicas conforme necessário.
+            áreas como recursos humanos, comunicação e financeiro, contemplando
+            todos os aspectos mercadológicos de um projeto.
           </Description>
           <AboutImg src={`${bucketURL}/aboutImageRight.png`} alt="about-img" />
         </Card>

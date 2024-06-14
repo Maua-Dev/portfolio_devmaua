@@ -25,15 +25,15 @@ export const HeaderDesktop: React.FC = () => {
           onClick={window.location.reload}
         />
         <Description>
-          O Dev. Community Mauá, criado em 2021, promove o desenvolvimento de
-          soluções computacionais no Instituto Mauá de Tecnologia. Focado em
+          A Dev. Community Mauá, criada em 2021, promove o desenvolvimento de
+          soluções computacionais no Instituto Mauá de Tecnologia. Focada em
           desafios, busca integrar trabalho em equipe e práticas de mercado com
           tecnologia e inovação.
         </Description>
         {/* <SelectiveProcessBtn>Processo Seletivo</SelectiveProcessBtn> */}
       </ContainerSecondary>
       <ContainerSecondary>
-        <HeaderImg src={`${bucketURL}/headerImage.png`} alt="header-img" />
+        <HeaderImg src={`${bucketURL}/fotos_membros_20241.jpeg`} alt="header-img" />
       </ContainerSecondary>
     </ContainerDestkop>
   );
