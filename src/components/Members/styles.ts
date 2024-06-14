@@ -111,7 +111,7 @@ export const Avatar = styled.img`
   height: 150px;
   object-fit: cover;
   border-radius: 100%;
-  border: 3px solid ${props => props.theme.colors.blue.quaternary};
+  border: 3px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
   background-color: #FFFFFF;
   transition: 0.4s;
 

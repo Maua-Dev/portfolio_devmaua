@@ -107,17 +107,19 @@ export const RightContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 5%;
 `
 
 export const Social = styled.img`
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     cursor: pointer;
     transition: all 0.3s;
+    display: flex;
 
     @media (max-width: 1440px) {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     }
 
     @media (max-width: 768px) {
@@ -136,16 +138,18 @@ export const Social = styled.img`
 `
 
 export const CircleMF = styled.div`
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     border-radius: 100%;
     background-color: ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
     transition: all 0.3s;
+    align-items: center;
+    justify-content: center;
     display: flex;
 
     @media (max-width: 1440px) {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     }
 
     @media (max-width: 768px) {
@@ -177,7 +181,9 @@ export const MemberPhoto = styled.img`
     width: 280px;
     height: 280px;
     object-fit: cover;
-    border-radius: 100%;
+    border-radius: 50%;
+    display: flex;
+    margin: auto;
     border: 3px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
     background-color: #FFFFFF;
 
