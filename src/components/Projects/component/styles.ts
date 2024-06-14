@@ -58,7 +58,7 @@ export const ProjectName = styled.div`
 `
 export const Technologies = styled.div`
     font-family: 'Poppins';
-    font-size: ${props => props.theme.fontsSizes.desktop.h4};
+    font-size: ${props => props.theme.fontsSizes.mobile.h4};
     font-weight: 400;
     line-height: 20px;
     color: ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
@@ -74,7 +74,7 @@ export const Technologies = styled.div`
 `
 export const Data = styled.div`
     font-family: 'Poppins';
-    font-size: ${props => props.theme.fontsSizes.desktop.h4};
+    font-size: ${props => props.theme.fontsSizes.mobile.h4};
     font-weight: 400;
     line-height: 20px;
     color: ${props => props.theme.colors.secondary};
