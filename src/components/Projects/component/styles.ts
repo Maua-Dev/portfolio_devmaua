@@ -31,6 +31,14 @@ export const ProjectName = styled.div`
     color: ${props => props.theme.colors.secondary};
     line-height: 68px;
     display: flex;
+
+    @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p};
+    }
+
+    @media (max-width: 400px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    }
 `
 export const Technologies = styled.div`
     font-family: 'Poppins';
@@ -39,6 +47,14 @@ export const Technologies = styled.div`
     line-height: 20px;
     color: ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
     margin-top: 5%;
+
+    @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    }
+
+    @media (max-width: 400px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.caption};
+    }
 `
 export const Data = styled.div`
     font-family: 'Poppins';
@@ -47,6 +63,14 @@ export const Data = styled.div`
     line-height: 20px;
     color: ${props => props.theme.colors.secondary};
     margin-top: 5%;
+
+    @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    }
+
+    @media (max-width: 400px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.caption};
+    }
 `
 
 export const RightContainer = styled.div`
@@ -66,6 +90,21 @@ export const ProjectImage = styled.img`
     border-radius: 100%;
     border: 3px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
     background-color: #FFFFFF;
+
+    @media (max-width: 1440px) {
+    width: 250px;
+    height: 250px;
+    }
+
+    @media (max-width: 768px) {
+    width: 200px;
+    height: 200px;
+    }
+
+    @media (max-width: 600px) {
+    width: 110px;
+    height: 110px;
+    }
 `
 export const ProjectImageFood = styled.img`
     margin-top: 10%;
@@ -75,4 +114,19 @@ export const ProjectImageFood = styled.img`
     border-radius: 100%;
     border: 3px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
     background-color: #000;
+
+    @media (max-width: 1440px) {
+    width: 250px;
+    height: 250px;
+    }
+
+    @media (max-width: 768px) {
+    width: 200px;
+    height: 200px;
+    }
+
+    @media (max-width: 600px) {
+    width: 110px;
+    height: 110px;
+    }
 `

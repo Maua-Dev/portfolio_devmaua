@@ -30,6 +30,14 @@ export const MemberName = styled.div`
     font-weight: 700;
     line-height: 32px;
     color: ${props => props.theme.colors.secondary};
+
+    @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    }
+
+    @media (max-width: 400px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.caption};
+    }
     `
 
 export const MemberData = styled.div`
@@ -40,6 +48,14 @@ export const MemberData = styled.div`
 export const MemberTech = styled.div`
     margin-top: 5%;
     gap: 2%;
+
+    @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    }
+
+    @media (max-width: 400px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.caption};
+    }
     `
 
 export const MemberValue = styled.div`
@@ -47,6 +63,14 @@ export const MemberValue = styled.div`
     font-weight: 400;
     line-height: 20px;
     color: ${props => props.theme.colors.secondary};
+
+    @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    }
+
+    @media (max-width: 400px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.caption};
+    }
     `
 
 export const MemberKey = styled.div`
@@ -54,7 +78,15 @@ export const MemberKey = styled.div`
     font-weight: 700;
     line-height: 20px;
     color: ${props => props.theme.colors.secondary};
-    `
+
+    @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    }
+
+    @media (max-width: 400px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.caption};
+    }
+`
 
 export const RightContainer = styled.div`
     width: 50%;
@@ -72,6 +104,21 @@ export const Social = styled.img`
     cursor: pointer;
     transition: all 0.3s;
 
+    @media (max-width: 1440px) {
+    width: 80px;
+    height: 80px;
+    }
+
+    @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+    }
+
+    @media (max-width: 600px) {
+    width: 30px;
+    height: 30px;
+    }
+
     &:hover {
         transform: scale(1.2);
     }
@@ -86,6 +133,21 @@ export const CircleMF = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 1440px) {
+    width: 80px;
+    height: 80px;
+    }
+
+    @media (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+    }
+
+    @media (max-width: 600px) {
+    width: 30px;
+    height: 30px;
+    }
 
     &:hover {
         transform: scale(1.2);
@@ -108,6 +170,21 @@ export const MemberPhoto = styled.img`
     height: 300px;
     object-fit: cover;
     border-radius: 100%;
-    border: 3px solid ${props => props.theme.colors.blue.quaternary};
+    border: 3px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
     background-color: #FFFFFF;
+
+    @media (max-width: 1440px) {
+    width: 250px;
+    height: 250px;
+    }
+
+    @media (max-width: 768px) {
+    width: 200px;
+    height: 200px;
+    }
+
+    @media (max-width: 600px) {
+    width: 110px;
+    height: 110px;
+    }
 `

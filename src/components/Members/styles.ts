@@ -32,6 +32,7 @@ export const RowCards = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;
   flex-wrap: wrap;
 `
 
@@ -72,15 +73,37 @@ export const CardSelect = styled.div<{selected : boolean}>`
 `
 
 export const CardMember = styled.div`
-  width: 23%;
-  height: 36%;
+  width: 300px;
+  height: 400px;
   border-radius: 12px;
   display: flex;
   margin: 0 1%;
+  margin-left: auto;
+  margin-right: auto;
   padding: 1%;
   margin-top: 4%;
   flex-direction: column;
   cursor: pointer;
+
+  @media (max-width: 1440px) {
+    width: 250px;
+    height: 350px;
+  }
+
+  @media (max-width: 1220px) {
+    width: 250px;
+    height: 280px;
+  }
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 150px;
+  }
+
+  @media (max-width: 600px) {
+    width: 110px;
+    height: 140px;
+  }
 `
 
 export const Avatar = styled.img`
@@ -90,14 +113,33 @@ export const Avatar = styled.img`
   border-radius: 100%;
   border: 3px solid ${props => props.theme.colors.blue.quaternary};
   background-color: #FFFFFF;
+
+  @media (max-width: 1100px) {
+    width: 100px;
+    height: 100px;
+    }
+
+    @media (max-width: 768px) {
+    width: 70px;
+    height: 70px;
+    }
+
+    @media (max-width: 600px) {
+    width: 40px;
+    height: 40px;
+    }
 `
 
 export const MemberName = styled.h2`
   color: ${props => props.theme.colors.secondary};
-  font-size: ${props => props.theme.fontsSizes.desktop.h4};
+  font-size: ${props => props.theme.fontsSizes.desktop.h5};
   margin-top: 4%;
   font-family: 'Poppins';
   font-weight: 700;
+
+  @media (max-width: 1220px) {
+    font-size: ${props => props.theme.fontsSizes.desktop.h5};
+  }
 
   @media (max-width: 768px) {
     font-size: ${props => props.theme.fontsSizes.mobile.p_small};
