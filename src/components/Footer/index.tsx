@@ -61,10 +61,6 @@ export const Footer: React.FC = () => {
         </ContainerOptions>
         <RowSocial id="footer">
           <Social
-            src={theme?.title === "light" ? `${bucketURL}/googleWhite.png` : `${bucketURL}/googleBlack.png`}
-            alt="google"
-          />
-          <Social
             onClick={handleInstagram}
             src={theme?.title === "light" ? `${bucketURL}/instaWhite.png` : `${bucketURL}/instaBlack.png`}
             alt="instagram"

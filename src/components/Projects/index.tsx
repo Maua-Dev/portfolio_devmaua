@@ -12,26 +12,64 @@ import { bucketURL } from "../../utils/enviroments";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
 import { IoChevronForwardCircleOutline } from "react-icons/io5";
-
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-
 import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+import { ProjectCard } from "./component/ProjectCard";
+
+export type Project = {
+  title: string;
+  frontend?: string;
+  backend?: string;
+  image?: string;
+}
+
+const projects = [
+  { 
+    "title" : "SMILE MAUÁ",
+    "frontend" : "Flutter", 
+    "backend" : "Python", 
+    "image" : `${bucketURL}/smile.png`,
+  },
+  { 
+    "title" : "MAUÁ FOOD", 
+    "frontend" : "Flutter", 
+    "backend": "Python", 
+    "image" : `${bucketURL}/mf.png`,
+  },
+  { 
+    "title" : "EUREKA", 
+    "frontend" : "React", 
+    "backend": "Python", 
+    "image" : `${bucketURL}/eureka.png`,
+  },
+  { 
+    "title" : "DEV MÉDIAS", 
+    "frontend" : "ReactNative", 
+    "backend": "Python", 
+    "image" : `${bucketURL}/devmedias.png`,
+  },
+  { 
+    "title" : "PORTAL INTERNO", 
+    "frontend" : "React", 
+    "backend": "Python", 
+    "image" : `${bucketURL}/portalinterno.png`,
+  },
+  { 
+    "title" : "PORTIFÓLIO", 
+    "frontend" : "React"
+  },
+]
 
 export const Projects: React.FC = () => {
-  const projects = [
-    `${bucketURL}/smile.png`,
-    `${bucketURL}/mf.png`,
-    `${bucketURL}/eureka.png`,
-    `${bucketURL}/devmedias.png`,
-    `${bucketURL}/portalinterno.png`,
-  ];
+  const [project, setProject] = React.useState<Project | null>(null)
 
   return (
     <>
       <Background>
         <Title id="projects">Projetos</Title>
         <Container>
+        {project != null && <ProjectCard project={project} setProject={setProject}/>}
           <Swiper
             effect={"coverflow"}
             grabCursor={true}
@@ -84,36 +122,36 @@ export const Projects: React.FC = () => {
             modules={[EffectCoverflow, Pagination, Navigation]}
           >
             <SwiperSlide>
-              <CardProject>
-                <Image src={projects[0]} alt="smile" />
+              <CardProject onClick={() => setProject(projects[0])}>
+                <Image src={projects[0].image} alt="smile" />
               </CardProject>
             </SwiperSlide>
             <SwiperSlide>
-              <CardProject>
+              <CardProject onClick={() => setProject(projects[1])}>
                 <CircleMF>
                   <Image
                     style={{ padding: "16px 8px", paddingLeft: "8px" }}
-                    src={projects[1]}
+                    src={projects[1].image}
                     alt="mf"
                   />
                 </CircleMF>
               </CardProject>
             </SwiperSlide>
             <SwiperSlide>
-              <CardProject>
-                <Image src={projects[2]} alt="eureka" />
+              <CardProject onClick={() => setProject(projects[2])}>
+                <Image src={projects[2].image} alt="eureka" />
               </CardProject>
             </SwiperSlide>
             <SwiperSlide>
-              <CardProject>
-                <Image src={projects[3]} alt="devmedias" />
+              <CardProject onClick={() => setProject(projects[3])}>
+                <Image src={projects[3].image} alt="devmedias" />
               </CardProject>
             </SwiperSlide>
             <SwiperSlide>
-              <CardProject>
+              <CardProject onClick={() => setProject(projects[4])}>
                 <Image
                   style={{ borderRadius: "50%", width: "90%", height: "90%" }}
-                  src={projects[4]}
+                  src={projects[4].image}
                   alt="portalinterno"
                 />
               </CardProject>
@@ -121,36 +159,36 @@ export const Projects: React.FC = () => {
 
             {/* REPETIÇÃO DOS SLIDES  */}
             <SwiperSlide>
-              <CardProject>
-                <Image src={projects[0]} alt="smile" />
+              <CardProject onClick={() => setProject(projects[0])}>
+                <Image src={projects[0].image} alt="smile" />
               </CardProject>
             </SwiperSlide>
             <SwiperSlide>
-              <CardProject>
+              <CardProject onClick={() => setProject(projects[1])}>
                 <CircleMF>
                   <Image
                     style={{ padding: "16px 8px", paddingLeft: "8px" }}
-                    src={projects[1]}
+                    src={projects[1].image}
                     alt="mf"
                   />
                 </CircleMF>
               </CardProject>
             </SwiperSlide>
             <SwiperSlide>
-              <CardProject>
-                <Image src={projects[2]} alt="eureka" />
+              <CardProject onClick={() => setProject(projects[2])}>
+                <Image src={projects[2].image} alt="eureka" />
               </CardProject>
             </SwiperSlide>
             <SwiperSlide>
-              <CardProject>
-                <Image src={projects[3]} alt="devmedias" />
+              <CardProject onClick={() => setProject(projects[3])}>
+                <Image src={projects[3].image} alt="devmedias" />
               </CardProject>
             </SwiperSlide>
             <SwiperSlide>
-              <CardProject>
+              <CardProject onClick={() => setProject(projects[4])}>
                 <Image
                   style={{ borderRadius: "50%", width: "90%", height: "90%" }}
-                  src={projects[4]}
+                  src={projects[4].image}
                   alt="portalinterno"
                 />
               </CardProject>
