@@ -113,6 +113,7 @@ export const Avatar = styled.img`
   border-radius: 100%;
   border: 3px solid ${props => props.theme.colors.blue.quaternary};
   background-color: #FFFFFF;
+  transition: 0.4s;
 
   @media (max-width: 1100px) {
     width: 100px;
@@ -127,6 +128,10 @@ export const Avatar = styled.img`
     @media (max-width: 600px) {
     width: 40px;
     height: 40px;
+    }
+
+    &:hover {
+        transform: scale(1.1);
     }
 `
 

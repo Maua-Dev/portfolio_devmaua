@@ -110,25 +110,24 @@ export const RightContainer = styled.div`
 `
 
 export const Social = styled.img`
-    width: 100px;
-    height: 100px;
-    margin-right: 2%;
+    width: 90px;
+    height: 90px;
     cursor: pointer;
     transition: all 0.3s;
 
     @media (max-width: 1440px) {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     }
 
     @media (max-width: 768px) {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     }
 
     @media (max-width: 600px) {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     }
 
     &:hover {
@@ -137,28 +136,26 @@ export const Social = styled.img`
 `
 
 export const CircleMF = styled.div`
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     border-radius: 100%;
     background-color: ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
     transition: all 0.3s;
     display: flex;
-    justify-content: center;
-    align-items: center;
 
     @media (max-width: 1440px) {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     }
 
     @media (max-width: 768px) {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     }
 
     @media (max-width: 600px) {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     }
 
     &:hover {
@@ -172,31 +169,30 @@ export const MemberSocial = styled.div`
     width: 90%;
     height: 40%;
     justify-content: center;
-    margin-right: 10%;
-    gap: 4%;
+    gap: 5%;
 `
 
 export const MemberPhoto = styled.img`
     margin-top: 10%;
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     object-fit: cover;
     border-radius: 100%;
     border: 3px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
     background-color: #FFFFFF;
 
     @media (max-width: 1440px) {
-    width: 250px;
-    height: 250px;
+    width: 230px;
+    height: 230px;
     }
 
     @media (max-width: 768px) {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     }
 
     @media (max-width: 600px) {
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
     }
 `
