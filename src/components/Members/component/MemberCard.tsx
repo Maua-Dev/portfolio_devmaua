@@ -50,6 +50,10 @@ export const MemberCard: React.FC <MemberCardProps> = ({member, setMember}) => {
   }
   
   const idade = calcularIdade(member.birthday)
+
+  const handleImageError = (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    event.currentTarget.src = bucketURL + "/perfilErro.png";
+  }
   
   return (
     <Container ref={ref}>
@@ -86,7 +90,7 @@ export const MemberCard: React.FC <MemberCardProps> = ({member, setMember}) => {
         )}
       </LeftContainer>
       <RightContainer>
-        <MemberPhoto src={bucketURL + "/" + member.photo} alt="profile" />
+        <MemberPhoto src={bucketURL + "/" + member.photo} onError={handleImageError} alt="profile" />
         <MemberSocial>
           {member.linkedin && (
             <CircleMF>
