@@ -35,10 +35,12 @@ jobs:
             yarn global add aws-cdk
             yarn install -g
             cd iac
-            yarn install -g
+            npm install
         - name: Build and Export
           run: |
             yarn vite build
+          env: 
+            VITE_BUCKET_ASSETS: ${{ vars.VITE_BUCKET_ASSETS }}
         - name: Setup envs
           run: |
             echo AWS_REGION=${{ vars.AWS_REGION }} >> $GITHUB_ENV
@@ -48,16 +50,19 @@ jobs:
             echo ACM_CERTIFICATE_ARN=${{ secrets.DEVMAUA_ACM_CERTIFICATE_ARN }} >> $GITHUB_ENV
             echo HOSTED_ZONE_ID=${{ secrets.DEVMAUA_HOSTED_ZONE_ID }} >> $GITHUB_ENV
             echo ALTERNATIVE_DOMAIN=${{ vars.ALTERNATIVE_DOMAIN_NAME }} >> $GITHUB_ENV        
-            echo STAGE=${{ github.ref_name }} >> $GITHUB_ENV        
+            echo STAGE=${{ github.ref_name }} >> $GITHUB_ENV
+            echo S3_BUCKET_NAME=${{ vars.S3_BUCKET_NAME }} >> $GITHUB_ENV
         - name: Deploy with CDK
           run: |
             cd iac
             cdk synth
             cdk deploy --require-approval never 
-        - name: Set CloudFront ID
+        - name: Set CloudFront IDs
           run: |
             CLOUD_FRONT_ID=$(aws cloudformation --region ${{vars.AWS_REGION}} describe-stacks --stack-name ${{env.STACK_NAME}} --query "Stacks[0].Outputs[?OutputKey=='PortfolioDevMauaFrontDistributionId${{github.ref_name}}'].OutputValue" --output text)
             echo "CLOUD_FRONT_ID='$CLOUD_FRONT_ID'" >> $GITHUB_ENV
+            CLOUD_FRONT_ID_BUCKET_ASSETS=${{ vars.CLOUD_FRONT_ID_BUCKET_ASSETS }}
+            echo "CLOUD_FRONT_ID_BUCKET_ASSETS='$CLOUD_FRONT_ID_BUCKET_ASSETS'" >> $GITHUB_ENV
         - name: Set AWS Bucket
           run: |
             AWS_BUCKET=$(aws cloudformation --region ${{vars.AWS_REGION}} describe-stacks --stack-name ${{env.STACK_NAME}} --query "Stacks[0].Outputs[?OutputKey=='PortfolioDevMauaFrontBucketName${{github.ref_name}}'].OutputValue" --output text)
@@ -65,4 +70,8 @@ jobs:
         - name: Upload to S3
           run: aws s3 cp dist s3://${{env.AWS_BUCKET}}/ --recursive --region ${{ vars.AWS_REGION }}
         - name: Clear CDN cache
-          run: aws cloudfront create-invalidation --distribution-id ${{env.CLOUD_FRONT_ID}} --paths "/*" --region us-east-1
+          run: |
+            aws cloudfront create-invalidation --distribution-id ${{env.CLOUD_FRONT_ID}} --paths "/*" --region us-east-1
+            aws cloudfront create-invalidation --distribution-id ${{env.CLOUD_FRONT_ID_BUCKET_ASSETS}} --paths "/*" --region us-east-1
+
+

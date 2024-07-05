@@ -1,11 +1,16 @@
-import { ButtonNavbar, Container, Logo } from "./styles";
+import { NavbarDesktop } from "./NavBarDesktop";
+import { NavbarMobile } from "./NavBarMobile";
 
-export function Navbar() {
-  return <Container>
-    <Logo src="https://i.imgur.com/9nNwPiN.png" alt="logo" onClick={window.location.reload} />
-    <ButtonNavbar>O que fazemos?</ButtonNavbar>
-    <ButtonNavbar>Projetos</ButtonNavbar>
-    <ButtonNavbar>Membros</ButtonNavbar>
-    <ButtonNavbar>Contato</ButtonNavbar>
-  </Container>
+interface Props {
+  toggleTheme: () => void;
 }
+
+export const Navbar: React.FC<Props> = ({ toggleTheme }) => {
+
+  return (
+    <>
+      <NavbarDesktop toggleTheme={toggleTheme} />
+      <NavbarMobile toggleTheme={toggleTheme} />
+    </>
+  );
+};
