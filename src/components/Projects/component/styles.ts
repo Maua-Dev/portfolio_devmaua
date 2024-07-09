@@ -146,3 +146,22 @@ export const ProjectImageFood = styled.img`
     height: 110px;
     }
 `
+
+export const Description = styled.div`
+    font-family: 'Poppins';
+    font-size: ${props => props.theme.fontsSizes.mobile.h4};
+    font-weight: 400;
+    line-height: 20px;
+    color: ${props => props.theme.colors.secondary};
+    margin-top: 5%;
+    text-align: justify;
+    margin-top: 15%;
+
+    @media (max-width: 768px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    }
+
+    @media (max-width: 400px) {
+    font-size: ${props => props.theme.fontsSizes.mobile.caption};
+    }
+`

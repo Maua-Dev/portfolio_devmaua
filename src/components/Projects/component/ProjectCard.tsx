@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Container, Data, LeftContainer, ProjectImage, ProjectImageFood, ProjectName, RightContainer, Technologies } from "./styles";
+import { Container, Data, Description, LeftContainer, ProjectImage, ProjectImageFood, ProjectName, RightContainer, Technologies } from "./styles";
 import { Project } from ".."
 
 interface ProjectCardProps {
@@ -47,6 +47,9 @@ export const ProjectCard: React.FC <ProjectCardProps> = ({project, setProject}) 
         <Data>
           Backend: {project.backend}
         </Data>
+        <Description>
+          {project.description}
+        </Description>
       </LeftContainer>
       <RightContainer>
         {renderProjectImage()}
