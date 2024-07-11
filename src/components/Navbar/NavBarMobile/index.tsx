@@ -102,14 +102,6 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
             <MenuFooter>
               <RowSocial>
                 <Social
-                  src={
-                    theme?.title === "light"
-                      ? `${bucketURL}/googleBlack.png`
-                      : `${bucketURL}/googleWhite.png`
-                  }
-                  alt="google"
-                />
-                <Social
                   onClick={handleInstagram}
                   src={
                     theme?.title === "light"
