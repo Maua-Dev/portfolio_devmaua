@@ -69,7 +69,7 @@ export const Option = styled.p`
   }
 
   &:hover {
-    color: ${props => props.theme.title === 'light' ? props.theme.colors.secondary : props.theme.colors.blue.quaternary};
+    color: ${props => props.theme.title === 'light' ? props.theme.colors.red.primary : props.theme.colors.blue.quaternary};
   }
 `
 
