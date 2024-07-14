@@ -76,7 +76,6 @@ export const Description = styled.h1`
   @media (max-width: 481px) {
     font-size: ${props => props.theme.fontsSizes.mobile.p_small};
   }
-
 `
 
 export const Card = styled.div`

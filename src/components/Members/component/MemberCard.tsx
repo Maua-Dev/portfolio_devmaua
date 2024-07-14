@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef } from "react";
-import { CircleMF, Container, LeftContainer, MemberData, MemberKey, MemberName, MemberPhoto, MemberSocial, MemberTech, MemberValue, RightContainer, Social } from "./styles";
+import { CircleMF, Container, LeftContainer, MemberData, MemberKey, MemberName, MemberPhoto, MemberSocial, MemberTech, MemberValue, Overlay, RightContainer, Social } from "./styles";
 import { Member } from "..";
 import { ThemeContext } from "styled-components";
 import { bucketURL } from "../../../utils/enviroments";
@@ -43,10 +43,10 @@ export const MemberCard: React.FC <MemberCardProps> = ({member, setMember}) => {
   const theme = useContext(ThemeContext)
 
   function handleGithub() {
-    if (member.github) {window.location.href = member.github}
+    if (member.github) {window.open(member.github, "_blank")}
   }
   function handleLinkedin() {
-    if (member.linkedin) {window.location.href = member.linkedin}
+    if (member.linkedin) {window.open(member.linkedin, "_blank")}
   }
   
   const idade = calcularIdade(member.birthday)
@@ -56,61 +56,63 @@ export const MemberCard: React.FC <MemberCardProps> = ({member, setMember}) => {
   }
   
   return (
-    <Container ref={ref}>
-      <LeftContainer>
-        <MemberName>{member.name}</MemberName>
-        {member.course && (
-          <MemberData>
-            <MemberKey>Curso: </MemberKey>
-            <MemberValue>{member.course}</MemberValue>
-          </MemberData>
-        )}
-        {member.year && (
-          <MemberData>
-            <MemberKey>Ano: </MemberKey>
-            <MemberValue>{member.year[0]} °</MemberValue>
-          </MemberData>
-        )}
-        {member.birthday && (
-          <MemberData>
-            <MemberKey>Idade: </MemberKey>
-            <MemberValue>{idade} anos</MemberValue>
-          </MemberData>
-        )}
-        {member.technologies.length > 0 && (
-          <MemberTech>
-            <MemberKey>Principais Tecnologias: </MemberKey>
-            <MemberValue>{member.technologies.map((t, i) => (
-              <React.Fragment key={i}>
-                      {t}
-                      {i < member.technologies.length - 1 && ", "}
-                    </React.Fragment>
-                  ))}</MemberValue>
-          </MemberTech>
-        )}
-      </LeftContainer>
-      <RightContainer>
-        <MemberPhoto src={bucketURL + "/" + member.photo} onError={handleImageError} alt="profile" />
-        <MemberSocial>
-          {member.linkedin && (
-            <CircleMF>
+    <Overlay>
+      <Container ref={ref}>
+        <LeftContainer>
+          <MemberName>{member.name}</MemberName>
+          {member.course && (
+            <MemberData>
+              <MemberKey>Curso: </MemberKey>
+              <MemberValue>{member.course}</MemberValue>
+            </MemberData>
+          )}
+          {member.year && (
+            <MemberData>
+              <MemberKey>Ano: </MemberKey>
+              <MemberValue>{member.year[0]} °</MemberValue>
+            </MemberData>
+          )}
+          {member.birthday && (
+            <MemberData>
+              <MemberKey>Idade: </MemberKey>
+              <MemberValue>{idade} anos</MemberValue>
+            </MemberData>
+          )}
+          {member.technologies.length > 0 && (
+            <MemberTech>
+              <MemberKey>Principais Tecnologias: </MemberKey>
+              <MemberValue>{member.technologies.map((t, i) => (
+                <React.Fragment key={i}>
+                        {t}
+                        {i < member.technologies.length - 1 && ", "}
+                      </React.Fragment>
+                    ))}</MemberValue>
+            </MemberTech>
+          )}
+        </LeftContainer>
+        <RightContainer>
+          <MemberPhoto src={bucketURL + "/" + member.photo} onError={handleImageError} alt="profile" />
+          <MemberSocial>
+            {member.linkedin && (
+              <CircleMF>
+                <Social
+                  onClick={handleLinkedin}
+                  style={{width: '100%', height: 'auto'}}
+                  src={`${bucketURL}/linkedin.png`}
+                  alt="LinkedIn"
+                />
+              </CircleMF>
+            )}
+            {member.github && (
               <Social
-                onClick={handleLinkedin}
-                style={{width: '100%', height: 'auto'}}
-                src={`${bucketURL}/linkedin.png`}
-                alt="LinkedIn"
+                onClick={handleGithub}
+                src={theme?.title === "light" ? `${bucketURL}/githubMemberBlue.png` : `${bucketURL}/githubMemberRed.png`}
+                alt="GitHub"
               />
-            </CircleMF>
-          )}
-          {member.github && (
-            <Social
-              onClick={handleGithub}
-              src={theme?.title === "light" ? `${bucketURL}/githubMemberBlue.png` : `${bucketURL}/githubMemberRed.png`}
-              alt="GitHub"
-            />
-          )}
-        </MemberSocial>
-      </RightContainer>
-    </Container>
+            )}
+          </MemberSocial>
+        </RightContainer>
+      </Container>
+    </Overlay>
   )
 }
