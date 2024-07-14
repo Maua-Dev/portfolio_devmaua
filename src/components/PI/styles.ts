@@ -98,33 +98,33 @@ export const RightContainer = styled.div`
 `
 
 export const PIImgBlack = styled.img`
-    width: 380px;
+    width: 50%;
     height: 100%;
     object-fit: contain;
     margin-top: 6%;
 
-    @media (max-width: 1024px) {
+    /* @media (max-width: 1024px) {
         width: 280px;
     }
     
     @media (max-width: 768px) {
         width: 200px;
-    }
+    } */
 `
 
 export const PIImgWhite = styled.img`
-    width: 380px;
+    width: 50%;
     height: 100%;
     z-index: 100;
     object-fit: contain;
     margin-top: 18%;
     margin-left: -16%;
     
-    @media (max-width: 1024px) {
+    /* @media (max-width: 1024px) {
         width: 280px;
     }
 
     @media (max-width: 768px) {
-        width: 200px;
+        width: 200px; */
     }
 `

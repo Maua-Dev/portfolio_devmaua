@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { bucketURL } from "../../utils/enviroments";
 import { Container, Description, RightContainer, Title, Portal, LeftContainer, Content, PIImgBlack, PIImgWhite } from "./styles";
+import { ThemeContext } from "styled-components";
 
 export const PI : React.FC = () => {
+
+    const theme = useContext(ThemeContext);
+
     return(
         <Container>
             <Title>Portal Interno</Title>
@@ -15,8 +20,8 @@ export const PI : React.FC = () => {
                     </Portal>
                 </LeftContainer>
                 <RightContainer>
-                    <PIImgBlack src={`${bucketURL}/PIBlack.png`} alt="PortealInternoBlack"/>
-                    <PIImgWhite src={`${bucketURL}/PIWhite.png`} alt="PortalInternoWhite"/>
+                    <PIImgBlack src={theme?.title === 'light' ? `${bucketURL}/PIBlack.png` : `${bucketURL}/PIWhite.png`} alt="PortealInternoBlack"/>
+                    <PIImgWhite src={theme?.title === 'light' ? `${bucketURL}/PIWhite.png` : `${bucketURL}/PIBlack.png`} alt="PortalInternoWhite"/>
                 </RightContainer>
             </Content>
         </Container>
