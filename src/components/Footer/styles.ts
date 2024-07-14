@@ -84,6 +84,8 @@ export const RowSocial = styled.div`
 export const Social = styled.img`
   width: 5%;
   height: 5%;
+  background-color: ${props => props.theme.colors.primary};
+  border-radius: 10px;
   margin-right: 2%;
   cursor: pointer;
   transition: all 0.3s;
