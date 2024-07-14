@@ -8,6 +8,7 @@ import usePersistedState from './utils/usePersistedState'
 import { DefaultTheme } from 'styled-components/dist/types'
 import { About } from './components/About'
 import { Projects } from './components/Projects'
+import { PI } from './components/PI'
 import { Members } from './components/Members'
 import { Footer } from './components/Footer'
 import './utils/enviroments'
@@ -27,6 +28,7 @@ function App() {
       <Header />
       <About />
       <Projects />
+      <PI/>
       <Members />
       <Footer />
     </ThemeProvider>
