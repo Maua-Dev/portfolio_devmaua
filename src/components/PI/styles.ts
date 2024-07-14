@@ -102,14 +102,6 @@ export const PIImgBlack = styled.img`
     height: 100%;
     object-fit: contain;
     margin-top: 6%;
-
-    /* @media (max-width: 1024px) {
-        width: 280px;
-    }
-    
-    @media (max-width: 768px) {
-        width: 200px;
-    } */
 `
 
 export const PIImgWhite = styled.img`
@@ -119,12 +111,4 @@ export const PIImgWhite = styled.img`
     object-fit: contain;
     margin-top: 18%;
     margin-left: -16%;
-    
-    /* @media (max-width: 1024px) {
-        width: 280px;
-    }
-
-    @media (max-width: 768px) {
-        width: 200px; */
-    }
 `
