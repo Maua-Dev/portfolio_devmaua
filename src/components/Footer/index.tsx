@@ -19,13 +19,13 @@ export const Footer: React.FC = () => {
   const theme = useContext(ThemeContext);
 
   function handleInstagram() {
-    window.location.href = "https://www.instagram.com/devcommunitymaua/";
+    window.open("https://www.instagram.com/devcommunitymaua/", "_blank");
   }
   function handleGithub() {
-    window.location.href = "https://github.com/Maua-Dev";
+    window.open("https://github.com/Maua-Dev", "_blank");
   }
   function handleDiscord() {
-    window.location.href = "https://discord.gg/DyfqfghRYx";
+    window.open("https://discord.gg/DyfqfghRYx", "_blank");
   }
 
   function handleScroll(id: string) {

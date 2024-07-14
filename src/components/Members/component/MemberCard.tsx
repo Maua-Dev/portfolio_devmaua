@@ -43,10 +43,10 @@ export const MemberCard: React.FC <MemberCardProps> = ({member, setMember}) => {
   const theme = useContext(ThemeContext)
 
   function handleGithub() {
-    if (member.github) {window.location.href = member.github}
+    if (member.github) {window.open(member.github, "_blank")}
   }
   function handleLinkedin() {
-    if (member.linkedin) {window.location.href = member.linkedin}
+    if (member.linkedin) {window.open(member.linkedin, "_blank")}
   }
   
   const idade = calcularIdade(member.birthday)
