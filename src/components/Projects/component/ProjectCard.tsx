@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Container, Data, Description, LeftContainer, ProjectImage, ProjectImageFood, ProjectName, RightContainer, Technologies } from "./styles";
+import { Container, Data, Description, LeftContainer, Overlay, ProjectImage, ProjectImageFood, ProjectName, RightContainer, Technologies } from "./styles";
 import { Project } from ".."
 
 interface ProjectCardProps {
@@ -33,27 +33,29 @@ export const ProjectCard: React.FC <ProjectCardProps> = ({project, setProject}) 
   }, [setProject]);
   
   return (
-    <Container ref={ref}>
-      <LeftContainer>
-        <ProjectName>
-          {project.title}
-        </ProjectName>
-        <Technologies>
-          Tecnologias:
-        </Technologies>
-        <Data>
-          Frontend: {project.frontend}
-        </Data>
-        <Data>
-          Backend: {project.backend}
-        </Data>
-        <Description>
-          {project.description}
-        </Description>
-      </LeftContainer>
-      <RightContainer>
-        {renderProjectImage()}
-      </RightContainer>
-    </Container>
+    <Overlay>
+      <Container ref={ref}>
+        <LeftContainer>
+          <ProjectName>
+            {project.title}
+          </ProjectName>
+          <Technologies>
+            Tecnologias:
+          </Technologies>
+          <Data>
+            Frontend: {project.frontend}
+          </Data>
+          <Data>
+            Backend: {project.backend}
+          </Data>
+          <Description>
+            {project.description}
+          </Description>
+        </LeftContainer>
+        <RightContainer>
+          {renderProjectImage()}
+        </RightContainer>
+      </Container>
+    </Overlay>
   )
 }
