@@ -30,6 +30,7 @@ export const NavbarDesktop: React.FC<Props> = ({ toggleTheme }) => {
         />
         <ButtonNavbar onClick={() => handleScroll('header')}>Sobre nós</ButtonNavbar>
         <ButtonNavbar onClick={() => handleScroll('projects')}>Projetos</ButtonNavbar>
+        <ButtonNavbar onClick={() => handleScroll('portalInterno')}>Portal Interno</ButtonNavbar>
         <ButtonNavbar onClick={() => handleScroll('members')}>Membros</ButtonNavbar>
         <ButtonNavbar onClick={() => handleScroll('footer')}>Contato</ButtonNavbar>
         <ButtonIcon>
