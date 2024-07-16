@@ -75,21 +75,46 @@ export const Option = styled.p`
 
 export const RowSocial = styled.div`
   margin-top: 5%;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  @media (max-width: 1200px) {
+    height: 40px;
+  }
+
+  @media (max-width: 480px) {
+    height: 20px;
+  }
 `
 
 export const Social = styled.img`
-  width: 5%;
-  height: 5%;
+  width: 100%;
+  padding: 10%;
+`
+
+export const SocialBackground = styled.div `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 100%;
   background-color: ${props => props.theme.colors.primary};
+  margin-right: 2%;
   padding: 0.5%;
   border-radius: 10px;
-  margin-right: 2%;
   cursor: pointer;
   transition: all 0.3s;
+
+  @media (max-width: 1200px) {
+    width: 40px;
+  }
+
+  @media (max-width: 480px) {
+    width: 20px;
+  }
 
   &:hover {
     transform: scale(1.2);
