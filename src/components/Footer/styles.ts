@@ -75,7 +75,7 @@ export const Option = styled.p`
 
 export const RowSocial = styled.div`
   margin-top: 5%;
-  height: 60px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,7 +99,7 @@ export const SocialBackground = styled.div `
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 5%;
+  width: 70px;
   height: 100%;
   background-color: ${props => props.theme.colors.primary};
   margin-right: 2%;
@@ -107,6 +107,14 @@ export const SocialBackground = styled.div `
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s;
+
+  @media (max-width: 1200px) {
+    width: 40px;
+  }
+
+  @media (max-width: 480px) {
+    width: 20px;
+  }
 
   &:hover {
     transform: scale(1.2);

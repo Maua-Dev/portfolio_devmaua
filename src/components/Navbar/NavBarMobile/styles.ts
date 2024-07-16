@@ -108,7 +108,7 @@ export const MenuFooter = styled.div`
 
 export const RowSocial = styled.div`
   margin-top: 5%;
-  height: 60px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,7 +128,7 @@ export const SocialBackground = styled.div `
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15%;
+  width: 50px;
   height: 100%;
   background-color: ${props => props.theme.colors.secondary};
   margin-right: 2%;
@@ -136,6 +136,10 @@ export const SocialBackground = styled.div `
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s;
+
+  @media (max-width: 480px) {
+    width: 40px;
+  }
 
   &:hover {
     transform: scale(1.2);
