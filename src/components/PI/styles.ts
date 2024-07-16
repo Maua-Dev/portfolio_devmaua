@@ -2,12 +2,9 @@ import styled from 'styled-components'
 import { shade } from 'polished';
 
 export const Container = styled.div`
-    display: none;
-    @media (min-width: 768px) {
-        display: contents;
-        background-color: ${props => props.theme.colors.primary};
-        height: 100%;
-    }
+    display: contents;
+    background-color: ${props => props.theme.colors.primary};
+    height: 100%;
 `
 
 export const Title = styled.h1`
@@ -46,10 +43,12 @@ export const Description = styled.h1`
 
     @media (max-width: 768px) {
         font-size: ${props => props.theme.fontsSizes.mobile.p};
+        margin-top: 6%;
     }
 
     @media (max-width: 481px) {
         font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+        margin-top: 6%;
     }
 `
 export const LeftContainer = styled.div`
@@ -57,6 +56,10 @@ export const LeftContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media (max-width: 768px) {
+        width: 56%;
+    }
 `
 
 export const Portal = styled.button`
@@ -79,22 +82,28 @@ export const Portal = styled.button`
     }
     
     @media (max-width: 1024px) {
-        width: 26%;
+        padding: 10px;
+        width: fit-content;
         font-size: ${props => props.theme.fontsSizes.mobile.h5};
     }
 
     @media (max-width: 768px) {
-        width: 20%;
+        padding: 10px;
+        width: fit-content;
         font-size: ${props => props.theme.fontsSizes.mobile.p_small};
     }
 `
 
 
 export const RightContainer = styled.div`
-    width: 48%;
+    width: 38%;
     display: flex;
     align-items: center;
     height: fit-content;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 export const PIImgBlack = styled.img`
@@ -102,6 +111,11 @@ export const PIImgBlack = styled.img`
     height: 100%;
     object-fit: contain;
     margin-top: 6%;
+
+    @media (max-width: 768px) {
+        margin-top: 0;
+        width: 100%;
+    }
 `
 
 export const PIImgWhite = styled.img`
@@ -111,4 +125,10 @@ export const PIImgWhite = styled.img`
     object-fit: contain;
     margin-top: 18%;
     margin-left: -16%;
+
+    @media (max-width: 768px) {
+        width: 90%;
+        margin-top: -10%;
+        margin-left: 10%;
+    }
 `

@@ -9,7 +9,7 @@ export const PI : React.FC = () => {
 
     return(
         <Container>
-            <Title>Portal Interno</Title>
+            <Title id="portalInterno">Portal Interno</Title>
             <Content>
                 <LeftContainer>
                     <Description>

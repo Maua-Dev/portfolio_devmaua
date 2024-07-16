@@ -55,6 +55,7 @@ export const Footer: React.FC = () => {
               Sobre nós
             </Option>
             <Option onClick={() => handleScroll("projects")}>Projetos</Option>
+            <Option onClick={() => handleScroll("portalInterno")}>Portal Interno</Option>
             <Option onClick={() => handleScroll("members")}>Membros</Option>
             <Option onClick={() => handleScroll("footer")}>Contato</Option>
           </Options>
