@@ -14,7 +14,8 @@ import {
   Social,
   TextVersion,
   MenuFooter,
-  Overlay
+  Overlay,
+  SocialBackground,
 } from "./styles";
 import { HiOutlineViewList } from "react-icons/hi";
 import { bucketURL } from "../../../utils/enviroments";
@@ -101,36 +102,48 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
             </MenuItems>
             <MenuFooter>
               <RowSocial>
-                <Social
-                  onClick={handleInstagram}
-                  src={
-                    theme?.title === "light"
-                      ? `${bucketURL}/instaBlack.png`
-                      : `${bucketURL}/instaWhite.png`
-                  }
-                  alt="instagram"
-                />
-                <Social
-                  onClick={handleGithub}
-                  src={
-                    theme?.title === "light"
-                      ? `${bucketURL}/githubBlack.png`
-                      : `${bucketURL}/githubWhite.png`
-                  }
-                  alt="google"
-                />
-                <Social
-                  onClick={handleDiscord}
-                  src={
-                    theme?.title === "light"
-                      ? `${bucketURL}/discBlack.png`
-                      : `${bucketURL}/discWhite.png`
-                  }
-                  alt="discord"
-                />
+                <SocialBackground>
+                  <Social
+                    onClick={handleInstagram}
+                    src={
+                      theme?.title === "light"
+                        ? `${bucketURL}/instaBlack.png`
+                        : `${bucketURL}/instaWhite.png`
+                    }
+                    alt="instagram"
+                  />
+                </SocialBackground>
+                <SocialBackground>
+                  <Social
+                    onClick={handleGithub}
+                    src={
+                      theme?.title === "light"
+                        ? `${bucketURL}/githubBlack.png`
+                        : `${bucketURL}/githubWhite.png`
+                    }
+                    alt="google"
+                  />
+                </SocialBackground>
+                <SocialBackground>
+                  <Social
+                    onClick={handleDiscord}
+                    src={
+                      theme?.title === "light"
+                        ? `${bucketURL}/discBlack.png`
+                        : `${bucketURL}/discWhite.png`
+                    }
+                    alt="discord"
+                  />
+                </SocialBackground>
               </RowSocial>
               <TextVersion>
                 Nosso site está sob constante mudança. Versão: 2.0.0
+              </TextVersion>
+              <TextVersion style={{ marginTop: "1%" }}>
+                Praça Mauá, 1 - Mauá, São Caetano do Sul - SP, 09580-900
+              </TextVersion>
+              <TextVersion style={{ marginTop: "1%" }}>
+                dev@maua.br
               </TextVersion>
             </MenuFooter>
           </NavMenu>

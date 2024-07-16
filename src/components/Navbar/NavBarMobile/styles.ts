@@ -107,22 +107,39 @@ export const MenuFooter = styled.div`
 `
 
 export const RowSocial = styled.div`
+  margin-top: 5%;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4%;
   width: 100%;
+
+  @media (max-width: 480px) {
+    height: 40px;
+  }
 `
 
 export const Social = styled.img`
-  width: 10%;
+  width: 100%;
+  padding: 10%;
+`
+
+export const SocialBackground = styled.div `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: 100%;
+  background-color: ${props => props.theme.colors.secondary};
   margin-right: 2%;
+  padding: 0.5%;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s;
 
-&:hover {
-  transform: scale(1.2);
-}
+  &:hover {
+    transform: scale(1.2);
+  }
 `
 
 export const TextVersion = styled.p`
