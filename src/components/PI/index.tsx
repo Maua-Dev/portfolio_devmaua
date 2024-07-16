@@ -7,6 +7,10 @@ export const PI : React.FC = () => {
 
     const theme = useContext(ThemeContext);
 
+    const handlePortalInterno = () => {
+        window.open("https://onlydevs.devmaua.com/login", "_blank");
+    };
+
     return(
         <Container>
             <Title id="portalInterno">Portal Interno</Title>
@@ -15,7 +19,7 @@ export const PI : React.FC = () => {
                     <Description>
                         Um site feito pelos integrantes da Dev Community, que tem o objetivo de ajudar a comunidade a contabilizar suas horas dedicadas a Dev.
                     </Description>
-                    <Portal>
+                    <Portal onClick={handlePortalInterno}>
                         Acessar PI
                     </Portal>
                 </LeftContainer>
