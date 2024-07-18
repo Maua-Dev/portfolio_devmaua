@@ -94,14 +94,11 @@ export const MemberCard: React.FC <MemberCardProps> = ({member, setMember}) => {
           <MemberPhoto src={bucketURL + "/" + member.photo} onError={handleImageError} alt="profile" />
           <MemberSocial>
             {member.linkedin && (
-              <CircleMF>
-                <Social
-                  onClick={handleLinkedin}
-                  style={{width: '100%', height: 'auto'}}
-                  src={`${bucketURL}/linkedin.png`}
-                  alt="LinkedIn"
-                />
-              </CircleMF>
+              <Social
+                onClick={handleLinkedin}
+                src={theme?.title === "light" ? `${bucketURL}/linkedinWhite.png` : `${bucketURL}/linkedinBlack.png`}
+                alt="LinkedIn"
+              />
             )}
             {member.github && (
               <Social
