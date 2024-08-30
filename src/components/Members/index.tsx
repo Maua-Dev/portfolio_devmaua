@@ -23,18 +23,22 @@ export const Members: React.FC = () => {
   const [todosMembros, setTodosMembros] = useState<Member[]>([])
   const [membros, setMembros] = useState<Member[]>([])
   const [member, setMember] = useState<Member | null>(null)
+  const [tagsDisponiveis, setTagsDisponiveis] = useState<string[]>([])
 
   useEffect(() => {
     const fetchMembers = async () => {
-        const response = await axios.get(`${bucketURL}/members.json`)
-        
-        const responseSorted: Member[] = response.data.sort((a: Member, b: Member) => a.name.localeCompare(b.name))
-        
-        setTodosMembros(responseSorted)
-        setMembros(responseSorted)
-    }
-    fetchMembers()
-  }, [])
+      const response = await axios.get(`${bucketURL}/members.json`);
+      const responseSorted: Member[] = response.data.sort((a: Member, b: Member) => a.name.localeCompare(b.name));
+
+      // Extraindo todas as tags únicas
+      const allTags = Array.from(new Set(responseSorted.flatMap(m => m.tag)));
+      setTagsDisponiveis(allTags);
+
+      setTodosMembros(responseSorted);
+      setMembros(responseSorted);
+    };
+    fetchMembers();
+  }, []);
 
   useEffect(() => {
     if (filtro === '') {
@@ -65,12 +69,11 @@ export const Members: React.FC = () => {
       {member != null && <MemberCard member={member} setMember={setMember}/>}
       <Title id="members">Membros</Title>
       <RowCards>
-        <CardSelect selected={filtro === "Diretoria"} onClick={() => handleClick("Diretoria")}>Diretoria</CardSelect>
-        <CardSelect selected={filtro === "DEV"} onClick={() => handleClick("DEV")}>Devs</CardSelect>
-        <CardSelect selected={filtro === "Infra"} onClick={() => handleClick("Infra")}>Infra</CardSelect>
-        <CardSelect selected={filtro === "UX / UI"} onClick={() => handleClick("UX / UI")}>UX/UI</CardSelect>
-        <CardSelect selected={filtro === "PO"} onClick={() => handleClick("PO")}>POs</CardSelect>
-        <CardSelect selected={filtro === "Comunicação"} onClick={() => handleClick("Comunicação")}>Comunicação</CardSelect>
+      {tagsDisponiveis.map((tag) => (
+          <CardSelect key={tag} selected={filtro === tag} onClick={() => handleClick(tag)}>
+            {tag}
+          </CardSelect>
+        ))}
       </RowCards>
       <RowCards style={{ justifyContent: 'flex-start' }}>
         {membros.map((data) => (
