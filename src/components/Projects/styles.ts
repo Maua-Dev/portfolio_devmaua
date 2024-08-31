@@ -46,6 +46,7 @@ export const CardProject = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   @media (max-width: 1279px) {
     height: 160px;

@@ -1,16 +1,29 @@
-import React, { useContext, useEffect, useRef } from "react";
-import { CircleMF, Container, LeftContainer, MemberData, MemberKey, MemberName, MemberPhoto, MemberSocial, MemberTech, MemberValue, Overlay, RightContainer, Social } from "./styles";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import {
+  CircleMF,
+  Container,
+  LeftContainer,
+  MemberData,
+  MemberKey,
+  MemberName,
+  MemberPhoto,
+  MemberSocial,
+  MemberTech,
+  MemberValue,
+  Overlay,
+  RightContainer,
+  Social,
+} from "./styles";
 import { Member } from "..";
 import { ThemeContext } from "styled-components";
 import { bucketURL } from "../../../utils/enviroments";
 
-interface MemberCardProps { 
-  member: Member,
-  setMember : (member: Member | null) => void
+interface MemberCardProps {
+  member: Member;
+  setMember: (member: Member | null) => void;
 }
 
-function calcularIdade(dataNascimento : string) {
-
+function calcularIdade(dataNascimento: string) {
   const hoje = new Date();
   const nascimento = new Date(dataNascimento);
   let idade = hoje.getFullYear() - nascimento.getFullYear();
@@ -23,14 +36,26 @@ function calcularIdade(dataNascimento : string) {
   return idade;
 }
 
-export const MemberCard: React.FC <MemberCardProps> = ({member, setMember}) => {
-
+export const MemberCard: React.FC<MemberCardProps> = ({
+  member,
+  setMember,
+}) => {
   const ref = useRef<HTMLDivElement>(null);
-  
+  const [fade, setFade] = useState(false);
+  const idade = calcularIdade(member.birthday);
+  const theme = useContext(ThemeContext);
+
+  useEffect(() => {
+    setFade(true);
+  } , []);
+
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
-        setMember(null);
+        setFade(false);
+        setTimeout(() => {
+          setMember(null);
+        }, 400); 
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -39,25 +64,26 @@ export const MemberCard: React.FC <MemberCardProps> = ({member, setMember}) => {
     };
   }, [setMember]);
 
-
-  const theme = useContext(ThemeContext)
-
   function handleGithub() {
-    if (member.github) {window.open(member.github, "_blank")}
+    if (member.github) {
+      window.open(member.github, "_blank");
+    }
   }
   function handleLinkedin() {
-    if (member.linkedin) {window.open(member.linkedin, "_blank")}
+    if (member.linkedin) {
+      window.open(member.linkedin, "_blank");
+    }
   }
-  
-  const idade = calcularIdade(member.birthday)
 
-  const handleImageError = (event: React.SyntheticEvent<HTMLImageElement, Event>) => {
+  const handleImageError = (
+    event: React.SyntheticEvent<HTMLImageElement, Event>
+  ) => {
     event.currentTarget.src = bucketURL + "/perfilErro.png";
-  }
-  
+  };
+
   return (
-    <Overlay>
-      <Container ref={ref}>
+    <Overlay fade={fade}>
+      <Container ref={ref} fade={fade}>
         <LeftContainer>
           <MemberName>{member.name}</MemberName>
           {member.course && (
@@ -81,29 +107,43 @@ export const MemberCard: React.FC <MemberCardProps> = ({member, setMember}) => {
           {member.technologies.length > 0 && (
             <MemberTech>
               <MemberKey>Principais Tecnologias: </MemberKey>
-              <MemberValue>{member.technologies.map((t, i) => (
-                <React.Fragment key={i}>
-                        {t}
-                        {i < member.technologies.length - 1 && ", "}
-                      </React.Fragment>
-                    ))}</MemberValue>
+              <MemberValue>
+                {member.technologies.map((t, i) => (
+                  <React.Fragment key={i}>
+                    {t}
+                    {i < member.technologies.length - 1 && ", "}
+                  </React.Fragment>
+                ))}
+              </MemberValue>
             </MemberTech>
           )}
         </LeftContainer>
         <RightContainer>
-          <MemberPhoto src={bucketURL + "/" + member.photo} onError={handleImageError} alt="profile" />
+          <MemberPhoto
+            src={bucketURL + "/" + member.photo}
+            onError={handleImageError}
+            alt="profile"
+          />
           <MemberSocial>
             {member.linkedin && (
               <Social
                 onClick={handleLinkedin}
-                src={theme?.title === "light" ? `${bucketURL}/linkedinWhite.png` : `${bucketURL}/linkedinBlack.png`}
+                src={
+                  theme?.title === "light"
+                    ? `${bucketURL}/linkedinWhite.png`
+                    : `${bucketURL}/linkedinBlack.png`
+                }
                 alt="LinkedIn"
               />
             )}
             {member.github && (
               <Social
                 onClick={handleGithub}
-                src={theme?.title === "light" ? `${bucketURL}/githubMemberBlue.png` : `${bucketURL}/githubMemberRed.png`}
+                src={
+                  theme?.title === "light"
+                    ? `${bucketURL}/githubMemberBlue.png`
+                    : `${bucketURL}/githubMemberRed.png`
+                }
                 alt="GitHub"
               />
             )}
@@ -111,5 +151,5 @@ export const MemberCard: React.FC <MemberCardProps> = ({member, setMember}) => {
         </RightContainer>
       </Container>
     </Overlay>
-  )
-}
+  );
+};

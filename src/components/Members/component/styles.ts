@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+    fade: boolean;
+}
+export const Container = styled.div<ContainerProps>`
     position: fixed; 
     top: 50%; 
     left: 50%; 
@@ -9,6 +12,8 @@ export const Container = styled.div`
     align-items: center;
     width: 70%;
     height: 60%;
+    opacity: ${props => props.fade ? '1' : '0'};
+    transition: all 0.3s ease-in-out;
     background-color: ${props =>  props.theme.colors.primary };
     border-radius: 30px;
     border: 4px solid ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
@@ -203,8 +208,10 @@ export const MemberPhoto = styled.img`
     }
 `
 
-export const Overlay = styled.div`
+export const Overlay = styled.div<ContainerProps>`
     position: fixed;
+    opacity: ${props => props.fade ? '1' : '0'};
+    transition: all 0.3s ease-in-out;
     top: 0;
     left: 0;
     width: 100%;

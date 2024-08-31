@@ -8,6 +8,8 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard: React.FC <ProjectCardProps> = ({project, setProject}) => {
+  const [fade, setFade] = React.useState(false);
+  const ref = useRef<HTMLDivElement>(null);
 
   const renderProjectImage = () => {
     if (project.title === "MAUÁ FOOD") {
@@ -18,23 +20,30 @@ export const ProjectCard: React.FC <ProjectCardProps> = ({project, setProject}) 
     return <ProjectImage src={project.image} alt="Project Image" />;
   };
 
-  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    setFade(true);
+  }, []);
   
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (ref.current && !ref.current.contains(e.target as Node)) {
-        setProject(null);
+        setFade(false);
+        setTimeout(() => {
+          setProject(null);
+        }, 400);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
+
+
   }, [setProject]);
   
   return (
-    <Overlay>
-      <Container ref={ref}>
+    <Overlay fade={fade}>
+      <Container ref={ref} fade={fade}>
         <LeftContainer>
           <ProjectName>
             {project.title}
