@@ -76,8 +76,8 @@ export const Members: React.FC = () => {
         ))}
       </RowCards>
       <RowCards style={{ justifyContent: 'flex-start' }}>
-        {membros.map((data) => (
-          <CardMember key={data.ra} onClick={() => setMember(data)}>
+        {membros.map((data, index) => (
+          <CardMember key={data.ra} onClick={() => setMember(data)} delay={index*100}>
             <Avatar src={bucketURL + "/" + data.photo} onError={handleImageError} alt="profile" />
             <MemberName>{data.name}</MemberName>
             <StackName>
