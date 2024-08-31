@@ -5,13 +5,12 @@ export const Container = styled.div`
 
 export const SecondContainer = styled.div`
   display: none;
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: ${ props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.primary };
     width: 100%;
-    /* height: 30%;  PERGUNTAR SE PODEMOS DEIXAR COMO PIXEL :  pode sim, só ver a responsividade*/ 
     height: 130px;
   }
   
@@ -92,7 +91,7 @@ export const ThemeIcon = styled.div`
 `;
 
 export const Linha = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     height: 4px;
     background-color: ${ props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary };
   }
