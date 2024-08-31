@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "styled-components";
 import {
   ButtonIcon,
@@ -30,10 +30,21 @@ interface Props {
 
 export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
   const theme = useContext(ThemeContext);
+  const [ fade , setFade ] = useState<boolean>(false);
   const [sidebarVisibility, setSidebarVisibility] = useState<boolean>(false);
 
   const handleSidebarVisibility = () => {
-    setSidebarVisibility(!sidebarVisibility);
+    if (sidebarVisibility) {
+      setFade(false);
+      setTimeout(() => {
+        setSidebarVisibility(false);
+      }, 500); 
+    } else {
+      setSidebarVisibility(true);
+      setTimeout(() => {
+        setFade(true);
+      }, 10); 
+    }
   };
 
   function handleInstagram() {
@@ -67,8 +78,8 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
       </Container>
       {sidebarVisibility ? (
         <>
-          <Overlay onClick={handleSidebarVisibility}></Overlay>
-          <NavMenu>
+          <Overlay fade={fade} onClick={handleSidebarVisibility} />
+          <NavMenu fade={fade}>
             <MenuHeader>
               <MenuLogo
                 src={
@@ -85,13 +96,13 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
             <MenuItems onClick={handleSidebarVisibility}>
               {MenuData.map((item, index) => {
                 return (
-                  <Item key={index} onClick={() => handleScroll(item.path)}>
+                  <Item key={index} onClick={() => handleScroll(item.path)} fade={fade} delay={index * 100}>
                     <Icon>{item.icon}</Icon>
                     <span>{item.title}</span>
                   </Item>
                 );
               })}
-              <Item onClick={toggleTheme}>
+              <Item onClick={toggleTheme}  fade={fade} delay={500} >
                 <Icon>
                   {theme?.title === "light" ? <MdSunny /> : <FaMoon />}
                 </Icon>

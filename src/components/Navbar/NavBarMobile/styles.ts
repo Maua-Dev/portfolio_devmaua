@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface ContainerProps {
+  fade: boolean;
+}
+
 export const Container = styled.div`
   display: none;
   width: 100%;
@@ -43,7 +47,10 @@ export const Logo = styled.img`
   
 `;
 
-export const NavMenu = styled.nav`
+export const NavMenu = styled.nav<ContainerProps>`
+  opacity: ${props => props.fade ? '1' : '0'};
+  transition: all 0.3s;
+  transform: ${props => props.fade ? 'translateX(0)' : 'translateX(100%)'};
   display: flex;
   position: fixed;
   height: 100%;
@@ -69,18 +76,26 @@ export const MenuItems = styled.ul`
   margin-left: 10%;
 `
 
-export const Item = styled.button`
+export const Item = styled.button<{fade: boolean, delay: number}>`
+  transition: all 1s ease;
+  transform: ${props => (props.fade ? "translateX(0)" : "translateX(100%)")};
+  opacity: ${props => (props.fade ? "1" : "0")};
+  transition-delay: ${props => `${props.delay}ms`};
   width: 100%;
   display: flex;
   justify-content: start;
   align-items: center;
   padding: 2%;
-  background-color: ${ props => props.theme.title === 'light' ? props.theme.colors.primary : props.theme.colors.primary };
+  background-color: transparent;
   font-size: ${props => props.theme.fontsSizes.mobile.h5};
   font-weight: bold;
   border: none;
   color: ${props => props.theme.colors.secondary};
   
+
+  &:hover {
+    transform: ${props => (props.fade ? "scale(1.1)" : "none")};
+  }
 `
 
 export const Icon = styled.div`
@@ -161,7 +176,9 @@ export const TextVersion = styled.p`
   }
 `
 
-export const Overlay = styled.div`
+export const Overlay = styled.div<ContainerProps>`
+  opacity: ${props => props.fade ? '1' : '0'};
+  transition: all 0.3s ease-in-out;
   display: none;
   width: 100%;
   height: 100%;
