@@ -91,7 +91,12 @@ export const MemberCard: React.FC<MemberCardProps> = ({
               <MemberValue>{member.course}</MemberValue>
             </MemberData>
           )}
-          {member.year && (
+          {member.year && member.tag.indexOf("Advisor") > -1 ? (
+            <MemberData>
+              <MemberKey>Ano: </MemberKey>
+              <MemberValue>{member.year}</MemberValue>
+            </MemberData>
+          ) : (
             <MemberData>
               <MemberKey>Ano: </MemberKey>
               <MemberValue>{member.year[0]} °</MemberValue>
