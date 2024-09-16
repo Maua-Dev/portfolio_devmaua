@@ -1,7 +1,7 @@
 import { rgba } from 'polished'
 import styled, { keyframes } from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.div<{ isTransitioning: boolean }>`
   padding-top: 4%;
   background-color: ${(props) => props.theme.colors.primary};
   display: flex;
@@ -11,6 +11,46 @@ export const Container = styled.div`
   padding-bottom: 4%;
   flex-direction: column;
   flex-wrap: wrap;
+`
+
+const dotBounce = keyframes`
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+`
+
+export const LoaderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; /* Ajuste conforme necessário */
+  width: 100%;
+`
+
+export const LoaderDot = styled.div`
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+  background-color: ${(props) => props.theme.colors.secondary};
+  border-radius: 50%;
+  animation: ${dotBounce} 0.6s infinite alternate;
+  &:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+`
+
+export const Loader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+  height: 60px;
 `
 
 export const Title = styled.h1`
@@ -108,6 +148,7 @@ export const CardMember = styled.div<{ delay: number }>`
   animation: ${fadeIn} 0.5s ease-in-out;
   animation-delay: ${({ delay }) => delay}ms;
   animation-fill-mode: both;
+  /* box-shadow: 0px 5px 8px ${(props) => props.theme.colors.secondary}; */
   width: 300px;
   height: 400px;
   border-radius: 12px;

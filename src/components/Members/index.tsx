@@ -3,6 +3,7 @@ import { Avatar, Biography, CardMember, CardSelect, Container, MemberName, RowCa
 import { MemberCard } from "./component/MemberCard";
 import axios from "axios";
 import { bucketURL } from "../../utils/enviroments";
+import { Loader, LoaderContainer, LoaderDot } from "./styles"; // Importe os estilos do carregamento
 
 export type Member = {
   name: string;
@@ -24,35 +25,42 @@ export const Members: React.FC = () => {
   const [membros, setMembros] = useState<Member[]>([])
   const [member, setMember] = useState<Member | null>(null)
   const [tagsDisponiveis, setTagsDisponiveis] = useState<string[]>([])
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchMembers = async () => {
       const response = await axios.get(`${bucketURL}/members.json`);
       const responseSorted: Member[] = response.data.sort((a: Member, b: Member) => a.name.localeCompare(b.name));
 
-      // Extraindo todas as tags únicas
       const allTags = Array.from(new Set(responseSorted.flatMap(m => m.tag)));
       setTagsDisponiveis(allTags);
 
       setTodosMembros(responseSorted);
       setMembros(responseSorted);
+      setIsLoading(false); // Membros carregados
     };
     fetchMembers();
   }, []);
 
   useEffect(() => {
-    if (filtro === '') {
-      setMembros(todosMembros);
-    } else {
-      setMembros(todosMembros.filter((m) => m.tag.includes(filtro)));
+    if (!isLoading) {
+      if (filtro === '') {
+        setMembros(todosMembros);
+      } else {
+        setMembros(todosMembros.filter((m) => m.tag.includes(filtro)));
+      }
     }
-  }, [filtro, todosMembros]);
+  }, [filtro, todosMembros, isLoading]);
 
   const toggleFiltro = (filt: string) => {
     if (filtro === filt) {
-      setFiltro('');
+      setFiltro("Sem filtro");
+      setIsLoading(true);
+      setTimeout(() => { setFiltro(''); setIsLoading(false); }, 500);
     } else {
-      setFiltro(filt);
+      setFiltro("Sem filtro");
+      setIsLoading(true);
+      setTimeout(() => { setFiltro(filt); setIsLoading(false); }, 500);
     }
   }
 
@@ -65,33 +73,42 @@ export const Members: React.FC = () => {
   }
 
   return (
-    <Container>
-      {member != null && <MemberCard member={member} setMember={setMember}/>}
+    <Container isTransitioning={false}> {/* Atualize conforme necessário */}
+      {member != null && <MemberCard member={member} setMember={setMember} />}
       <Title id="members">Membros</Title>
       <RowCards>
-      {tagsDisponiveis.map((tag) => (
+        {tagsDisponiveis.map((tag) => (
           <CardSelect key={tag} selected={filtro === tag} onClick={() => handleClick(tag)}>
             {tag}
           </CardSelect>
         ))}
       </RowCards>
-      <RowCards style={{ justifyContent: 'flex-start' }}>
-        {membros.map((data, index) => (
-          <CardMember key={data.ra} onClick={() => setMember(data)} delay={index*100}>
-            <Avatar src={bucketURL + "/" + data.photo} onError={handleImageError} alt="profile" />
-            <MemberName>{data.name}</MemberName>
-            <StackName>
-              {data.tag.map((t, i) => (
-                <React.Fragment key={i}>
-                  {t}
-                  {i < data.tag.length - 1 && ", "}
-                </React.Fragment>
-              ))}
-            </StackName>
-            <Biography>Ler bio</Biography>
-          </CardMember>
-        ))}
-      </RowCards>
+      {isLoading ? (
+        <LoaderContainer>
+          <Loader>
+            <LoaderDot />
+            <LoaderDot />
+            <LoaderDot />
+          </Loader>
+        </LoaderContainer>) : (
+        <RowCards style={{ justifyContent: 'flex-start' }}>
+          {membros.map((data, index) => (
+            <CardMember key={data.ra} onClick={() => setMember(data)} delay={index * 100}>
+              <Avatar src={bucketURL + "/" + data.photo} onError={handleImageError} alt="profile" />
+              <MemberName>{data.name}</MemberName>
+              <StackName>
+                {data.tag.map((t, i) => (
+                  <React.Fragment key={i}>
+                    {t}
+                    {i < data.tag.length - 1 && ", "}
+                  </React.Fragment>
+                ))}
+              </StackName>
+              <Biography>Ler bio</Biography>
+            </CardMember>
+          ))}
+        </RowCards>
+      )}
     </Container>
-  )
+  );
 }
