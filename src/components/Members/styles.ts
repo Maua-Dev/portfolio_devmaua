@@ -28,11 +28,15 @@ export const LoaderContainer = styled.div`
   align-items: center;
   height: 30vh; /* Ajuste conforme necessário */
   width: 100%;
+
+  @media (max-width: 768px) {
+    height: 10vh;
+  }
 `
 
 export const LoaderDot = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   margin: 0 5px;
   background-color: ${(props) => props.theme.colors.secondary};
   border-radius: 50%;
@@ -42,6 +46,11 @@ export const LoaderDot = styled.div`
   }
   &:nth-child(3) {
     animation-delay: 0.4s;
+  }
+
+  @media (max-width: 768px) {
+    width: 15px;
+    height: 15px;
   }
 `
 
