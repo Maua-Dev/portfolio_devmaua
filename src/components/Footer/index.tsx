@@ -10,30 +10,30 @@ import {
   RowSocial,
   Social,
   TextVersion,
-  SocialBackground,
-} from "./styles";
-import { useContext } from "react";
-import { ThemeContext } from "styled-components";
-import { bucketURL } from "../../utils/enviroments";
+  SocialBackground
+} from './styles'
+import { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
+import { bucketURL } from '../../utils/enviroments'
 
 export const Footer: React.FC = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext)
 
   function handleInstagram() {
-    window.open("https://www.instagram.com/devcommunitymaua/", "_blank");
+    window.open('https://www.instagram.com/devcommunitymaua/', '_blank')
   }
   function handleGithub() {
-    window.open("https://github.com/Maua-Dev", "_blank");
+    window.open('https://github.com/Maua-Dev', '_blank')
   }
   function handleDiscord() {
-    window.open("https://discord.gg/DyfqfghRYx", "_blank");
+    window.open('https://discord.gg/DyfqfghRYx', '_blank')
   }
 
   function handleScroll(id: string) {
-    const section = document.getElementById(id);
-    console.log(section);
+    const section = document.getElementById(id)
+    console.log(section)
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
         <ContainerOptions>
           <LogoFooter
             src={
-              theme?.title === "light"
+              theme?.title === 'light'
                 ? `${bucketURL}/logo_dev_header_light.png`
                 : `${bucketURL}/logo_dev_header.png`
             }
@@ -56,17 +56,17 @@ export const Footer: React.FC = () => {
           <Options>
             <Option
               onClick={() =>
-                handleScroll(innerWidth > 768 ? "header" : "headerMobile")
+                handleScroll(innerWidth > 768 ? 'header' : 'headerMobile')
               }
             >
               Sobre nós
             </Option>
-            <Option onClick={() => handleScroll("projects")}>Projetos</Option>
-            <Option onClick={() => handleScroll("portalInterno")}>
+            <Option onClick={() => handleScroll('projects')}>Projetos</Option>
+            <Option onClick={() => handleScroll('portalInterno')}>
               Portal Interno
             </Option>
-            <Option onClick={() => handleScroll("members")}>Membros</Option>
-            <Option onClick={() => handleScroll("footer")}>Contato</Option>
+            <Option onClick={() => handleScroll('members')}>Membros</Option>
+            <Option onClick={() => handleScroll('footer')}>Contato</Option>
           </Options>
         </ContainerOptions>
         <RowSocial id="footer">
@@ -74,7 +74,7 @@ export const Footer: React.FC = () => {
             <Social
               onClick={handleInstagram}
               src={
-                theme?.title === "light"
+                theme?.title === 'light'
                   ? `${bucketURL}/instaWhite.png`
                   : `${bucketURL}/instaBlack.png`
               }
@@ -85,7 +85,7 @@ export const Footer: React.FC = () => {
             <Social
               onClick={handleGithub}
               src={
-                theme?.title === "light"
+                theme?.title === 'light'
                   ? `${bucketURL}/githubWhite.png`
                   : `${bucketURL}/githubBlack.png`
               }
@@ -96,7 +96,7 @@ export const Footer: React.FC = () => {
             <Social
               onClick={handleDiscord}
               src={
-                theme?.title === "light"
+                theme?.title === 'light'
                   ? `${bucketURL}/discWhite.png`
                   : `${bucketURL}/discBlack.png`
               }
@@ -108,14 +108,14 @@ export const Footer: React.FC = () => {
         <TextVersion>
           Nosso site está sob constante mudança. Versão: 2.0.0
         </TextVersion>
-        <TextVersion style={{ marginTop: "1%" }}>
+        <TextVersion style={{ marginTop: '1%' }}>
           Praça Mauá, 1 - Mauá, São Caetano do Sul - SP, 09580-900
         </TextVersion>
-        <TextVersion style={{ marginTop: "1%" }}>dev@maua.br</TextVersion>
+        <TextVersion style={{ marginTop: '1%' }}>dev@maua.br</TextVersion>
       </ContentContainer>
       <LateralImgFooterRight
         src={`${bucketURL}/footerLateralD.png`}
       ></LateralImgFooterRight>
     </Container>
-  );
-};
+  )
+}

@@ -16,7 +16,6 @@ import './utils/enviroments'
 function App() {
   const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light)
 
-
   const toggleTheme = () => {
     setTheme(theme.title === 'light' ? dark : light)
   }
@@ -28,7 +27,7 @@ function App() {
       <Header />
       <About />
       <Projects />
-      <PI/>
+      <PI />
       <Members />
       <Footer />
     </ThemeProvider>
@@ -36,5 +35,3 @@ function App() {
 }
 
 export default App
-
-

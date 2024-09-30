@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react";
-import { ThemeContext } from "styled-components";
+import { useContext, useState } from 'react'
+import { ThemeContext } from 'styled-components'
 import {
   ButtonIcon,
   Container,
@@ -15,52 +15,52 @@ import {
   TextVersion,
   MenuFooter,
   Overlay,
-  SocialBackground,
-} from "./styles";
-import { HiOutlineViewList } from "react-icons/hi";
-import { bucketURL } from "../../../utils/enviroments";
-import { MenuData } from "./assets/MenuData";
-import { IoMdClose } from "react-icons/io";
-import { MdSunny } from "react-icons/md";
-import { FaMoon } from "react-icons/fa";
+  SocialBackground
+} from './styles'
+import { HiOutlineViewList } from 'react-icons/hi'
+import { bucketURL } from '../../../utils/enviroments'
+import { MenuData } from './assets/MenuData'
+import { IoMdClose } from 'react-icons/io'
+import { MdSunny } from 'react-icons/md'
+import { FaMoon } from 'react-icons/fa'
 
 interface Props {
-  toggleTheme: () => void;
+  toggleTheme: () => void
 }
 
 export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
-  const theme = useContext(ThemeContext);
-  const [ fade , setFade ] = useState<boolean>(false);
-  const [sidebarVisibility, setSidebarVisibility] = useState<boolean>(false);
+  const theme = useContext(ThemeContext)
+  const [fade, setFade] = useState<boolean>(false)
+  const [sidebarVisibility, setSidebarVisibility] = useState<boolean>(false)
 
   const handleSidebarVisibility = () => {
     if (sidebarVisibility) {
-      setFade(false);
+      setFade(false)
       setTimeout(() => {
-        setSidebarVisibility(false);
-      }, 500); 
+        setSidebarVisibility(false)
+      }, 500)
     } else {
-      setSidebarVisibility(true);
+      setSidebarVisibility(true)
       setTimeout(() => {
-        setFade(true);
-      }, 10); 
+        setFade(true)
+      }, 10)
     }
-  };
+  }
 
   function handleInstagram() {
-    window.open("https://www.instagram.com/devcommunitymaua/", "_blank");
+    window.open('https://www.instagram.com/devcommunitymaua/', '_blank')
   }
   function handleGithub() {
-    window.open("https://github.com/Maua-Dev", "_blank");
+    window.open('https://github.com/Maua-Dev', '_blank')
   }
   function handleDiscord() {
-    window.open("https://discord.gg/DyfqfghRYx", "_blank");
+    window.open('https://discord.gg/DyfqfghRYx', '_blank')
   }
 
   function handleScroll(id: string) {
-    const section = document.getElementById(id);
+    const section = document.getElementById(id)
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -83,7 +83,7 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
             <MenuHeader>
               <MenuLogo
                 src={
-                  theme?.title === "light"
+                  theme?.title === 'light'
                     ? `${bucketURL}/logo_dev_header.png`
                     : `${bucketURL}/logo_dev_header_light.png`
                 }
@@ -96,18 +96,23 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
             <MenuItems onClick={handleSidebarVisibility}>
               {MenuData.map((item, index) => {
                 return (
-                  <Item key={index} onClick={() => handleScroll(item.path)} fade={fade} delay={index * 100}>
+                  <Item
+                    key={index}
+                    onClick={() => handleScroll(item.path)}
+                    fade={fade}
+                    delay={index * 100}
+                  >
                     <Icon>{item.icon}</Icon>
                     <span>{item.title}</span>
                   </Item>
-                );
+                )
               })}
-              <Item onClick={toggleTheme}  fade={fade} delay={500} >
+              <Item onClick={toggleTheme} fade={fade} delay={500}>
                 <Icon>
-                  {theme?.title === "light" ? <MdSunny /> : <FaMoon />}
+                  {theme?.title === 'light' ? <MdSunny /> : <FaMoon />}
                 </Icon>
                 <span>
-                  {theme?.title === "light" ? "Modo Light" : "Modo Dark"}
+                  {theme?.title === 'light' ? 'Modo Light' : 'Modo Dark'}
                 </span>
               </Item>
             </MenuItems>
@@ -117,7 +122,7 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
                   <Social
                     onClick={handleInstagram}
                     src={
-                      theme?.title === "light"
+                      theme?.title === 'light'
                         ? `${bucketURL}/instaBlack.png`
                         : `${bucketURL}/instaWhite.png`
                     }
@@ -128,7 +133,7 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
                   <Social
                     onClick={handleGithub}
                     src={
-                      theme?.title === "light"
+                      theme?.title === 'light'
                         ? `${bucketURL}/githubBlack.png`
                         : `${bucketURL}/githubWhite.png`
                     }
@@ -139,7 +144,7 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
                   <Social
                     onClick={handleDiscord}
                     src={
-                      theme?.title === "light"
+                      theme?.title === 'light'
                         ? `${bucketURL}/discBlack.png`
                         : `${bucketURL}/discWhite.png`
                     }
@@ -150,16 +155,14 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
               <TextVersion>
                 Nosso site está sob constante mudança. Versão: 2.0.0
               </TextVersion>
-              <TextVersion style={{ marginTop: "1%" }}>
+              <TextVersion style={{ marginTop: '1%' }}>
                 Praça Mauá, 1 - Mauá, São Caetano do Sul - SP, 09580-900
               </TextVersion>
-              <TextVersion style={{ marginTop: "1%" }}>
-                dev@maua.br
-              </TextVersion>
+              <TextVersion style={{ marginTop: '1%' }}>dev@maua.br</TextVersion>
             </MenuFooter>
           </NavMenu>
         </>
       ) : null}
     </>
-  );
-};
+  )
+}
