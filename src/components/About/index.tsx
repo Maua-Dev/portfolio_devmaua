@@ -1,9 +1,11 @@
-import { AboutDesktop } from "./AboutDesktop"
-import { AboutMobile } from "./AboutMobile"
+import { AboutDesktop } from './AboutDesktop'
+import { AboutMobile } from './AboutMobile'
 
 export const About: React.FC = () => {
-  return <>
-    <AboutDesktop/>
-    <AboutMobile/>
-  </>
+  return (
+    <>
+      <AboutDesktop />
+      <AboutMobile />
+    </>
+  )
 }

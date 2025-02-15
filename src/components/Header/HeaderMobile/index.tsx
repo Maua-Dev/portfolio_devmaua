@@ -1,23 +1,23 @@
-import { useContext } from "react";
+import { useContext } from 'react'
 import {
   ContainerMobile,
   ContainerSecondary,
   ContainerTertiary,
   Description,
   HeaderImg,
-  LogoHeader,
-} from "../styles";
-import { ThemeContext } from "styled-components";
-import { bucketURL } from "../../../utils/enviroments";
+  LogoHeader
+} from '../styles'
+import { ThemeContext } from 'styled-components'
+import { bucketURL } from '../../../utils/enviroments'
 
 export const HeaderMobile: React.FC = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext)
 
   return (
     <ContainerMobile>
       <LogoHeader
         src={
-          theme?.title === "light"
+          theme?.title === 'light'
             ? `${bucketURL}/logo_dev_header.png`
             : `${bucketURL}/logo_dev_header_light.png`
         }
@@ -42,5 +42,5 @@ export const HeaderMobile: React.FC = () => {
         </ContainerTertiary>
       </ContainerSecondary>
     </ContainerMobile>
-  );
-};
+  )
+}

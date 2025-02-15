@@ -1,10 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
-type Response<T> = [
-  T,
-  React.Dispatch<React.SetStateAction<T>>
-]
+type Response<T> = [T, React.Dispatch<React.SetStateAction<T>>]
 
 function usePersistedState<T>(key: string, initialState: any): Response<T> {
   const [state, setState] = useState(() => {

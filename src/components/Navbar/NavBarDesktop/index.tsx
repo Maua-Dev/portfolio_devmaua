@@ -1,46 +1,74 @@
-import { FaRegMoon } from "react-icons/fa";
-import { MdOutlineWbSunny } from "react-icons/md";
-import { ThemeContext } from "styled-components";
-import { useContext } from "react";
-import { HiChevronDoubleLeft } from "react-icons/hi";
-import { bucketURL } from "../../../utils/enviroments";
-import { ButtonIcon, ButtonNavbar, Container, Linha, Logo, SecondContainer, ThemeIcon } from "./styles";
+import { FaRegMoon } from 'react-icons/fa'
+import { MdOutlineWbSunny } from 'react-icons/md'
+import { ThemeContext } from 'styled-components'
+import { useContext } from 'react'
+import { HiChevronDoubleLeft } from 'react-icons/hi'
+import { bucketURL } from '../../../utils/enviroments'
+import {
+  ButtonIcon,
+  ButtonNavbar,
+  Container,
+  Linha,
+  Logo,
+  SecondContainer,
+  ThemeIcon
+} from './styles'
 
 interface Props {
-  toggleTheme: () => void;
+  toggleTheme: () => void
 }
 
 export const NavbarDesktop: React.FC<Props> = ({ toggleTheme }) => {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext)
 
   function handleScroll(id: string) {
-    const section = document.getElementById(id);
+    const section = document.getElementById(id)
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
   return (
     <Container>
       <SecondContainer>
-
-        <Logo src={`${bucketURL}/logo_dev.png`}
+        <Logo
+          src={`${bucketURL}/logo_dev.png`}
           alt="logo"
           onClick={() => window.location.reload}
         />
-        <ButtonNavbar onClick={() => handleScroll('header')}>Sobre nós</ButtonNavbar>
-        <ButtonNavbar onClick={() => handleScroll('projects')}>Projetos</ButtonNavbar>
-        <ButtonNavbar onClick={() => handleScroll('members')}>Membros</ButtonNavbar>
-        <ButtonNavbar onClick={() => handleScroll('footer')}>Contato</ButtonNavbar>
+        <ButtonNavbar onClick={() => handleScroll('header')}>
+          Sobre nós
+        </ButtonNavbar>
+        <ButtonNavbar onClick={() => handleScroll('projects')}>
+          Projetos
+        </ButtonNavbar>
+        <ButtonNavbar onClick={() => handleScroll('portalInterno')}>
+          Portal Interno
+        </ButtonNavbar>
+        <ButtonNavbar onClick={() => handleScroll('members')}>
+          Membros
+        </ButtonNavbar>
+        <ButtonNavbar onClick={() => handleScroll('footer')}>
+          Contato
+        </ButtonNavbar>
         <ButtonIcon>
-          <HiChevronDoubleLeft color={theme?.title === 'light'
-            ? theme.fontsSizes.colors.black : theme?.fontsSizes.colors.white
-          } />
+          <HiChevronDoubleLeft
+            color={
+              theme?.title === 'light'
+                ? theme.fontsSizes.colors.black
+                : theme?.fontsSizes.colors.white
+            }
+          />
         </ButtonIcon>
         <ThemeIcon onClick={toggleTheme}>
-          {theme?.title === 'light' ?
-            <FaRegMoon size={30} color={theme.fontsSizes.colors.white} /> :
-            <MdOutlineWbSunny size={30} color={theme?.fontsSizes.colors.white} />}
+          {theme?.title === 'light' ? (
+            <FaRegMoon size={30} color={theme.fontsSizes.colors.white} />
+          ) : (
+            <MdOutlineWbSunny
+              size={30}
+              color={theme?.fontsSizes.colors.white}
+            />
+          )}
         </ThemeIcon>
       </SecondContainer>
       <Linha />

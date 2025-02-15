@@ -1,5 +1,5 @@
-import { useContext, useState } from "react";
-import { ThemeContext } from "styled-components";
+import { useContext, useState } from 'react'
+import { ThemeContext } from 'styled-components'
 import {
   ButtonIcon,
   Container,
@@ -14,41 +14,53 @@ import {
   Social,
   TextVersion,
   MenuFooter,
-  Overlay
-} from "./styles";
-import { HiOutlineViewList } from "react-icons/hi";
-import { bucketURL } from "../../../utils/enviroments";
-import { MenuData } from "./assets/MenuData";
-import { IoMdClose } from "react-icons/io";
-import { MdSunny } from "react-icons/md";
-import { FaMoon } from "react-icons/fa";
+  Overlay,
+  SocialBackground
+} from './styles'
+import { HiOutlineViewList } from 'react-icons/hi'
+import { bucketURL } from '../../../utils/enviroments'
+import { MenuData } from './assets/MenuData'
+import { IoMdClose } from 'react-icons/io'
+import { MdSunny } from 'react-icons/md'
+import { FaMoon } from 'react-icons/fa'
 
 interface Props {
-  toggleTheme: () => void;
+  toggleTheme: () => void
 }
 
 export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
-  const theme = useContext(ThemeContext);
-  const [sidebarVisibility, setSidebarVisibility] = useState<boolean>(false);
+  const theme = useContext(ThemeContext)
+  const [fade, setFade] = useState<boolean>(false)
+  const [sidebarVisibility, setSidebarVisibility] = useState<boolean>(false)
 
   const handleSidebarVisibility = () => {
-    setSidebarVisibility(!sidebarVisibility);
-  };
+    if (sidebarVisibility) {
+      setFade(false)
+      setTimeout(() => {
+        setSidebarVisibility(false)
+      }, 500)
+    } else {
+      setSidebarVisibility(true)
+      setTimeout(() => {
+        setFade(true)
+      }, 10)
+    }
+  }
 
   function handleInstagram() {
-    window.location.href = "https://www.instagram.com/devcommunitymaua/";
+    window.open('https://www.instagram.com/devcommunitymaua/', '_blank')
   }
   function handleGithub() {
-    window.location.href = "https://github.com/Maua-Dev";
+    window.open('https://github.com/Maua-Dev', '_blank')
   }
   function handleDiscord() {
-    window.location.href = "https://discord.gg/DyfqfghRYx";
+    window.open('https://discord.gg/DyfqfghRYx', '_blank')
   }
 
   function handleScroll(id: string) {
-    const section = document.getElementById(id);
+    const section = document.getElementById(id)
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      section.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -66,12 +78,12 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
       </Container>
       {sidebarVisibility ? (
         <>
-          <Overlay onClick={handleSidebarVisibility}></Overlay>
-          <NavMenu>
+          <Overlay fade={fade} onClick={handleSidebarVisibility} />
+          <NavMenu fade={fade}>
             <MenuHeader>
               <MenuLogo
                 src={
-                  theme?.title === "light"
+                  theme?.title === 'light'
                     ? `${bucketURL}/logo_dev_header.png`
                     : `${bucketURL}/logo_dev_header_light.png`
                 }
@@ -84,66 +96,73 @@ export const NavbarMobile: React.FC<Props> = ({ toggleTheme }) => {
             <MenuItems onClick={handleSidebarVisibility}>
               {MenuData.map((item, index) => {
                 return (
-                  <Item key={index} onClick={() => handleScroll(item.path)}>
+                  <Item
+                    key={index}
+                    onClick={() => handleScroll(item.path)}
+                    fade={fade}
+                    delay={index * 100}
+                  >
                     <Icon>{item.icon}</Icon>
                     <span>{item.title}</span>
                   </Item>
-                );
+                )
               })}
-              <Item onClick={toggleTheme}>
+              <Item onClick={toggleTheme} fade={fade} delay={500}>
                 <Icon>
-                  {theme?.title === "light" ? <MdSunny /> : <FaMoon />}
+                  {theme?.title === 'light' ? <MdSunny /> : <FaMoon />}
                 </Icon>
                 <span>
-                  {theme?.title === "light" ? "Modo Light" : "Modo Dark"}
+                  {theme?.title === 'light' ? 'Modo Light' : 'Modo Dark'}
                 </span>
               </Item>
             </MenuItems>
             <MenuFooter>
               <RowSocial>
-                <Social
-                  src={
-                    theme?.title === "light"
-                      ? `${bucketURL}/googleBlack.png`
-                      : `${bucketURL}/googleWhite.png`
-                  }
-                  alt="google"
-                />
-                <Social
-                  onClick={handleInstagram}
-                  src={
-                    theme?.title === "light"
-                      ? `${bucketURL}/instaBlack.png`
-                      : `${bucketURL}/instaWhite.png`
-                  }
-                  alt="instagram"
-                />
-                <Social
-                  onClick={handleGithub}
-                  src={
-                    theme?.title === "light"
-                      ? `${bucketURL}/githubBlack.png`
-                      : `${bucketURL}/githubWhite.png`
-                  }
-                  alt="google"
-                />
-                <Social
-                  onClick={handleDiscord}
-                  src={
-                    theme?.title === "light"
-                      ? `${bucketURL}/discBlack.png`
-                      : `${bucketURL}/discWhite.png`
-                  }
-                  alt="discord"
-                />
+                <SocialBackground>
+                  <Social
+                    onClick={handleInstagram}
+                    src={
+                      theme?.title === 'light'
+                        ? `${bucketURL}/instaBlack.png`
+                        : `${bucketURL}/instaWhite.png`
+                    }
+                    alt="instagram"
+                  />
+                </SocialBackground>
+                <SocialBackground>
+                  <Social
+                    onClick={handleGithub}
+                    src={
+                      theme?.title === 'light'
+                        ? `${bucketURL}/githubBlack.png`
+                        : `${bucketURL}/githubWhite.png`
+                    }
+                    alt="google"
+                  />
+                </SocialBackground>
+                <SocialBackground>
+                  <Social
+                    onClick={handleDiscord}
+                    src={
+                      theme?.title === 'light'
+                        ? `${bucketURL}/discBlack.png`
+                        : `${bucketURL}/discWhite.png`
+                    }
+                    alt="discord"
+                  />
+                </SocialBackground>
               </RowSocial>
               <TextVersion>
                 Nosso site está sob constante mudança. Versão: 2.0.0
               </TextVersion>
+              <TextVersion style={{ marginTop: '1%' }}>
+                Praça Mauá, 1 - Mauá, São Caetano do Sul - SP, 09580-900
+              </TextVersion>
+              <TextVersion style={{ marginTop: '1%' }}>dev@maua.br</TextVersion>
             </MenuFooter>
           </NavMenu>
         </>
       ) : null}
     </>
-  );
-};
+  )
+}

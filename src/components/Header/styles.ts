@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import { shade } from 'polished';
+import styled from 'styled-components'
+import { shade } from 'polished'
 
 export const ContainerDestkop = styled.div`
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primary};
   display: flex;
   padding: 0 2%;
   width: 100%;
@@ -14,14 +14,14 @@ export const ContainerDestkop = styled.div`
 `
 
 export const ContainerMobile = styled.div`
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primary};
   display: none;
   padding: 0 2%;
   width: 100%;
   height: 32%;
   justify-content: center;
   flex-direction: column;
-  font-size: ${props => props.theme.fontsSizes.mobile.p};
+  font-size: ${(props) => props.theme.fontsSizes.mobile.p};
 
   @media (max-width: 768px) {
     display: flex;
@@ -35,26 +35,26 @@ export const LogoHeader = styled.img`
   height: auto;
   object-fit: contain;
 
-  @media ( max-width: 768px) {
-    width: 80%
+  @media (max-width: 768px) {
+    width: 80%;
   }
 `
 
 export const Description = styled.h1`
   margin-top: 12%;
   text-align: justify;
-  font-family: "Poppins";
-  font-size: ${props => props.theme.fontsSizes.desktop.h5};
+  font-family: 'Poppins';
+  font-size: ${(props) => props.theme.fontsSizes.desktop.h5};
   line-height: 28px;
   font-weight: 400;
-  color: ${props => props.theme.colors.secondary};
+  color: ${(props) => props.theme.colors.secondary};
 
   @media (max-width: 768px) {
-    font-size: ${props => props.theme.fontsSizes.mobile.p};
+    font-size: ${(props) => props.theme.fontsSizes.mobile.p};
   }
 
   @media (max-width: 481px) {
-    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    font-size: ${(props) => props.theme.fontsSizes.mobile.p_small};
   }
 `
 
@@ -78,7 +78,7 @@ export const HeaderImg = styled.img`
   object-fit: contain;
   margin-top: 20%;
   margin-left: 12%;
-  
+
   @media (max-width: 768px) {
     margin-top: 0;
     margin-left: 0;
@@ -91,9 +91,12 @@ export const SelectiveProcessBtn = styled.button`
   margin-top: 4%;
   width: 32%;
   height: 46px;
-  background-color: ${props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.red.primary};
-  color: ${props => props.theme.fontsSizes.colors.white};
-  font-size: ${props => props.theme.fontsSizes.desktop.h5};
+  background-color: ${(props) =>
+    props.theme.title === 'light'
+      ? props.theme.colors.blue.quaternary
+      : props.theme.colors.red.primary};
+  color: ${(props) => props.theme.fontsSizes.colors.white};
+  font-size: ${(props) => props.theme.fontsSizes.desktop.h5};
   font-weight: 700;
   font-style: italic;
   border: none;
@@ -101,13 +104,15 @@ export const SelectiveProcessBtn = styled.button`
   cursor: pointer;
   transition: 0.4s;
   &:hover {
-    background-color: ${props => props.theme.title === 'light' ? shade(0.1, props.theme.colors.blue.tertiary) : shade(0.1, props.theme.colors.red.quaternary)};
-
+    background-color: ${(props) =>
+      props.theme.title === 'light'
+        ? shade(0.1, props.theme.colors.blue.tertiary)
+        : shade(0.1, props.theme.colors.red.quaternary)};
   }
 
   @media (max-width: 768px) {
     width: 80%;
-    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    font-size: ${(props) => props.theme.fontsSizes.mobile.p_small};
   }
 `
 
@@ -115,9 +120,9 @@ export const SelectiveProcessBtnLightMode = styled.button`
   margin-top: 4%;
   width: 32%;
   height: 46px;
-  background-color: ${props => props.theme.colors.red.primary};
-  color: ${props => props.theme.colors.secondary};
-  font-size: ${props => props.theme.fontsSizes.desktop.p};
+  background-color: ${(props) => props.theme.colors.red.primary};
+  color: ${(props) => props.theme.colors.secondary};
+  font-size: ${(props) => props.theme.fontsSizes.desktop.p};
   font-weight: 700;
   font-style: italic;
   border: none;
@@ -125,8 +130,8 @@ export const SelectiveProcessBtnLightMode = styled.button`
   cursor: pointer;
   transition: 0.4s;
   &:hover {
-    background-color: ${props => shade(0.1, props.theme.colors.red.quaternary)};
-
+    background-color: ${(props) =>
+      shade(0.1, props.theme.colors.red.quaternary)};
   }
 `
 
@@ -135,7 +140,7 @@ export const ContainerTertiary = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  
+
   @media (max-width: 768px) {
     display: flex;
   }
