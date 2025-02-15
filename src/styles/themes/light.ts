@@ -1,4 +1,3 @@
-
 export default {
   title: 'light',
 
@@ -10,17 +9,17 @@ export default {
       secondary: '#3333ff',
       tertiary: '#9999ff',
       quaternary: '#270272',
-      quintenary: 'rgba(39, 2, 114, 0.3)',
+      quintenary: 'rgba(39, 2, 114, 0.3)'
     },
     red: {
-      primary:'#860000',
-      secondary:'#ff3333',
-      tertiary:'#ff6666',
-      quaternary:'#ff9999',
+      primary: '#860000',
+      secondary: '#ff3333',
+      tertiary: '#ff6666',
+      quaternary: '#ff9999'
     },
     gray: {
       primary: '#E6E6E6',
-      secondary: '#3A3A3A',
+      secondary: '#3A3A3A'
     }
   },
 
@@ -33,7 +32,7 @@ export default {
       h5: '24px',
       p: '16px',
       p_small: '14px',
-      caption: '12px',
+      caption: '12px'
     },
     mobile: {
       h1: '44px',
@@ -43,12 +42,11 @@ export default {
       h5: '16px',
       p: '14px',
       p_small: '10px',
-      caption: '8.5px',
+      caption: '8.5px'
     },
     colors: {
       black: '#000000',
       white: '#FFFFFF'
     }
   }
-
 }

@@ -1,4 +1,4 @@
-import { bucketURL } from "../../../utils/enviroments";
+import { bucketURL } from '../../../utils/enviroments'
 import {
   AboutImg,
   ContainerDesktop,
@@ -6,8 +6,8 @@ import {
   Title,
   Container,
   Card,
-  CardTitle,
-} from "../styles";
+  CardTitle
+} from '../styles'
 
 export const AboutDesktop: React.FC = () => {
   return (
@@ -47,8 +47,8 @@ export const AboutDesktop: React.FC = () => {
         </Card>
       </Container>
     </ContainerDesktop>
-  );
-};
+  )
+}
 
 // <Title>O que fazemos?</Title>
 //       <Container>

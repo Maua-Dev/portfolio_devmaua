@@ -1,21 +1,29 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
+
+interface ContainerProps {
+  fade: boolean
+}
 
 export const Container = styled.div`
   display: none;
   width: 100%;
+  height: 80px;
   align-items: center;
-  background-color: ${ props => props.theme.title === 'light' ? props.theme.colors.blue.quaternary : props.theme.colors.primary };
+  background-color: ${(props) =>
+    props.theme.title === 'light'
+      ? props.theme.colors.blue.quaternary
+      : props.theme.colors.primary};
   justify-content: space-between;
 
   @media (max-width: 768px) {
     display: flex;
   }
-`;
+`
 
 export const ButtonIcon = styled.div`
   display: flex;
   justify-content: center;
-  color: ${props => props.theme.fontsSizes.colors.white};
+  color: ${(props) => props.theme.fontsSizes.colors.white};
   align-items: center;
   margin-right: 20px;
   margin-top: 20px;
@@ -31,19 +39,21 @@ export const ButtonIcon = styled.div`
   &:hover {
     transform: scale(1.1);
   }
-`;
+`
 
 export const Logo = styled.img`
-    margin-top: 12px;
-    margin-left: 12px;
-    width: 60px;
-    max-height: 100%;
-    cursor: pointer;
-    object-fit: contain;
-  
-`;
+  margin-top: 12px;
+  margin-left: 12px;
+  width: 60px;
+  max-height: 100%;
+  cursor: pointer;
+  object-fit: contain;
+`
 
-export const NavMenu = styled.nav`
+export const NavMenu = styled.nav<ContainerProps>`
+  opacity: ${(props) => (props.fade ? '1' : '0')};
+  transition: all 0.3s;
+  transform: ${(props) => (props.fade ? 'translateX(0)' : 'translateX(100%)')};
   display: flex;
   position: fixed;
   height: 100%;
@@ -51,7 +61,10 @@ export const NavMenu = styled.nav`
   top: 0;
   right: 0;
   flex-direction: column;
-  background-color: ${ props => props.theme.title === 'light' ? props.theme.colors.primary : props.theme.colors.primary };
+  background-color: ${(props) =>
+    props.theme.title === 'light'
+      ? props.theme.colors.primary
+      : props.theme.colors.primary};
   gap: 2%;
   z-index: 2;
 `
@@ -69,23 +82,30 @@ export const MenuItems = styled.ul`
   margin-left: 10%;
 `
 
-export const Item = styled.button`
+export const Item = styled.button<{ fade: boolean; delay: number }>`
+  transition: all 1s ease;
+  transform: ${(props) => (props.fade ? 'translateX(0)' : 'translateX(100%)')};
+  opacity: ${(props) => (props.fade ? '1' : '0')};
+  transition-delay: ${(props) => `${props.delay}ms`};
   width: 100%;
   display: flex;
   justify-content: start;
   align-items: center;
   padding: 2%;
-  background-color: ${ props => props.theme.title === 'light' ? props.theme.colors.primary : props.theme.colors.primary };
-  font-size: ${props => props.theme.fontsSizes.mobile.h5};
+  background-color: transparent;
+  font-size: ${(props) => props.theme.fontsSizes.mobile.h5};
   font-weight: bold;
   border: none;
-  color: ${props => props.theme.colors.secondary};
-  
+  color: ${(props) => props.theme.colors.secondary};
+
+  &:hover {
+    transform: ${(props) => (props.fade ? 'scale(1.1)' : 'none')};
+  }
 `
 
 export const Icon = styled.div`
   margin-right: 6%;
-  font-size: ${props => props.theme.fontsSizes.mobile.h4};
+  font-size: ${(props) => props.theme.fontsSizes.mobile.h4};
 `
 
 export const MenuLogo = styled.img`
@@ -93,7 +113,7 @@ export const MenuLogo = styled.img`
   height: auto;
   object-fit: contain;
   margin: 8%;
-  `
+`
 
 export const MenuFooter = styled.div`
   display: flex;
@@ -107,40 +127,63 @@ export const MenuFooter = styled.div`
 `
 
 export const RowSocial = styled.div`
+  margin-top: 5%;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4%;
   width: 100%;
+
+  @media (max-width: 480px) {
+    height: 40px;
+  }
 `
 
 export const Social = styled.img`
-  width: 10%;
+  width: 100%;
+  padding: 10%;
+`
+
+export const SocialBackground = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 100%;
+  background-color: ${(props) => props.theme.colors.secondary};
   margin-right: 2%;
+  padding: 0.5%;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s;
 
-&:hover {
-  transform: scale(1.2);
-}
+  @media (max-width: 480px) {
+    width: 40px;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
 `
 
 export const TextVersion = styled.p`
-  color: ${props => props.theme.colors.secondary};
+  color: ${(props) => props.theme.colors.secondary};
   font-family: 'Libre Franklin';
   text-align: center;
   margin-top: 5%;
 
   @media (max-width: 768px) {
-    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    font-size: ${(props) => props.theme.fontsSizes.mobile.p_small};
   }
 
   @media (max-width: 400px) {
-    font-size: ${props => props.theme.fontsSizes.mobile.caption};
+    font-size: ${(props) => props.theme.fontsSizes.mobile.caption};
   }
 `
 
-export const Overlay = styled.div`
+export const Overlay = styled.div<ContainerProps>`
+  opacity: ${(props) => (props.fade ? '1' : '0')};
+  transition: all 0.3s ease-in-out;
   display: none;
   width: 100%;
   height: 100%;

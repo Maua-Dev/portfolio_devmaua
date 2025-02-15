@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
@@ -8,20 +8,21 @@ export const Container = styled.div`
   height: 36%;
   padding-bottom: 4%;
   flex-direction: column;
-  background-color: ${props => props.theme.title === 'light' ? props.theme.colors.secondary : props.theme.colors.secondary};
+  background-color: ${(props) =>
+    props.theme.title === 'light'
+      ? props.theme.colors.secondary
+      : props.theme.colors.secondary};
 `
 
-export const ContentContainer = styled.div`
-
-`
+export const ContentContainer = styled.div``
 
 export const Title = styled.h1`
   padding-top: 4%;
-  color: ${props => props.theme.colors.secondary};
-  font-size: ${props => props.theme.fontsSizes.desktop.h5};
+  color: ${(props) => props.theme.colors.secondary};
+  font-size: ${(props) => props.theme.fontsSizes.desktop.h5};
   font-style: italic;
   width: 100%;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primary};
   text-align: center;
   padding-bottom: 4%;
 `
@@ -39,7 +40,7 @@ export const LogoFooter = styled.img`
 export const ContainerOptions = styled.div`
   display: flex;
   justify-content: space-between;
-  border-bottom: 2px solid ${props => props.theme.colors.primary};
+  border-bottom: 2px solid ${(props) => props.theme.colors.primary};
   padding-bottom: 5%;
 
   @media (max-width: 768px) {
@@ -57,36 +58,67 @@ export const Options = styled.div`
 `
 
 export const Option = styled.p`
-  color: ${props => props.theme.colors.primary};
-  font-size: ${props => props.theme.fontsSizes.desktop.h4};
+  color: ${(props) => props.theme.colors.primary};
+  font-size: ${(props) => props.theme.fontsSizes.desktop.h4};
   font-family: 'Poppins';
   margin-top: 4%;
   cursor: pointer;
   transition: all 0.3s;
 
   @media (max-width: 768px) {
-    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    font-size: ${(props) => props.theme.fontsSizes.mobile.p_small};
   }
 
   &:hover {
-    color: ${props => props.theme.title === 'light' ? props.theme.colors.secondary : props.theme.colors.blue.quaternary};
+    color: ${(props) =>
+      props.theme.title === 'light'
+        ? props.theme.colors.red.primary
+        : props.theme.colors.blue.quaternary};
   }
 `
 
 export const RowSocial = styled.div`
   margin-top: 5%;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  @media (max-width: 1200px) {
+    height: 40px;
+  }
+
+  @media (max-width: 480px) {
+    height: 20px;
+  }
 `
 
 export const Social = styled.img`
-  width: 5%;
-  height: 5%;
+  width: 100%;
+  padding: 10%;
+`
+
+export const SocialBackground = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 100%;
+  background-color: ${(props) => props.theme.colors.primary};
   margin-right: 2%;
+  padding: 0.5%;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s;
+
+  @media (max-width: 1200px) {
+    width: 40px;
+  }
+
+  @media (max-width: 480px) {
+    width: 20px;
+  }
 
   &:hover {
     transform: scale(1.2);
@@ -94,18 +126,18 @@ export const Social = styled.img`
 `
 
 export const TextVersion = styled.p`
-  color: ${props => props.theme.colors.primary};
-  font-size: ${props => props.theme.fontsSizes.desktop.h5};
+  color: ${(props) => props.theme.colors.primary};
+  font-size: ${(props) => props.theme.fontsSizes.desktop.h5};
   font-family: 'Libre Franklin';
   text-align: center;
   margin-top: 5%;
 
   @media (max-width: 768px) {
-    font-size: ${props => props.theme.fontsSizes.mobile.p_small};
+    font-size: ${(props) => props.theme.fontsSizes.mobile.p_small};
   }
 
   @media (max-width: 400px) {
-    font-size: ${props => props.theme.fontsSizes.mobile.caption};
+    font-size: ${(props) => props.theme.fontsSizes.mobile.caption};
   }
 `
 

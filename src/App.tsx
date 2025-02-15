@@ -1,38 +1,16 @@
-import { Navbar } from './components/Navbar'
-import GlobalStyles from './styles/global'
-import { ThemeProvider } from 'styled-components'
-import light from './styles/themes/light'
-import dark from './styles/themes/dark'
-import { Header } from './components/Header'
-import usePersistedState from './utils/usePersistedState'
-import { DefaultTheme } from 'styled-components/dist/types'
-import { About } from './components/About'
-import { Projects } from './components/Projects'
-import { Members } from './components/Members'
-import { Footer } from './components/Footer'
-import './utils/enviroments'
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import { Home } from './pages/home'
+import { LinkShortcut } from './pages/link-shortcut'
 
-function App() {
-  const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light)
-
-
-  const toggleTheme = () => {
-    setTheme(theme.title === 'light' ? dark : light)
-  }
-
+export function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Navbar toggleTheme={toggleTheme} />
-      <Header />
-      <About />
-      <Projects />
-      <Members />
-      <Footer />
-    </ThemeProvider>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:path" element={<LinkShortcut />} />
+        </Routes>
+      </Router>
+    </>
   )
 }
-
-export default App
-
-

@@ -1,23 +1,23 @@
-import { useContext } from "react";
+import { useContext } from 'react'
 import {
   ContainerDestkop,
   ContainerSecondary,
   Description,
   HeaderImg,
   LogoHeader
-} from "../styles";
-import { ThemeContext } from "styled-components";
-import { bucketURL } from "../../../utils/enviroments";
+} from '../styles'
+import { ThemeContext } from 'styled-components'
+import { bucketURL } from '../../../utils/enviroments'
 
 export const HeaderDesktop: React.FC = () => {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext)
 
   return (
     <ContainerDestkop>
       <ContainerSecondary>
         <LogoHeader
           src={
-            theme?.title === "light"
+            theme?.title === 'light'
               ? `${bucketURL}/logo_dev_header.png`
               : `${bucketURL}/logo_dev_header_light.png`
           }
@@ -33,8 +33,11 @@ export const HeaderDesktop: React.FC = () => {
         {/* <SelectiveProcessBtn>Processo Seletivo</SelectiveProcessBtn> */}
       </ContainerSecondary>
       <ContainerSecondary>
-        <HeaderImg src={`${bucketURL}/fotos_membros_20241.jpeg`} alt="header-img" />
+        <HeaderImg
+          src={`${bucketURL}/fotos_membros_20241.jpeg`}
+          alt="header-img"
+        />
       </ContainerSecondary>
     </ContainerDestkop>
-  );
-};
+  )
+}
