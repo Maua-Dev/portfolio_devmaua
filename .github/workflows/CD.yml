@@ -32,14 +32,11 @@ jobs:
           echo "STACK_NAME=PortfolioStackFront${{github.ref_name}}" >> $GITHUB_ENV
       - name: Installing Dependencies
         run: |
-          yarn add vite
-          yarn global add aws-cdk
-          yarn install -g
-          cd iac
           npm install
+          npm install -g add aws-cdk
       - name: Build and Export
         run: |
-          yarn vite build
+          npm run build
         env:
           VITE_BUCKET_ASSETS: ${{ vars.VITE_BUCKET_ASSETS }}
       - name: Setup envs
