@@ -162,11 +162,11 @@ export class IacStack extends cdk.Stack {
       )
     }
 
-    new cdk.CfnOutput(this, 'PortfolioFrontBucketName-' + stage, {
+    new cdk.CfnOutput(this, 'PortfolioDevMauaFrontBucketName' + stage, {
       value: s3Bucket.bucketName
     })
 
-    new cdk.CfnOutput(this, 'PortfolioFrontDistributionId-' + stage, {
+    new cdk.CfnOutput(this, 'PortfolioDevMauaFrontDistributionId-' + stage, {
       value: cloudFrontWebDistribution.distributionId
     })
 
