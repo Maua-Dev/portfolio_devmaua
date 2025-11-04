@@ -91,7 +91,7 @@ jobs:
           VITE_STAGE: ${{ env.VITE_STAGE}}
           VITE_AUTH_CLIENT_ID: ${{ vars.VITE_AUTH_CLIENT_ID }}
           VITE_AUTH_TENANT_ID: ${{ vars.VITE_AUTH_TENANT_ID }}
-          VITE_BUCKET_ASSETS: ${{ vars.AWS_BUCKET_ASSETS }}
+          VITE_BUCKET_ASSETS: ${{ vars.VITE_BUCKET_ASSETS }}
           S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME }}
           CLOUD_FRONT_ID_BUCKET_ASSETS: ${{ vars.CLOUD_FRONT_ID_BUCKET_ASSETS }}
 
