@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import 'source-map-support/register'
 import * as cdk from 'aws-cdk-lib'
-import { IacStack } from '../lib/iac-stack'
+import { IacStack } from '../lib/iac_stack'
 
 const app = new cdk.App()
 
@@ -12,6 +12,6 @@ const env = {
 
 const stackName = process.env.STACK_NAME || 'PortfolioStackDev'
 
-new IacStack(app, stackName, {
+new IacStack (app, stackName, {
   env: env
 })
