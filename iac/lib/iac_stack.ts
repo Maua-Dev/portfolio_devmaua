@@ -1,52 +1,74 @@
-import * as cdk from 'aws-cdk-lib';
-import * as s3 from 'aws-cdk-lib/aws-s3';
-import * as iam from 'aws-cdk-lib/aws-iam';
-import * as route53 from 'aws-cdk-lib/aws-route53';
-import * as cloudfront from 'aws-cdk-lib/aws-cloudfront';
-import { Certificate } from 'aws-cdk-lib/aws-certificatemanager';
-import * as route53Targets from 'aws-cdk-lib/aws-route53-targets';
+import * as cdk from 'aws-cdk-lib'
+import * as s3 from 'aws-cdk-lib/aws-s3'
+import * as cloudfront from 'aws-cdk-lib/aws-cloudfront'
+// import * as origins from 'aws-cdk-lib/aws-cloudfront-origins'
+import { Certificate } from 'aws-cdk-lib/aws-certificatemanager'
+import * as iam from 'aws-cdk-lib/aws-iam'
+import * as route53 from 'aws-cdk-lib/aws-route53'
+import * as route53Targets from 'aws-cdk-lib/aws-route53-targets'
 
-import { Construct } from 'constructs';
-import { LambdaStack } from './lambda_stack';
+import { Construct } from 'constructs'
+
 export class IacStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
-    super(scope, id, props);
+    super(scope, id, props)
 
-    const stage = process.env.GITHUB_REF_NAME || 'dev'
-    const acmCertificateArn = process.env.ACM_CERTIFICATE_ARN || 'arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012'
-    const alternativeDomain = process.env.ALTERNATIVE_DOMAIN || "portfolio-dev.devmaua.com"
-    const hostedZoneIdValue = process.env.HOSTED_ZONE_ID || 'Z1UJRXOUMOOFQ8'
-    const projectName = process.env.PROJECT_NAME || 'PortfolioDevMauaFront'
+    const stage = process.env.STAGE || 'dev'
+    const acmCertificateArn = process.env.ACM_CERTIFICATE_ARN || ''
+    const alternativeDomainName = process.env.ALTERNATIVE_DOMAIN_NAME || ''
 
-    // new LambdaStack(this, 'LambdaStackPortfolioDevmaua', {
-    //   S3_BuCKET_NAME: process.env.S3_BUCKET_NAME as string,
-    // })
-
-    const s3Bucket = new s3.Bucket(this, 'PortfolioDevMauaFrontBucket' + stage, {
+    const s3Bucket = new s3.Bucket(this, 'PortfolioFrontBucket' + stage, {
       versioned: true,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
-      accessControl: s3.BucketAccessControl.PRIVATE,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
-      autoDeleteObjects: true,
-    });
+      accessControl: s3.BucketAccessControl.PRIVATE,
+      autoDeleteObjects: true
+    })
 
-    const oac = new cloudfront.CfnOriginAccessControl(this, "AOC", {
+    const oac = new cloudfront.CfnOriginAccessControl(this, 'AOC', {
       originAccessControlConfig: {
-        name: 'Portfolio Dev Maua Front Bucket OAC ' + stage,
+        name: 'Portfolio Front Bucket OAC ' + stage,
         originAccessControlOriginType: 's3',
         signingBehavior: 'always',
         signingProtocol: 'sigv4'
       }
     })
 
-    let viewerCertificate = cloudfront.ViewerCertificate.fromCloudFrontDefaultCertificate();
-    if (stage === 'prod' || stage === 'homolog' || stage === 'dev') {
+    if (
+      (stage === 'dev' || stage === 'homolog' || stage === 'prod') &&
+      !acmCertificateArn
+    ) {
+      throw new Error(
+        `ACM_CERTIFICATE_ARN é obrigatório para o stage: ${stage}`
+      )
+    }
+
+    // Permite múltiplos domínios alternativos separados por vírgula
+    let domainNames: string[] = []
+    if (alternativeDomainName) {
+      domainNames = alternativeDomainName
+        .split(',')
+        .map((d) => d.trim())
+        .filter(Boolean)
+    }
+
+    const hostedZoneId = process.env.HOSTED_ZONE_ID || ''
+    const hostedZoneName = process.env.HOSTED_ZONE_NAME || ''
+
+    let viewerCertificate =
+      cloudfront.ViewerCertificate.fromCloudFrontDefaultCertificate()
+
+    if (stage === 'dev' || stage === 'homolog' || stage === 'prod') {
       viewerCertificate = cloudfront.ViewerCertificate.fromAcmCertificate(
-        Certificate.fromCertificateArn(this, 'PortfolioDevMauaFrontCertificate-' + stage, acmCertificateArn),
+        Certificate.fromCertificateArn(
+          this,
+          'PortfolioFrontCertificate-' + stage,
+          acmCertificateArn
+        ),
         {
-          aliases: [alternativeDomain],
           securityPolicy: cloudfront.SecurityPolicyProtocol.TLS_V1_2_2021,
-        },
+          aliases: domainNames.length > 0 ? domainNames : undefined
+        }
       )
     }
 
@@ -54,11 +76,11 @@ export class IacStack extends cdk.Stack {
       this,
       'CDN',
       {
-        comment: projectName + ' ' + stage,
+        comment: 'Portfolio Front Distribution ' + stage,
         originConfigs: [
           {
             s3OriginSource: {
-              s3BucketSource: s3Bucket,
+              s3BucketSource: s3Bucket
             },
             behaviors: [
               {
@@ -86,9 +108,10 @@ export class IacStack extends cdk.Stack {
           }
         ]
       }
-    );
+    )
 
-    const cfnDistribution = cloudFrontWebDistribution.node.defaultChild as cloudfront.CfnDistribution;
+    const cfnDistribution = cloudFrontWebDistribution.node
+      .defaultChild as cloudfront.CfnDistribution
 
     cfnDistribution.addPropertyOverride(
       'DistributionConfig.Origins.0.OriginAccessControlId',
@@ -102,37 +125,53 @@ export class IacStack extends cdk.Stack {
         principals: [new iam.ServicePrincipal('cloudfront.amazonaws.com')],
         resources: [s3Bucket.arnForObjects('*')]
       })
-    );
+    )
 
-    if (stage === 'prod' || stage === 'homolog' || stage === 'dev'){
-      const zone = route53.HostedZone.fromHostedZoneAttributes(
+    if (domainNames.length > 0 && hostedZoneId && hostedZoneName) {
+      const hostedZone = route53.HostedZone.fromHostedZoneAttributes(
         this,
-        'PortfolioDevMauaFrontHostedZone-' + stage,
+        'HostedZone',
         {
-          hostedZoneId: hostedZoneIdValue,
-          zoneName: alternativeDomain
+          hostedZoneId: hostedZoneId,
+          zoneName: hostedZoneName
         }
       )
 
-        new route53.ARecord(this, 'PortfolioDevMauaFrontAliasRecord-' + stage, {
-          zone: zone,
-          recordName: alternativeDomain,
+      // Criar um registro para cada domain name alternativo
+      domainNames.forEach((domain, index) => {
+        new route53.ARecord(this, `CloudFrontARecord-${stage}-${index}`, {
+          zone: hostedZone,
+          recordName: domain,
           target: route53.RecordTarget.fromAlias(
             new route53Targets.CloudFrontTarget(cloudFrontWebDistribution)
           )
         })
-      }
 
-      new cdk.CfnOutput(this, 'PortfolioDevMauaFrontBucketName-' + stage, {
-        value: s3Bucket.bucketName
+        // Criar também registro AAAA para IPv6
+        new route53.AaaaRecord(this, `CloudFrontAAAARecord-${stage}-${index}`, {
+          zone: hostedZone,
+          recordName: domain,
+          target: route53.RecordTarget.fromAlias(
+            new route53Targets.CloudFrontTarget(cloudFrontWebDistribution)
+          )
+        })
       })
+    } else if (domainNames.length > 0) {
+      console.warn(
+        'Domain names alternativos fornecidos, mas HOSTED_ZONE_ID ou HOSTED_ZONE_NAME não configurados. Registros DNS não serão criados.'
+      )
+    }
 
-      new cdk.CfnOutput(this, 'PortfolioDevMauaFrontDistributionId-' + stage, {
-        value: cloudFrontWebDistribution.distributionId
-      })
+    new cdk.CfnOutput(this, 'PortfolioFrontBucketName-' + stage, {
+      value: s3Bucket.bucketName
+    })
 
-      new cdk.CfnOutput(this, 'PortfolioDevMauaFrontDistributionDomainName-' + stage, {
-        value: cloudFrontWebDistribution.distributionDomainName,
-      });
+    new cdk.CfnOutput(this, 'PortfolioFrontDistributionId-' + stage, {
+      value: cloudFrontWebDistribution.distributionId
+    })
+
+    new cdk.CfnOutput(this, 'PortfolioFrontDistributionDomainName-' + stage, {
+      value: cloudFrontWebDistribution.distributionDomainName
+    })
   }
 }
